@@ -12448,6 +12448,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#installer-docker-sur-windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installer Docker sur Windows
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#premier-contneur" class="md-nav__link">
     <span class="md-ellipsis">
       Premier contneur
@@ -15824,6 +15833,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#installer-docker-sur-windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installer Docker sur Windows
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#premier-contneur" class="md-nav__link">
     <span class="md-ellipsis">
       Premier contneur
@@ -15890,6 +15908,8 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>$<span class="w"> </span>sudo<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>hello-world
 </code></pre></div>
 <img alt="" src="https://algojungle.github.io/algojungle-assets/images/docker/docker-install-ubuntu-06.png" /></p>
+<p><em>En cas de difficultés, merci de consulter la docs officielle <a href="https://docs.docker.com/engine/install/ubuntu/">https://docs.docker.com/engine/install/ubuntu/</a>.</em></p>
+<h2 id="installer-docker-sur-windows">Installer Docker sur Windows<a class="headerlink" href="#installer-docker-sur-windows" title="Permanent link">#</a></h2>
 <p>Ouvrez PowerShell, cela peut prendre quelques minutes
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>$<span class="w"> </span>wsl<span class="w"> </span>--set-default-version<span class="w"> </span><span class="m">2</span>
 </code></pre></div>
@@ -15901,7 +15921,6 @@
 <p>Créer un fichier <code>/etc/docker/daemon.json</code>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>$<span class="w"> </span>sudo<span class="w"> </span>touch<span class="w"> </span>/etc/docker/daemon.json
 </code></pre></div></p>
-<p><em>En cas de difficultés, merci de consulter la docs officielle <a href="https://docs.docker.com/engine/install/ubuntu/">https://docs.docker.com/engine/install/ubuntu/</a>.</em></p>
 <!-- ## Installer Docker sur Windows
 Rendez-vous sur cette page [https://docs.docker.com/desktop/install/windows-install/](https://docs.docker.com/desktop/install/windows-install/)
 ![](https://algojungle.github.io/algojungle-assets/images/docker/docker-install-01.png)
@@ -15935,10 +15954,22 @@ Ouvrez votre dossier de téléchargement et lancer l'exécution.
 </code></pre></div></p>
 <p><img alt="" src="https://algojungle.github.io/algojungle-assets/images/docker/docker-hello-world.png" /></p>
 <h2 id="ajouter-lutilisateur-au-groupe-docker">Ajouter l'utilisateur au groupe docker<a class="headerlink" href="#ajouter-lutilisateur-au-groupe-docker" title="Permanent link">#</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>docker<span class="w"> </span>run<span class="w"> </span>hello-world
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>docker<span class="w"> </span>run<span class="w"> </span>hello-world
-</code></pre></div>
+<ol>
+<li>
+<p>Créer le groupe docker (si ce n'est pas déjà fait)
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>sudo<span class="w"> </span>groupadd<span class="w"> </span>docker
+</code></pre></div></p>
+</li>
+<li>
+<p>Ajouter l'utilisateur courant au groupe docker
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>sudo<span class="w"> </span>usermod<span class="w"> </span>-aG<span class="w"> </span>docker<span class="w"> </span><span class="nv">$USER</span>
+</code></pre></div></p>
+</li>
+<li>Vérifier que l’ajout a bien fonctionné
+Essayez une commande sans sudo :
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>docker<span class="w"> </span>ps
+</code></pre></div></li>
+</ol>
 <hr />
 <p><em>Bravo, tout est prêt maintenant. Dans la prochaine section, vous découvrirez comment créer une image Docker à partir d'un Dockerfile.</em></p>
 

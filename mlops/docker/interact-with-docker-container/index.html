@@ -116,7 +116,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#acceder-a-un-conteneur-en-ligne-de-commande" class="md-skip">
+        <a href="#astuce" class="md-skip">
           Aller au contenu
         </a>
       
@@ -12504,6 +12504,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#astuce" class="md-nav__link">
+    <span class="md-ellipsis">
+      💡 Astuce
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#acceder-a-un-conteneur-en-ligne-de-commande" class="md-nav__link">
     <span class="md-ellipsis">
       🔍 Accéder à un conteneur en ligne de commande
@@ -12531,9 +12540,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#astuce" class="md-nav__link">
+  <a href="#consulter-les-journaux-dun-conteneur" class="md-nav__link">
     <span class="md-ellipsis">
-      💡 Astuce
+      Consulter les journaux d’un conteneur
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#surveiller-lutilisation-des-ressources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Surveiller l'utilisation des ressources
     </span>
   </a>
   
@@ -15818,6 +15836,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#astuce" class="md-nav__link">
+    <span class="md-ellipsis">
+      💡 Astuce
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#acceder-a-un-conteneur-en-ligne-de-commande" class="md-nav__link">
     <span class="md-ellipsis">
       🔍 Accéder à un conteneur en ligne de commande
@@ -15845,9 +15872,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#astuce" class="md-nav__link">
+  <a href="#consulter-les-journaux-dun-conteneur" class="md-nav__link">
     <span class="md-ellipsis">
-      💡 Astuce
+      Consulter les journaux d’un conteneur
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#surveiller-lutilisation-des-ressources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Surveiller l'utilisation des ressources
     </span>
   </a>
   
@@ -15897,42 +15933,54 @@
 	</p>
 	
 
-	<h2 id="acceder-a-un-conteneur-en-ligne-de-commande">🔍 Accéder à un conteneur en ligne de commande<a class="headerlink" href="#acceder-a-un-conteneur-en-ligne-de-commande" title="Permanent link">#</a></h2>
+	<h2 id="astuce">💡 Astuce<a class="headerlink" href="#astuce" title="Permanent link">#</a></h2>
+<p>Pour obtenir l’ID ou le nom exact de vos conteneurs en cours d’exécution :
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>docker<span class="w"> </span>ps
+</code></pre></div></p>
+<h2 id="acceder-a-un-conteneur-en-ligne-de-commande">🔍 Accéder à un conteneur en ligne de commande<a class="headerlink" href="#acceder-a-un-conteneur-en-ligne-de-commande" title="Permanent link">#</a></h2>
 <p>Vous pouvez ouvrir un terminal interactif à l'intérieur d'un conteneur (comme une session SSH) :</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>&lt;nom_du_conteneur&gt;<span class="w"> </span>bash
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>&lt;nom_du_conteneur&gt;<span class="w"> </span>bash
 </code></pre></div>
 <p>Par exemple :
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>jupyterhub<span class="w"> </span>bash
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>jupyterhub<span class="w"> </span>bash
 </code></pre></div></p>
 <p>Cette commande ouvre un shell (<code>bash</code>) dans le conteneur, vous permettant de naviguer dans les fichiers, d’installer des packages, etc.</p>
 <h2 id="executer-une-commande-sans-ouvrir-de-session">⚙️ Exécuter une commande sans ouvrir de session<a class="headerlink" href="#executer-une-commande-sans-ouvrir-de-session" title="Permanent link">#</a></h2>
 <p>Vous pouvez également exécuter une commande directement dans le conteneur, sans y entrer :</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>&lt;nom_du_conteneur&gt;<span class="w"> </span>&lt;commande&gt;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>&lt;nom_du_conteneur&gt;<span class="w"> </span>&lt;commande&gt;
 </code></pre></div>
 <p>Exemple :
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>jupyterhub<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>panel<span class="w"> </span>watchfiles
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>jupyterhub<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>panel<span class="w"> </span>watchfiles
 </code></pre></div></p>
 <p>Pour exécuter en tant que superutilisateur (root), ajoutez l’option <code>--user root</code> ou <code>-u root</code> :</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>--user<span class="w"> </span>root<span class="w"> </span>jupyterhub<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>panel<span class="w"> </span>watchfiles
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>--user<span class="w"> </span>root<span class="w"> </span>jupyterhub<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>panel<span class="w"> </span>watchfiles
 </code></pre></div>
 <h2 id="copier-des-fichiers-depuis-ou-vers-un-conteneur">📁 Copier des fichiers depuis ou vers un conteneur<a class="headerlink" href="#copier-des-fichiers-depuis-ou-vers-un-conteneur" title="Permanent link">#</a></h2>
 <p>Docker permet également de copier des fichiers entre l'hôte et le conteneur :</p>
 <ul>
 <li>
 <p><strong>Depuis l’hôte vers le conteneur</strong> :
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>docker<span class="w"> </span>cp<span class="w"> </span>workspace<span class="w"> </span>jupyterhub:/home/
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>docker<span class="w"> </span>cp<span class="w"> </span>workspace<span class="w"> </span>jupyterhub:/home/
 </code></pre></div></p>
 </li>
 <li>
 <p><strong>Depuis le conteneur vers l’hôte</strong> :
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>docker<span class="w"> </span>cp<span class="w"> </span>jupyterhub:/home/jovyan/notebooks<span class="w"> </span>./notebooks-backup
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>docker<span class="w"> </span>cp<span class="w"> </span>jupyterhub:/home/jovyan/notebooks<span class="w"> </span>./notebooks-backup
 </code></pre></div></p>
 </li>
 </ul>
-<h2 id="astuce">💡 Astuce<a class="headerlink" href="#astuce" title="Permanent link">#</a></h2>
-<p>Pour obtenir l’ID ou le nom exact de vos conteneurs en cours d’exécution :
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>docker<span class="w"> </span>ps
-</code></pre></div></p>
+<h2 id="consulter-les-journaux-dun-conteneur">Consulter les journaux d’un conteneur<a class="headerlink" href="#consulter-les-journaux-dun-conteneur" title="Permanent link">#</a></h2>
+<p>Pour diagnostiquer une erreur ou observer le comportement d’un conteneur :</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>docker<span class="w"> </span>logs<span class="w"> </span>&lt;nom_du_conteneur&gt;
+</code></pre></div>
+<p>Exemple :</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>docker<span class="w"> </span>logs<span class="w"> </span>jupyterhub
+</code></pre></div>
+<h2 id="surveiller-lutilisation-des-ressources">Surveiller l'utilisation des ressources<a class="headerlink" href="#surveiller-lutilisation-des-ressources" title="Permanent link">#</a></h2>
+<p>Pour surveiller l’utilisation CPU, mémoire, réseau, etc. des conteneurs en temps réel :</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>docker<span class="w"> </span>stats
+</code></pre></div>
+<p>Cela affiche un tableau interactif semblable à htop mais pour vos conteneurs Docker.</p>
 <hr />
 <p><em>Maîtriser l'interaction avec un conteneur Docker est une compétence essentielle pour tout Data Scientist ou ingénieur MLOps. Ces commandes vous permettent d'inspecter, modifier et contrôler l’environnement de vos applications, sans avoir à reconstruire vos conteneurs à chaque étape. Dans les prochaines sections, nous verrons comment monitorer et déboguer efficacement vos services Docker.</em></p>
 
