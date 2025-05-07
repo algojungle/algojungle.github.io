@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Prêt à acquérir les compétences pour lancer votre carrière en Data Science ? <br> Je suis Joseph Konka, Analyste de données Sénior et je vous accompagnerai dans votre aventure.<br> Découvrez Python, SQL, Power BI, Tensorflow et bien d'autres outils gratuitement.<br> C'est parti ! 🚀">
+        <meta name="description" content="Lorsqu'il s'agit de déployer les applications, Docker est la technologie de choix. Docker est simplement l'une technologie open source qui permet de déployer des applications dans des conteneurs. En tant que Data Scientist, vous êtes amenés à deployer vos modèles et Docker est une bonne solution. ">
       
       
         <meta name="author" content="Joseph Konka">
@@ -90,7 +90,7 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="mlops/docker/">
 
-<meta property="og:image" content="https://joekakone.github.io/static/img/cover.png">
+<meta property="og:image" content="https://algojungle.github.io/algojungle-assets/images/docker/covers/docker.png">
 
 <meta property="og:image:width" content="1280">
 <meta property="og:image:height" content="720">
@@ -116,7 +116,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#deploiement-dapplications-avec-docker" class="md-skip">
+        <a href="#la-mise-en-production" class="md-skip">
           Aller au contenu
         </a>
       
@@ -15711,8 +15711,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -15795,16 +15793,39 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-                  
+  <!-- Content -->
 
+	<!-- Edit button -->
+	
 
+	<!--
+	Hack: check whether the content contains a h1 headline. If it
+	doesn't, the page title (or respectively site name) is used
+	as the main headline.
+	-->
+	
+		<h1 style="margin-bottom: 0px;">Déploiement d'applications avec Docker</h1>
+	
+	<br>
 
-<h1 id="deploiement-dapplications-avec-docker">Déploiement d'applications avec Docker<a class="headerlink" href="#deploiement-dapplications-avec-docker" title="Permanent link">#</a></h1>
-<p>Lorsqu'il s'agit de déployer les applications, Docker est la technologie de choix. Docker est simplement l'une technologie open source qui permet de déployer des applications dans des conteneurs. En tant que Data Scientist, vous êtes amenés à deployer vos modèles et Docker est une bonne solution.</p>
-<p><img alt="" src="https://algojungle.github.io/algojungle-assets/images/docker/covers/docker.png" /></p>
-<!-- ![](https://agilethought.com/wp-content/uploads/2018/05/Docker_logo.png) -->
+	
 
-<h2 id="la-mise-en-production">La mise en production 🚀<a class="headerlink" href="#la-mise-en-production" title="Permanent link">#</a></h2>
+	<!-- Tags -->
+	
+
+	<!-- description -->
+	
+	<p>Lorsqu'il s'agit de déployer les applications, Docker est la technologie de choix. Docker est simplement l'une technologie open source qui permet de déployer des applications dans des conteneurs. En tant que Data Scientist, vous êtes amenés à deployer vos modèles et Docker est une bonne solution. </p>
+	
+
+	<!-- Cover Image -->
+	
+	<p>
+		<img alt="" src="https://algojungle.github.io/algojungle-assets/images/docker/covers/docker.png">
+	</p>
+	
+
+	<h2 id="la-mise-en-production">La mise en production 🚀<a class="headerlink" href="#la-mise-en-production" title="Permanent link">#</a></h2>
 <p>Une fois les applications développées, elles sont testées puis mises en production. La mise en production consiste à mettre l’application à disposition des utilisateurs finaux afin de leurs apporter de la valeur.</p>
 <p><img alt="" src="https://www.qiminfo.ch/wp-content/uploads/2022/08/powerplateform.jpg" /></p>
 <h2 id="evolution-des-environnements-de-deploiement">Évolution des environnements de déploiement 🚀<a class="headerlink" href="#evolution-des-environnements-de-deploiement" title="Permanent link">#</a></h2>
@@ -15819,6 +15840,7 @@
 <li>Docker est Open Source</li>
 <li>Docker est extensible Docker Compose et Kubernetes</li>
 </ul>
+<p><img alt="" src="https://www.tatvasoft.com/blog/wp-content/uploads/2023/07/Docker-Architecture.jpg" /></p>
 <p>Docker est aujourd’hui le système le plus utilisé et bénéficie d’une grande communauté d’utilisateurs et de contributeurs open source.</p>
 <h2 id="notion-de-conteneur">Notion de conteneur<a class="headerlink" href="#notion-de-conteneur" title="Permanent link">#</a></h2>
 <p>Les conteneurs sont des unités autonomes qui encapsulent une application et ses dépendances, assurant ainsi la portabilité, la rapidité et la cohérence dans le déploiement logiciel (toujours la virtualisation).</p>
@@ -15832,14 +15854,15 @@
 </ul>
 <p>Technos de conteneurisation : LCX / Podman / Docker</p>
 <h2 id="sommaire">Sommaire<a class="headerlink" href="#sommaire" title="Permanent link">#</a></h2>
+<p>Notre formation est découpée en quatre parties princpales à savoir :</p>
 <ol>
-<li>Créer une image Docker</li>
-<li>Déployer un conteneur</li>
-<li>Publier une image sur Docker Hub</li>
+<li>Construire une image Docker</li>
+<li>Déployer et gérer un conteneur</li>
+<li>Publier une image sur une Docker Registry</li>
+<li>Gérer plusieurs conteneurs avec Docker Compose</li>
 </ol>
-<p>Après avoir entrainé et testé votre modèle, il faut le mettre en production afin qu'il soit accessible aux applications. Une fois les modèles construits, il faut les exporter sous un format plus facile à mettre en production.</p>
-<p><img alt="" src="https://www.tatvasoft.com/blog/wp-content/uploads/2023/07/Docker-Architecture.jpg" /></p>
 <h2 id="exemple-de-dockerfile">Exemple de Dockerfile<a class="headerlink" href="#exemple-de-dockerfile" title="Permanent link">#</a></h2>
+<p>Ce fichier <code>Dockerfile</code> décrit la procédure pour déployer une application Flask qui tourne sur le pour 5000.</p>
 <div class="highlight"><span class="filename">Dockerfile for Flask Application</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">FROM</span><span class="w"> </span><span class="s">python:3-buster</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="k">COPY</span><span class="w"> </span>.<span class="w"> </span>/app
@@ -15856,22 +15879,41 @@
 <h2 id="a-quoi-ca-ressemble">À quoi ça ressemble ?<a class="headerlink" href="#a-quoi-ca-ressemble" title="Permanent link">#</a></h2>
 <p><img alt="" src="https://algojungle.github.io/algojungle-assets/images/docker/docker-desktop-container-view.png" /></p>
 <hr />
-<p><em>Si vous souhaitez aller plus loin, je vous recommande ce cours Openclassrooms <a href="https://openclassrooms.com/fr/courses/2035766-optimisez-votre-deploiement-en-creant-des-conteneurs-avec-docker">Cours Openclassrooms</a>.</em></p>
+<p><em>Vous êtes à présent introduit sur ce que c'est que Docker, je vous donne rendez-vous dans la prochaine section pour installer Docker sur votre machine.</em></p>
+
+	<!-- Last update of source file -->
+	
+		
+	
+
+	<!-- <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="large" data-theme="light" data-type="HORIZONTAL" data-vanity="joseph-koami-konka" data-version="v1" style="width: 100%;"></div> -->
+
+	<h2>Partagez sur les réseaux sociaux</h2>
+	<!-- ShareThis BEGIN -->
+	<div class="sharethis-inline-share-buttons"></div>
+	<!-- ShareThis END -->
+
+	<!-- Giscus - generated by https://giscus.app -->
+	<h2 id="__comments">Commentaires</h2>
+	<script src="https://giscus.app/client.js"
+		data-repo="joekakone/Departement-De-Maths"
+		data-repo-id="MDEwOlJlcG9zaXRvcnkzMzY4MjEwNTY="
+		data-category="General"
+		data-category-id="DIC_kwDOFBN7QM4CORj9"
+		data-mapping="pathname"
+		data-reactions-enabled="1"
+		data-emit-metadata="0"
+		data-input-position="bottom"
+		data-theme="dark"
+		data-lang="fr"
+		crossorigin="anonymous"
+		async>
+	</script>
+
+	<!-- LinkedIn -->
+	<!-- <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script> -->
 
 
-
-
-
-
-
-
-
-  
-
-
-
-
-                
               </article>
             </div>
           
