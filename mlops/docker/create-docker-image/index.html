@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Prêt à acquérir les compétences pour lancer votre carrière en Data Science ? <br> Je suis Joseph Konka, Analyste de données Sénior et je vous accompagnerai dans votre aventure.<br> Découvrez Python, SQL, Power BI, Tensorflow et bien d'autres outils gratuitement.<br> C'est parti ! 🚀">
+        <meta name="description" content="Lorsqu'il s'agit de déployer les applications, Docker est la technologie de choix. Docker est simplement l'une technologie open source qui permet de déployer des applications dans des conteneurs. En tant que Data Scientist, vous êtes amenés à deployer vos modèles et Docker est une bonne solution. ">
       
       
         <meta name="author" content="Joseph Konka">
@@ -22,15 +22,15 @@
       
       
       <link rel="icon" href="https://algojungle.github.io/algojungle-assets/assets/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.13">
     
     
       
-        <title>Créer une image - Algo Jungle</title>
+        <title>Créer une image Docker - Algo Jungle</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.2afb09e1.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
@@ -90,7 +90,7 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="mlops/docker/create-docker-image/">
 
-<meta property="og:image" content="https://joekakone.github.io/static/img/cover.png">
+<meta property="og:image" content="https://algojungle.github.io/algojungle-assets/images/docker/covers/create-docker-image.png">
 
 <meta property="og:image:width" content="1280">
 <meta property="og:image:height" content="720">
@@ -116,7 +116,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#creer-une-image-docker" class="md-skip">
+        <a href="#structure-du-dockerfile" class="md-skip">
           Aller au contenu
         </a>
       
@@ -152,7 +152,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Créer une image
+              Créer une image Docker
             
           </span>
         </div>
@@ -9056,6 +9056,8 @@
       
         
       
+        
+      
     
     
     
@@ -9152,6 +9154,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../big-data/apache-hadoop/applications.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Applications
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../big-data/apache-hadoop/ressources/" class="md-nav__link">
         
   
@@ -9187,6 +9212,8 @@
       
         
           
+        
+      
         
       
         
@@ -9341,6 +9368,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../big-data/pyspark/applications.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Applications
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../big-data/pyspark/ressources/" class="md-nav__link">
         
   
@@ -9376,6 +9426,8 @@
       
         
           
+        
+      
         
       
         
@@ -9630,6 +9682,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../big-data/apache-airflow/applications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Applications
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../big-data/apache-airflow/ressources/" class="md-nav__link">
         
   
@@ -9665,6 +9740,8 @@
       
         
           
+        
+      
         
       
         
@@ -9902,6 +9979,29 @@
   
   <span class="md-ellipsis">
     Exporter un job
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../big-data/talend/applications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Applications
     
   </span>
   
@@ -12418,8 +12518,6 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
-      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -12451,8 +12549,6 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table des matières">
   
   
-  
-    
   
   
     <label class="md-nav__title" for="__toc">
@@ -15814,8 +15910,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -15871,15 +15965,68 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-                  
+  <!-- Content -->
 
+	<!-- Edit button -->
+	
 
+	<!--
+	Hack: check whether the content contains a h1 headline. If it
+	doesn't, the page title (or respectively site name) is used
+	as the main headline.
+	-->
+	
+		<h1 style="margin-bottom: 0px;">Créer une image Docker</h1>
+	
+	<br>
 
-<h1 id="creer-une-image-docker">Créer une image Docker<a class="headerlink" href="#creer-une-image-docker" title="Permanent link">#</a></h1>
-<p><img alt="" src="https://algojungle.github.io/algojungle-assets/images/docker/covers/create-docker-image.png" /></p>
-<p>Un image Docker est une rprésentation abstraite d'une application.</p>
+	
+
+	<!-- Tags -->
+	
+
+	<!-- description -->
+	
+	<p>Lorsqu'il s'agit de déployer les applications, Docker est la technologie de choix. Docker est simplement l'une technologie open source qui permet de déployer des applications dans des conteneurs. En tant que Data Scientist, vous êtes amenés à deployer vos modèles et Docker est une bonne solution. </p>
+	
+
+	<!-- Cover Image -->
+	
+	<p>
+		<img alt="" src="https://algojungle.github.io/algojungle-assets/images/docker/covers/create-docker-image.png">
+	</p>
+	
+
+	<p>Une <strong>image Docker</strong> est une représentation figée d’une application, contenant tout ce dont elle a besoin pour s’exécuter : code, dépendances, bibliothèques, fichiers de configuration, etc.</p>
+<p>Elle sert de <strong>modèle</strong> pour créer des conteneurs Docker.</p>
 <h2 id="structure-du-dockerfile">Structure du Dockerfile<a class="headerlink" href="#structure-du-dockerfile" title="Permanent link">#</a></h2>
-<p>Le Dockerfile est un fichier qui décrit la logique de déploiement d'une application. On y spécifie l'environnement </p>
+<p>Le Dockerfile est un fichier qui décrit la logique de déploiement d'une application. On y spécifie l'environnement</p>
+<table>
+<thead>
+<tr>
+<th>Mot Clé</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FROM</td>
+<td>L'instruction FROM permet d'indiquer l'image Docker de base à partir de laquelle</td>
+</tr>
+<tr>
+<td>WORKDIR</td>
+<td>L'instruction WORKDIR permet d'indiquer le répertoire de  l'application.</td>
+</tr>
+<tr>
+<td>COPY</td>
+<td>L'instruction COPY permet de copier des éléments dans le conteneurs.</td>
+</tr>
+<tr>
+<td>ADD</td>
+<td>L'instruction ADD est similaire à COPY mais peut également copier des éléments externes depuis des URLs.</td>
+</tr>
+</tbody>
+</table>
 <p><strong>FROM</strong><br>
 L'instruction FROM permet d'indiquer l'image Docker de base à partir de laquelle </p>
 <p><strong>WORKDIR</strong><br>
@@ -15929,20 +16076,39 @@ L'instruction CMD permet d'indiquer la commande à utiliser pour démarrer l'app
 <hr />
 <p><em>Dans la prochaine section, vous découvrirez comment lancer deployer des instances de vos applications grâce aux contenuers Docker.</em></p>
 
+	<!-- Last update of source file -->
+	
+		
+	
+
+	<!-- <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="large" data-theme="light" data-type="HORIZONTAL" data-vanity="joseph-koami-konka" data-version="v1" style="width: 100%;"></div> -->
+
+	<h2>Partagez sur les réseaux sociaux</h2>
+	<!-- ShareThis BEGIN -->
+	<div class="sharethis-inline-share-buttons"></div>
+	<!-- ShareThis END -->
+
+	<!-- Giscus - generated by https://giscus.app -->
+	<h2 id="__comments">Commentaires</h2>
+	<script src="https://giscus.app/client.js"
+		data-repo="joekakone/Departement-De-Maths"
+		data-repo-id="MDEwOlJlcG9zaXRvcnkzMzY4MjEwNTY="
+		data-category="General"
+		data-category-id="DIC_kwDOFBN7QM4CORj9"
+		data-mapping="pathname"
+		data-reactions-enabled="1"
+		data-emit-metadata="0"
+		data-input-position="bottom"
+		data-theme="dark"
+		data-lang="fr"
+		crossorigin="anonymous"
+		async>
+	</script>
+
+	<!-- LinkedIn -->
+	<!-- <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script> -->
 
 
-
-
-
-
-
-
-  
-
-
-
-
-                
               </article>
             </div>
           
@@ -16185,7 +16351,7 @@ L'instruction CMD permet d'indiquer la commande à utiliser pour démarrer l'app
     
     
       
-      <script id="__config" type="application/json">{"base": "../../..", "features": ["header.autohide", "announce.dismiss", "navigation.instant.prefetch", "navigation.instant.progress", "navigation.instant.preview", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.path", "navigation.indexes", "navigation.top", "navigation.footer", "content.code.copy", "content.code.select", "content.code.annotate", "content.tabs.link", "content.action.edit", "content.action.view", "toc.extend", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["header.autohide", "announce.dismiss", "navigation.instant.prefetch", "navigation.instant.progress", "navigation.instant.preview", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.path", "navigation.indexes", "navigation.top", "navigation.footer", "content.code.copy", "content.code.select", "content.code.annotate", "content.tabs.link", "content.action.edit", "content.action.view", "toc.extend", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}, "version": null}</script>
     
     
 <!-- Google tag (gtag.js) -->
