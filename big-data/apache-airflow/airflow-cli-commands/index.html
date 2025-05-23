@@ -9466,6 +9466,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#supprimer-un-dag" class="md-nav__link">
+    <span class="md-ellipsis">
+      Supprimer un DAG
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -16205,6 +16214,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#supprimer-un-dag" class="md-nav__link">
+    <span class="md-ellipsis">
+      Supprimer un DAG
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -16281,6 +16299,9 @@
 <p>Exemple :<br>
 Si votre DAG s'appelle <code>etl_sales</code>, la commande sera :</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>airflow<span class="w"> </span>dags<span class="w"> </span>backfill<span class="w"> </span>--start-date<span class="w"> </span><span class="m">2024</span>-09-01<span class="w"> </span>--end-date<span class="w"> </span><span class="m">2024</span>-09-23<span class="w"> </span>etl_sales
+</code></pre></div>
+<h2 id="supprimer-un-dag">Supprimer un DAG<a class="headerlink" href="#supprimer-un-dag" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>airflow<span class="w"> </span>dags<span class="w"> </span>delete<span class="w"> </span>etl_sales<span class="w"> </span>-y
 </code></pre></div>
 <hr />
 <p><em>Bravo, vous avez créé votre premier pipeline avec Airflow. Dans la prochaine section, nous explorerons en détail chaque composant du pipeline et approfondirons votre compréhension d'Apache Airflow.</em></p>
