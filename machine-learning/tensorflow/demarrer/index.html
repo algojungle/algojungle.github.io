@@ -1,0 +1,1473 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+
+  <!-- Meta tags -->
+  
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <!-- Page description -->
+    
+      <meta name="description" content="Dans cette première section de la formation Tensorflow, je vous présente les tenseurs élément fondamental et enfin vous verrez comment apprendre une régression linéaire." />
+    
+
+    <!-- Page author -->
+    
+      <meta name="author" content="Joseph Konka" />
+    
+
+    <!-- Canonical -->
+    
+      <link rel="canonical" href="https://josephkonkathedataguy.com/learning/machine-learning/tensorflow/demarrer/" />
+    
+
+    <!-- Previous page -->
+    
+      <link rel="prev" href="../installer/" />
+    
+
+    <!-- Next page -->
+    
+      <link rel="next" href="../01-neural-network/" />
+    
+
+    <!-- Favicon -->
+    <link rel="icon" href="https://algojungle.github.io/algojungle-assets/assets/favicon.png" />
+
+    <!-- Generator banner -->
+    <meta name="generator" content="mkdocs-1.6.1, $md-name$-$md-version$" />
+  
+
+  <title>
+    Démarrer avec TensorFlow | Algo Jungle
+  </title>
+
+  <!-- Google Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,800&display=swap">
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+  <!-- Theme CSS -->
+  <link rel="stylesheet" href="https://joekakone.github.io/static/css/style.blue.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../../../assets/stylesheets/custom.css">
+  
+  <style>
+    body {
+      font-family: 'Work Sans', sans-serif;
+      background-color: #fcfcfc;
+    }
+    /* Style par défaut pour le contenu Markdown */
+    .markdown-content img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+  </style>
+  
+</head>
+
+<body>
+
+  <!-- navbar-->
+<header class="header">
+  <nav class="navbar navbar-light navbar-expand-lg fixed-top" id="navbar">
+    <div class="container"><a class="navbar-brand" href="/learning"><img
+          src="https://algojungle.github.io/algojungle-assets/assets/favicon.png" alt="" height="36.14"></a>
+      <button class="navbar-toggler navbar-toggler-end" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation"><i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        
+  <ul class="navbar-nav ms-auto">
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    <li class="nav-item">
+      
+      <a href="../../.." class="nav-link link-scroll">
+        
+  
+
+  <!-- Navigation link icon -->
+  
+    
+  
+
+  <!-- Navigation link title -->
+  Accueil
+
+      </a>
+      
+    </li>
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../../../informatique/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  Informatique
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../../../algorithmique/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  Algorithmique
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../../../programmation/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  Programmation
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../../../python/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  Python
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../../../analytics/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  Analytics
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../../../analytics/sql/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  SQL
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../../../analytics/powerbi/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  Power BI
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../../../big-data/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  Big Data
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../../" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  Machine Learning
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+    
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../" class="nav-link link-scroll active">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  TensorFlow
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../../../mlops/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  MLOps
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../../../blog/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  Blog
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+  </ul>
+
+      </div>
+
+    </div>
+  </nav>
+</header>
+
+  
+
+  <!-- Bloc principal : Sera remplacé par home.html pour la page d'accueil -->
+  
+<div class="algo-jungle-article">
+
+    <!-- Header de l'Article -->
+    
+    <section class="article-header bg-light border-bottom">
+        <div class="container py-5 text-center">
+            
+            <!-- Titre avec marge haute pour le descendre -->
+            <div class="pt-5 mt-5">
+                
+                    <h1 class="text-uppercase fw-bold mb-4 display-5" style="color: #333;">Régression linéaire simple avec Tensorflow</h1>
+                
+            </div>
+
+            <!-- Infos Auteur -->
+            
+
+            <!-- Tags -->
+            
+
+            <!-- Description / Overview centrée et justifiée -->
+            
+            <div class="row justify-content-center mt-5">
+                <div class="col-lg-10">
+                    <p class="lead text-muted cust-justify mb-0" style="line-height: 1.6;">
+                        Dans cette première section de la formation Tensorflow, je vous présente les tenseurs élément fondamental et enfin vous verrez comment apprendre une régression linéaire.
+                    </p>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+    
+
+    <!-- Structure Corps de page (Sidebar + Contenu) -->
+    <div class="container py-5">
+        <div class="row gx-lg-5">
+            
+            <!-- Sidebar Navigation (Sous-sections du module actif) -->
+            <!-- <aside class="col-lg-3 d-none d-lg-block">
+                <div class="sticky-sidebar-container">
+                </div>
+            </aside> -->
+            <!-- Sidebar Navigation (droite) -->
+
+<aside class="col-lg-3 d-none d-lg-block">
+    <div class="sticky-sidebar-container">
+        <div class="p-4 bg-white border rounded shadow-sm mb-4">
+
+            
+
+            <!-- Initialisation navigation -->
+            <div class="sidebar-scroll-wrapper">
+                <div class="nav flex-column sidebar-nav" id="sidebarAccordion">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../"
+                style="padding-left: 0px; font-size: 1.0rem;">
+                Deep Learning avec TensorFlow
+            </a>
+            
+            
+            
+                    
+                    
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../installer/"
+                style="padding-left: 0px; font-size: 1.0rem;">
+                Installer TensorFlow
+            </a>
+            
+            
+            
+                    
+                    
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 fw-bold text-primary active-child"
+                href="./"
+                style="padding-left: 0px; font-size: 1.0rem;">
+                Démarrer avec TensorFlow
+            </a>
+            
+            
+            
+                    
+                    
+            
+            
+
+            
+            <!-- SECTION AVEC ENFANTS -->
+            <div class="nav-item mb-1">
+                <div class="d-flex justify-content-between align-items-center">
+
+                    
+                    
+                    <a class="nav-link flex-grow-1 text-dark"
+                        href="../01-neural-network/" style="padding-left: 0px;">
+                        Neurals Network
+                    </a>
+
+                    <button
+                        class="btn btn-link p-2 text-decoration-none shadow-none collapse-trigger collapsed"
+                        data-bs-toggle="collapse" data-bs-target="#collapse-5724"
+                        aria-expanded="false">
+                        <i class="fas fa-chevron-right chevron-icon"></i>
+                    </button>
+                </div>
+
+                <div class="collapse " id="collapse-5724">
+                    <nav class="nav flex-column ms-2 mt-1">
+
+                        
+                        
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../01-neural-network/perceptron/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Perceptron Simple
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../01-neural-network/perceptron-multi-couches/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Perceptron Multi Couches
+            </a>
+            
+            
+            
+                        
+                        
+
+                    </nav>
+                </div>
+            </div>
+
+            
+            
+            
+                    
+                    
+            
+            
+
+            
+            <!-- SECTION AVEC ENFANTS -->
+            <div class="nav-item mb-1">
+                <div class="d-flex justify-content-between align-items-center">
+
+                    
+                    
+                    <a class="nav-link flex-grow-1 text-dark"
+                        href="../02-image-classification/" style="padding-left: 0px;">
+                        Image Classification
+                    </a>
+
+                    <button
+                        class="btn btn-link p-2 text-decoration-none shadow-none collapse-trigger collapsed"
+                        data-bs-toggle="collapse" data-bs-target="#collapse-6502"
+                        aria-expanded="false">
+                        <i class="fas fa-chevron-right chevron-icon"></i>
+                    </button>
+                </div>
+
+                <div class="collapse " id="collapse-6502">
+                    <nav class="nav flex-column ms-2 mt-1">
+
+                        
+                        
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../02-image-classification/reseaux-convolutifs/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Réseaux convolutifs
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../02-image-classification/transfer-learning/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Transfer Learning
+            </a>
+            
+            
+            
+                        
+                        
+
+                    </nav>
+                </div>
+            </div>
+
+            
+            
+            
+                    
+                    
+            
+            
+
+            
+            <!-- SECTION AVEC ENFANTS -->
+            <div class="nav-item mb-1">
+                <div class="d-flex justify-content-between align-items-center">
+
+                    
+                    
+                    <a class="nav-link flex-grow-1 text-dark"
+                        href="../03-natural-language-processing/" style="padding-left: 0px;">
+                        Natural Language Processing
+                    </a>
+
+                    <button
+                        class="btn btn-link p-2 text-decoration-none shadow-none collapse-trigger collapsed"
+                        data-bs-toggle="collapse" data-bs-target="#collapse-8399"
+                        aria-expanded="false">
+                        <i class="fas fa-chevron-right chevron-icon"></i>
+                    </button>
+                </div>
+
+                <div class="collapse " id="collapse-8399">
+                    <nav class="nav flex-column ms-2 mt-1">
+
+                        
+                        
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../03-natural-language-processing/classification-de-texte/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Classification de texte
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../03-natural-language-processing/creer-un-plognement-de-mots/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Créer un plongement de mots
+            </a>
+            
+            
+            
+                        
+                        
+
+                    </nav>
+                </div>
+            </div>
+
+            
+            
+            
+                    
+                    
+            
+            
+
+            
+            <!-- SECTION AVEC ENFANTS -->
+            <div class="nav-item mb-1">
+                <div class="d-flex justify-content-between align-items-center">
+
+                    
+                    
+                    <a class="nav-link flex-grow-1 text-dark"
+                        href="../04-time-series-sequences/" style="padding-left: 0px;">
+                        Time Series & Sequences
+                    </a>
+
+                    <button
+                        class="btn btn-link p-2 text-decoration-none shadow-none collapse-trigger collapsed"
+                        data-bs-toggle="collapse" data-bs-target="#collapse-8165"
+                        aria-expanded="false">
+                        <i class="fas fa-chevron-right chevron-icon"></i>
+                    </button>
+                </div>
+
+                <div class="collapse " id="collapse-8165">
+                    <nav class="nav flex-column ms-2 mt-1">
+
+                        
+                        
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../04-time-series-sequences/predict-time-series/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Génération de texte
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../03-natural-language-processing/generation-de-texte/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Génération de texte
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../04-time-series-sequences/application/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Prédire l'usage d'un client
+            </a>
+            
+            
+            
+                        
+                        
+
+                    </nav>
+                </div>
+            </div>
+
+            
+            
+            
+                    
+                    
+            
+            
+
+            
+            <!-- SECTION AVEC ENFANTS -->
+            <div class="nav-item mb-1">
+                <div class="d-flex justify-content-between align-items-center">
+
+                    
+                    
+                    <a class="nav-link flex-grow-1 text-dark"
+                        href="../projets/" style="padding-left: 0px;">
+                        Projets TensorFlow
+                    </a>
+
+                    <button
+                        class="btn btn-link p-2 text-decoration-none shadow-none collapse-trigger collapsed"
+                        data-bs-toggle="collapse" data-bs-target="#collapse-5088"
+                        aria-expanded="false">
+                        <i class="fas fa-chevron-right chevron-icon"></i>
+                    </button>
+                </div>
+
+                <div class="collapse " id="collapse-5088">
+                    <nav class="nav flex-column ms-2 mt-1">
+
+                        
+                        
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../projets/projet-01/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Projet 01 - Prostate Cancer Prediction
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../projets/projet-02/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Projet 02
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../projets/projet-03/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Projet 03
+            </a>
+            
+            
+            
+                        
+                        
+
+                    </nav>
+                </div>
+            </div>
+
+            
+            
+            
+                    
+                    
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../ressources/"
+                style="padding-left: 0px; font-size: 1.0rem;">
+                Ressources
+            </a>
+            
+            
+            
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Bloc Abonnement -->
+        <div class="p-4 bg-primary text-white rounded shadow text-center">
+            <p class="small mb-3">Abonnez-vous à la newsletter !</p>
+            <a href="#tally-open=mJzBvX&tally-layout=modal&tally-emoji-text=👋&tally-emoji-animation=wave"
+                class="btn btn-outline-light btn-sm text-uppercase w-100">
+                S'abonner
+            </a>
+        </div>
+
+    </div>
+</aside>
+
+            <!-- Contenu Principal -->
+            <main class="col-lg-9 col-md-12">
+                <article class="markdown-content bg-white p-4 p-md-5 border rounded shadow-sm">                        
+                    
+
+                    
+                    <div class="featured-image mb-5">
+                        <img src="https://algojungle.github.io/algojungle-assets/images/09-tensorflow/covers/get-started-with-tensorflow.png" class="img-fluid rounded shadow-sm w-100" alt="Démarrer avec TensorFlow">
+                    </div>
+                    
+
+                    <section class="" id="blog">
+
+                        
+
+                        <h2 id="importation">Importation<a class="headerlink" href="#importation" title="Permanent link">#</a></h2>
+<p>L'API Keras est très utilisée, donc on l'importe également. Pour rappel Keras a été intégré dans Tensorflow.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">tensorflow</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">tf</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">tensorflow</span><span class="w"> </span><span class="kn">import</span> <span class="n">keras</span>
+</code></pre></div></p>
+<h2 id="les-tenseurs">Les tenseurs<a class="headerlink" href="#les-tenseurs" title="Permanent link">#</a></h2>
+<p>Un tenseur est un tableau multidimensionnel qui contient des données de même type. Les tenseurs sont semblables aux tableaux Numpy <code>np.array</code>. Un tenseur peut être une valeur scalaire semblable à une variable classique Python.</p>
+<p>Exemple d'un tenseur scalaire :
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">scalar</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">constant</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">scalar</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">[Output]</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>tf.Tensor(2, shape=(), dtype=int32)
+</code></pre></div></p>
+<p>Exemples de tenseurs :
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">tf_vector</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">constant</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">tf_vector</span><span class="p">)</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="n">tf_matrix</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">constant</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">]])</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">tf_matrix</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">[Output]</span><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>tf.Tensor([ 1  0 -5  4], shape=(4,), dtype=int32)
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>tf.Tensor(
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>[[ 1  0 -5  4]
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a> [ 1  0 -5  3]], shape=(2, 4), dtype=int32)
+</code></pre></div>
+La méthode <code>.numpy()</code> permet de convertir les tenseurs TensorFlow en tableaux Numpy. Par exemple, pour convertir <code>tf_vector</code> en tableau Numpy :
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">numpy_vector</span> <span class="o">=</span> <span class="n">tf_vector</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">numpy_vector</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">[Output]</span><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>[ 1  0 -5  4]
+</code></pre></div></p>
+<p>Pour en savoir plus sur les tenseurs, consultez la docs officielle <a href="https://www.tensorflow.org/guide/tensor?hl=fr">Introduction aux tenseurs</a>.</p>
+<h2 id="apprentissage-iteratif">Apprentissage itératif<a class="headerlink" href="#apprentissage-iteratif" title="Permanent link">#</a></h2>
+<p>Lapprentissage des modèles avec Tensorflow se fait de manière itérative. Si la régression linéaire possède une solution directe, la solution peut-être approchée de manière itérative.</p>
+<p><img alt="" src="https://sebastianraschka.com/images/faq/gradient-optimization/ball.png" /></p>
+<p>La solution directe devient impossible lorsque la taille des données est trop grande pour tenir en memoire. On doit donc passer à un mode d'apprentissage itératif avec des mini-lots.</p>
+<h2 id="regression-lineaire">Régression linéaire<a class="headerlink" href="#regression-lineaire" title="Permanent link">#</a></h2>
+<p>Nous allons résoudre notre premier problème de machine learning avec Tensorflow. Il s'agit d'un exercice simple, nous allons réaliser une régression linéaire simple avec Tensorflow.</p>
+<p>Pour rappel, une régression linéaire est de la forme suivante:<br>
+<span class="arithmatex">\(y = aX + b + \epsilon\)</span><br>
+où a et b sont les paramètres du modèle et <span class="arithmatex">\(\epsilon\)</span> le résidu.</p>
+<h2 id="jeu-de-donnees">Jeu de données<a class="headerlink" href="#jeu-de-donnees" title="Permanent link">#</a></h2>
+<p>Nous allons simuler un jeu de données fictif avec <span class="arithmatex">\(a=2\)</span> et <span class="arithmatex">\(b=1\)</span> en plus d'un résidu qui suit la normale centrée réduite.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span> <span class="o">=</span> <span class="mi">42</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="n">n_samples</span> <span class="o">=</span> <span class="mi">200</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">n_samples</span><span class="p">)</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="n">y</span> <span class="o">=</span> <span class="n">X</span><span class="o">*</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n_samples</span><span class="p">)</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="nb">print</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">[Output]</span><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>(200,) (200,)
+</code></pre></div></p>
+<h2 id="nuage-de-points">Nuage de points<a class="headerlink" href="#nuage-de-points" title="Permanent link">#</a></h2>
+<p>Nous allons représenter les données sur un graphique pour illustrer la relation linéaire. Pour cela nous utilisons le package Matplotlib.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div>
+<img alt="" src="https://algojungle.github.io/algojungle-assets/images/09-tensorflow/demarrer/figure-1.png" /></p>
+<h2 id="premier-modele-avec-tensorflow">Premier modèle avec Tensorflow<a class="headerlink" href="#premier-modele-avec-tensorflow" title="Permanent link">#</a></h2>
+<p>Nous allons à présent créer le modèle en utilisant Keras.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">model</span> <span class="o">=</span> <span class="n">keras</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">input_shape</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,)))</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="n">model</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">[Output]</span><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>Model: &quot;sequential&quot;
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>_________________________________________________________________
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a> Layer (type)                Output Shape              Param #   
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>=================================================================
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a> dense (Dense)               (None, 1)                 2         
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>=================================================================
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>Total params: 2
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>Trainable params: 2
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>Non-trainable params: 0
+<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>_________________________________________________________________
+</code></pre></div></p>
+<h2 id="parametrage-de-lapprentissage">Paramétrage de l'apprentissage<a class="headerlink" href="#parametrage-de-lapprentissage" title="Permanent link">#</a></h2>
+<p>Le paramétrage consiste à définir la fonction de perte et la méthode d'optimisation à utiliser pendant l'apprentissage.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">loss</span><span class="o">=</span><span class="s2">&quot;mse&quot;</span><span class="p">,</span> <span class="n">optimizer</span><span class="o">=</span><span class="s2">&quot;sgd&quot;</span><span class="p">)</span>
+</code></pre></div></p>
+<h2 id="entrainement">Entraînement<a class="headerlink" href="#entrainement" title="Permanent link">#</a></h2>
+<p>Nous allons entraîner le modèle sur 10 époques avec des mini-lots de données de 20.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+</code></pre></div></p>
+<h2 id="analyse-du-resultat">Analyse du résultat<a class="headerlink" href="#analyse-du-resultat" title="Permanent link">#</a></h2>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">layers</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">weights</span><span class="p">))</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a = &quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;b = &quot;</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">[Output]</span><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>a =  [2.023662567138672]
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>b =  [0.8865243792533875]
+</code></pre></div>
+Les valeurs estimées pour <span class="arithmatex">\(a\)</span> et <span class="arithmatex">\(b\)</span> sont respectivement <span class="arithmatex">\(2.02\)</span> et <span class="arithmatex">\(0.89\)</span>. Ces valeurs sont assez proches de celles utilisées pendant la simulation du jeu de données, l'approximation est plutôt bonne.</p>
+<p>C'est important de comprendre que cette notion d'approximation parce que c'est en cela que consiste la régression linéaire et l'apprentissage automatique en général.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Dataset&quot;</span><span class="p">)</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">X</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]],</span> <span class="p">[</span><span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">,</span> <span class="n">X</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Regression Curve&quot;</span><span class="p">)</span>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">&quot;best&quot;</span><span class="p">)</span>
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div>
+<img alt="" src="https://algojungle.github.io/algojungle-assets/images/09-tensorflow/demarrer/figure-2.png" /></p>
+<p>On peut voir sur le graphique ci-dessus que le modèle rend assez bien compte des données.</p>
+<h2 id="comparaison-true-y-vs-predicated-y">Comparaison True Y vs Predicated Y<a class="headerlink" href="#comparaison-true-y-vs-predicated-y" title="Permanent link">#</a></h2>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="n">y_pred</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">X</span><span class="p">)</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;True Y vs Predicted Y&quot;</span><span class="p">)</span>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;True Y&quot;</span><span class="p">)</span>
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Predicted Y&quot;</span><span class="p">)</span>
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div>
+<img alt="" src="https://algojungle.github.io/algojungle-assets/images/09-tensorflow/demarrer/figure-3.png" /></p>
+<p>Dans un monde parfait, on aurait eu une droite mais puisqu'il s'agit d'approximation les valeurs prédites sont très proches des vraies valeurs.</p>
+<h2 id="code-complet">Code complet<a class="headerlink" href="#code-complet" title="Permanent link">#</a></h2>
+<div class="highlight"><span class="filename">Code complet</span><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">tensorflow</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">tf</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">tensorflow</span><span class="w"> </span><span class="kn">import</span> <span class="n">keras</span>
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="n">model</span> <span class="o">=</span> <span class="n">keras</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">input_shape</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,)))</span>
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="n">model</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>
+<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">loss</span><span class="o">=</span><span class="s2">&quot;mse&quot;</span><span class="p">,</span> <span class="n">optimizer</span><span class="o">=</span><span class="s2">&quot;sgd&quot;</span><span class="p">)</span>
+<a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a>
+<a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a><span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a>
+<a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">layers</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">weights</span><span class="p">))</span>
+<a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a = &quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+<a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;b = &quot;</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+<a id="__codelineno-18-14" name="__codelineno-18-14" href="#__codelineno-18-14"></a>
+<a id="__codelineno-18-15" name="__codelineno-18-15" href="#__codelineno-18-15"></a><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Dataset&quot;</span><span class="p">)</span>
+<a id="__codelineno-18-16" name="__codelineno-18-16" href="#__codelineno-18-16"></a><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">X</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]],</span> <span class="p">[</span><span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">,</span> <span class="n">X</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Regression Curve&quot;</span><span class="p">)</span>
+<a id="__codelineno-18-17" name="__codelineno-18-17" href="#__codelineno-18-17"></a><span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">&quot;best&quot;</span><span class="p">)</span>
+<a id="__codelineno-18-18" name="__codelineno-18-18" href="#__codelineno-18-18"></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<a id="__codelineno-18-19" name="__codelineno-18-19" href="#__codelineno-18-19"></a>
+<a id="__codelineno-18-20" name="__codelineno-18-20" href="#__codelineno-18-20"></a><span class="n">y_pred</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">X</span><span class="p">)</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
+<a id="__codelineno-18-21" name="__codelineno-18-21" href="#__codelineno-18-21"></a>
+<a id="__codelineno-18-22" name="__codelineno-18-22" href="#__codelineno-18-22"></a><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+<a id="__codelineno-18-23" name="__codelineno-18-23" href="#__codelineno-18-23"></a><span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;True Y vs Predicted Y&quot;</span><span class="p">)</span>
+<a id="__codelineno-18-24" name="__codelineno-18-24" href="#__codelineno-18-24"></a><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;True Y&quot;</span><span class="p">)</span>
+<a id="__codelineno-18-25" name="__codelineno-18-25" href="#__codelineno-18-25"></a><span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Predicted Y&quot;</span><span class="p">)</span>
+<a id="__codelineno-18-26" name="__codelineno-18-26" href="#__codelineno-18-26"></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div>
+<hr />
+<p><em>Bravo ! Vous venez de créer votre premier modèle avec Tensorflow. Dans la prochaine section, nous verrons comment créer des réseaux de neurones avec Tensorflow.</em></p>
+
+                    </section>
+
+                </article>
+
+                <!-- Navigation Précédent / Suivant -->
+                <nav class="row mt-5 pt-4 border-top">
+                    <div class="col-6">
+                        
+                        <a href="../installer/" class="text-decoration-none">
+                            <span class="d-block small text-muted text-uppercase mb-1"><i class="fas fa-arrow-left me-1"></i> Précédent</span>
+                            <span class="fw-bold text-primary">Installer TensorFlow</span>
+                        </a>
+                        
+                    </div>
+                    <div class="col-6 text-end">
+                        
+                        <a href="../01-neural-network/" class="text-decoration-none">
+                            <span class="d-block small text-muted text-uppercase mb-1">Suivant <i class="fas fa-arrow-right ms-1"></i></span>
+                            <span class="fw-bold text-primary">Créer un réseau de neurones avec Tensorflow</span>
+                        </a>
+                        
+                    </div>
+                </nav>
+
+                <section class="mt-5 border-top pt-4">
+                    
+                    <div class="share-section mb-5">
+                        <h2 class="h4 mb-3">Partagez sur les réseaux sociaux</h2>
+                        <!-- ShareThis BEGIN -->
+                        <div class="sharethis-inline-share-buttons"></div>
+                        <!-- ShareThis END -->
+                    </div>
+
+                    
+                    
+                    <div class="comments-section">
+                        <h2 id="__comments" class="h4 mb-4">Commentaires</h2>
+                        
+                        
+                        <script src="https://giscus.app/client.js"
+                                data-repo="joekakone/Departement-De-Maths"
+                                data-repo-id="MDEwOlJlcG9zaXRvcnkzMzY4MjEwNTY="
+                                data-category="General"
+                                data-category-id="DIC_kwDOFBN7QM4CORj9"
+                                data-mapping="pathname"
+                                data-reactions-enabled="1"
+                                data-emit-metadata="0"
+                                data-input-position="bottom"
+                                
+                                data-theme="preferred_color_scheme"
+                                data-lang="fr"
+                                crossorigin="anonymous"
+                                async>
+                        </script>
+                    </div>
+                    
+                </section>
+            </main>
+
+        </div>
+    </div>
+
+</div>
+
+
+
+
+  <!-- Tags -->
+
+<!-- CTA FINAL -->
+<section class="py-5 bg-primary text-white text-center">
+<div class="container py-4">
+    <h3 class="text-uppercase mb-4">Inscrivez-vous à une formation complète</h3>
+    <a href="/#formations" class="btn btn-outline-light btn-lg text-uppercase px-5">Voir le catalogue</a>
+</div>
+</section>
+
+<!-- Footer-->
+<footer class="pt-0">
+    <!-- Bande de Navigation Précédent / Suivant (Style Bootstrap Dark) -->
+    
+    
+    <div class="container text-center py-5">
+        <div class="row px-4">
+            <div class="col-lg-7 mx-auto">
+                <h2 class="text-uppercase mb-0">Joseph Konka </h2>
+                <h6 class="text-primary text-uppercase mb-0 letter-spacing-3">Senior Data Analyst | Data Scientist</h6>
+                <p class="text-muted my-4">Project Management - Data Engineering - Data Analytics - Python Programming</p>
+                <ul class="list-inline mb-0">
+                    <li class="list-inline-item"><a class="social-link" href="https://wa.me/+22891518923" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
+                    <li class="list-inline-item"><a class="social-link" href="https://github.com/joekakone" target="_blank"><i class="fab fa-github"></i></a></li>
+                    <li class="list-inline-item"><a class="social-link" href="https://www.linkedin.com/in/joseph-koami-konka" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+                    <li class="list-inline-item"><a class="social-link" href="https://web.facebook.com/joekakonepage" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                    <li class="list-inline-item"><a class="social-link" href="https://twitter.com/joekakone" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                    <li class="list-inline-item"><a class="social-link" href="https://www.youtube.com/@algojungle" target="_blank"><i class="fab fa-youtube"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="copyrights px-4">
+        <div class="container py-4 border-top text-center">
+        <p class="mb-0 text-muted py-2">&copy; All rights reserved. Template designed by <a
+            href="https://bootstrapious.com/p/bootstrap-resume">Bootstrapious</a>. </p>
+        </div>
+    </div>
+</footer>
+  
+
+  <!-- JS -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script> -->
+  <script src="../../../assets/javascripts/custom.js"></script>
+
+  
+  <!-- JavaScript files-->
+  <script src="https://joekakone.github.io/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="https://joekakone.github.io/static/js/front.js"></script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YPL3847T5N"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-YPL3847T5N');
+  </script>
+
+  <script type='text/javascript'>
+    var divElement = document.getElementById('viz1677099741796'); var vizElement = divElement.getElementsByTagName('object')[0]; if (divElement.offsetWidth > 800) { vizElement.style.width = '1100px'; vizElement.style.height = '627px'; } else if (divElement.offsetWidth > 500) { vizElement.style.width = '1100px'; vizElement.style.height = '627px'; } else { vizElement.style.width = '100%'; vizElement.style.height = '1327px'; } var scriptElement = document.createElement('script'); scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js'; vizElement.parentNode.insertBefore(scriptElement, vizElement);                
+  </script>
+
+  <!-- Google Ads -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2980760029476176"
+      crossorigin="anonymous"></script>
+
+  <!-- ShareThis -->
+  <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=649bd6c6a6672f0012d186bd&product=sop' async='async'></script>
+
+  <!-- Tally -->
+  <script async src="https://tally.so/widgets/embed.js"></script>
+
+  <!-- Facebook -->
+  <div id="fb-root"></div>
+  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v20.0&appId=564181564271850"></script>
+
+  <!-- Messenger Plugin de discussion Code -->
+  <div id="fb-root"></div>
+
+  <!-- Your Plugin de discussion code -->
+  <div id="fb-customer-chat" class="fb-customerchat">
+  </div>
+
+  <script>
+    var chatbox = document.getElementById('fb-customer-chat');
+    chatbox.setAttribute("page_id", "2130664133866857");
+    chatbox.setAttribute("attribution", "biz_inbox");
+
+    window.fbAsyncInit = function () {
+      FB.init({
+        xfbml: true,
+        version: 'v12.0'
+      });
+    };
+
+    (function (d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/fr_FR/sdk/xfbml.customerchat.js';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
+
+  <!-- Contact Form Utils -->
+  <script>
+    function buildMailtoUrl(event) {
+      event.preventDefault(); // Prevent form submission
+
+      var emailInputFirstName = document.getElementById('InputFirstName').value;
+      var emailInputLastName = document.getElementById('InputLastName').value;
+      var emailInputEmail = document.getElementById('InputEmail').value;
+      var emailInputPhone = document.getElementById('InputPhone').value;
+      var emailInputSubject = document.getElementById('InputSubject').value;
+      var emailInputMessage = document.getElementById('InputMessage').value;
+
+      var emailContent = `${emailInputMessage} \n\nFull Name : ${emailInputFirstName} ${emailInputLastName}\nPhone Number : ${emailInputPhone}\nEmail : ${emailInputEmail}`;
+
+      var subject = encodeURIComponent(emailInputSubject);
+      var body = encodeURIComponent(emailContent);
+
+      var mailtoLink = 'mailto:konka.datanalytics@gmail.com' + '?subject=' + subject + '&body=' + body;
+
+      window.location.href = mailtoLink;
+    }
+  </script>
+
+  <!-- Google Ads -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2980760029476176"
+    crossorigin="anonymous"></script>
+
+
+  <!-- FontAwesome CSS - loading as last, so it doesn't block rendering-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+</body>
+</html>

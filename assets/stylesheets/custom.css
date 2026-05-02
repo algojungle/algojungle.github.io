@@ -1,0 +1,628 @@
+/* --- CONFIGURATION GLOBALE & VARIABLES --- */
+:root {
+    --aj-primary: #007bff;
+    --aj-primary-light: #e7f1ff;
+    --aj-dark: #2c3e50;
+    --aj-text-muted: #6c757d;
+    --aj-bg-light: #f8f9fa;
+    --aj-white: #ffffff;
+    --aj-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    --aj-transition: all 0.3s ease-in-out;
+}
+
+
+/* .container-sm,
+.container-md,
+.container-lg,
+.container-xl,
+.container-xxl {
+  width: 100% !important;
+  padding-right: var(1rem) !important;
+  padding-left: var(1rem) !important;
+  margin-right: auto !important;
+  margin-left: auto !important;
+} */
+
+
+/* --- UTILITAIRES --- */
+/* .algo-jungle-home, .algo-jungle-article { overflow-x: hidden; }
+.cust-justify { text-align: justify; }
+.letter-spacing-3 { letter-spacing: 3px; }
+.text-sm { font-size: 0.875rem; }*/
+
+/* Ajustement de la bordure du bas pour le titre "lined" (cohérence avec votre thème) */
+.lined::after {
+    background-color: #007bff !important; /* On s'aligne sur votre bleu existant */
+}
+
+/* --- HERO SECTION --- */
+.algo-header {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                url('https://joekakone.github.io/static/img/shutterstock-cover.jpg') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    padding: 160px 0 100px;
+    color: var(--aj-white);
+}
+
+/* --- CARTES (Formations, Blog, Events) --- */
+.course-card, .info-card {
+    border: 1px solid #eee;
+    padding: 30px;
+    transition: var(--aj-transition);
+    height: 100%;
+    border-radius: 12px;
+    background: var(--aj-white);
+    display: flex;
+    flex-direction: column;
+}
+
+.course-card:hover, .info-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--aj-shadow);
+    border-color: var(--aj-primary);
+}
+
+.icon-box {
+    width: 65px;
+    height: 65px;
+    background: var(--aj-bg-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    color: var(--aj-primary);
+    font-size: 1.6rem;
+}
+
+.price-badge {
+    background: var(--aj-primary-light);
+    color: var(--aj-primary);
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-weight: 800;
+    font-size: 0.85rem;
+    margin-top: auto;
+    display: inline-block;
+    align-self: flex-start;
+}
+
+.card-img-top {
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+/* --- SECTION ABOUT & IMAGES --- */
+.about-img-wrapper {
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.about-img-effect {
+    filter: grayscale(100%);
+    transition: all 0.5s ease;
+    cursor: pointer;
+    transform: scale(1.02);
+}
+
+.about-img-effect:hover {
+    filter: grayscale(0%);
+    transform: scale(1);
+}
+
+/* --- SKILLS & TAGS --- */
+.skill-tag, .badge-custom {
+    background: var(--aj-primary-light);
+    padding: 6px 16px;
+    border-radius: 50px;
+    margin: 4px;
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--aj-primary);
+    border: 1px solid rgba(0, 123, 255, 0.1);
+    text-transform: uppercase;
+}
+
+/* --- RESEAUX SOCIAUX --- */
+/*.social-link {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    color: #495057;
+    transition: var(--aj-transition);
+}
+
+.social-link:hover {
+    background-color: var(--aj-primary);
+    color: white !important;
+    border-color: var(--aj-primary) !important;
+    transform: translateY(-3px);
+}
+*/
+/* --- PARTENAIRES --- */
+.partner-logo-wrapper {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.partner-img {
+    max-height: 65px;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.info-card:hover .partner-logo-wrapper {
+    transform: scale(1.1);
+}
+
+/* --- ARTICLE & MARKDOWN CONTENT --- */
+.markdown-content {
+    line-height: 1.8;
+    font-size: 1.05rem;
+    color: #444;
+}
+
+.markdown-content h2 {
+    font-size: 1.6rem;
+    border-left: 5px solid var(--aj-primary);
+    padding-left: 15px;
+    margin-top: 2.5rem;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.article-header-overlay {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+}
+
+.blog-post {margin-bottom: 30px;}
+
+/* .md-tag {font-size: medium;} */
+
+
+/* ****************************************** */
+/* Styles spécifiques pour améliorer le rendu Markdown */
+.article-body h2 { margin-top: 2rem; font-weight: 700; color: #2c3e50; border-bottom: 2px solid #f8f9fa; padding-bottom: 0.5rem; }
+.article-body h3 { margin-top: 1.5rem; font-weight: 600; color: #34495e; }
+.article-body p { line-height: 1.8; margin-bottom: 1.25rem; color: #444; }
+.article-body img { max-width: 100%; height: auto; border-radius: 8px; margin: 1.5rem 0; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+.article-body code { background: #f1f3f5; color: #e83e8c; padding: 0.2rem 0.4rem; border-radius: 4px; }
+.article-body pre code { background: none; color: inherit; padding: 0; }
+.article-body blockquote { border-left: 5px solid #0d6efd; padding-left: 1rem; color: #6c757d; font-style: italic; margin: 1.5rem 0; }
+
+
+/* SIDEBAR : Barre de navigation latérale */
+/* FIX STICKY : Assurer que la sidebar colle au scroll */
+/*.sticky-sidebar-container {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 100px;
+    height: fit-content;
+}
+*/
+
+aside .col-lg-3 {
+    position: sticky;
+    top: 120px;
+    align-self: flex-start;
+}
+
+.sticky-sidebar-container {
+    position: sticky;
+    top: 100px;   /* distance depuis le haut */
+}
+
+/* Gestion du défilement interne si la liste est trop longue */
+.sidebar-scroll-wrapper {
+    max-height: calc(100vh - 350px);
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
+/* Style des liens */
+.sidebar-nav .nav-link {
+    padding: 0.5rem 0;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+    text-decoration: none;
+}
+
+.active-parent, .active-simple {
+    color: var(--bs-primary) !important;
+}
+
+.collapse-trigger {
+    color: #666;
+    transition: transform 0.3s ease;
+}
+
+.collapse-trigger[aria-expanded="true"] .chevron-icon {
+    transform: rotate(90deg);
+}
+
+.grandchild-link {
+    font-size: 0.9rem !important;
+    padding-left: 1rem !important;
+}
+
+.active-child {
+    border-left: 2px solid var(--bs-primary);
+    padding-left: 0.8rem !important;
+    color: var(--bs-primary) !important;
+    background: rgba(var(--bs-primary-rgb), 0.05);
+}
+
+.collapse nav {
+    border-left: 1px solid #eee;
+    margin-left: 0.5rem !important;
+}
+
+/* Scrollbar discrète */
+.sidebar-scroll-wrapper::-webkit-scrollbar {
+    width: 4px;
+}
+.sidebar-scroll-wrapper::-webkit-scrollbar-thumb {
+    background: #eee;
+    border-radius: 10px;
+}
+
+
+/******************************************************************************
+** Styles pour les blocs de code (Markdown) - Amélioration du rendu
+******************************************************************************/
+/* Container principal - unifié pour les deux structures */
+.highlight {
+    background-color: #f8f9fb;
+    border: 1px solid #eaebed;
+    border-radius: 8px;
+    margin: 1.5em 0;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Bande de titre (pour th de tableau OU span direct) */
+.highlight .filename, 
+.highlight th.filename {
+    background-color: #f1f2f4;
+    border-bottom: 1px solid #eaebed;
+    padding: 10px 16px;
+    font-weight: 700;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+    font-size: 14px;
+    color: #1a1a1a;
+    text-align: left;
+    display: table-cell; /* Important pour les tableaux */
+}
+
+/* Gestion spécifique du titre en dehors des tableaux */
+span.filename {
+    display: block;
+}
+
+/* Alignement du tableau de code */
+.highlighttable {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0;
+}
+
+/* Zone de code et numéros de lignes */
+.highlight pre, 
+.highlighttable td.code pre, 
+.highlighttable td.linenos pre {
+    margin: 0;
+    padding: 16px;
+    background: transparent;
+    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+    font-size: 0.95em;
+    line-height: 1.6;
+}
+
+/* Colonne des numéros de lignes */
+.highlighttable td.linenos {
+    background-color: #f8f9fb;
+    border-right: 1px solid #eaebed;
+    padding: 0;
+    width: 10px; /* Taille minimale */
+}
+
+.highlighttable td.linenos pre {
+    padding-right: 10px;
+    color: #9ca3af;
+    text-align: right;
+    user-select: none; /* Empêche la sélection des numéros */
+}
+
+/* Bouton Copier Premium */
+.copy-btn {
+    position: absolute;
+    top: 7px;
+    right: 12px;
+    background: white;
+    border: 1px solid #d1d5db;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 500;
+    color: #4b5563;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 20;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.copy-btn:hover {
+    background: #f9fafb;
+    border-color: #9ca3af;
+    color: #111827;
+}
+/*******************************************************************************/
+
+
+
+/******************************************************************************
+** Styles pour les tableaux (Markdown) - Amélioration du rendu
+** Note : On ignore explicitement les tableaux avec class="dataframe"
+******************************************************************************/
+
+/* --- TABLEAU DESIGN ALGO JUNGLE (Sauf Dataframes) --- */
+table:not(.dataframe) {
+width: 100%;
+border-collapse: separate;
+border-spacing: 0;
+margin: 2em 0;
+border: 1px solid #eaebed;
+border-radius: 12px;
+overflow: hidden;
+font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+font-size: 14px;
+box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+/* --- EN-TÊTE --- */
+table:not(.dataframe) thead {
+background-color: #f8f9fb;
+}
+
+table:not(.dataframe) th {
+color: #1a1a1a;
+font-weight: 700;
+text-align: left;
+padding: 14px 20px;
+border-bottom: 2px solid #eaebed;
+text-transform: uppercase;
+letter-spacing: 0.05em;
+font-size: 12px;
+}
+
+/* --- CORPS DU TABLEAU --- */
+table:not(.dataframe) td {
+padding: 14px 20px;
+border-bottom: 1px solid #f1f2f4;
+color: #4b5563;
+line-height: 1.5;
+vertical-align: middle;
+}
+
+/* Suppression de la bordure pour la dernière ligne */
+table:not(.dataframe) tr:last-child td {
+border-bottom: none;
+}
+
+/* --- EFFETS ET VARIATIONS --- */
+
+/* Survol de ligne */
+table:not(.dataframe) tbody tr:hover {
+background-color: #fcfdfe;
+transition: background-color 0.2s ease;
+}
+
+/* Style spécifique pour les colonnes "Valeur" ou codes */
+table:not(.dataframe) td:nth-child(2) {
+font-family: 'SFMono-Regular', Consolas, monospace;
+color: #0366d6;
+font-weight: 600;
+}
+
+/* Responsive : scroll horizontal sur petit écran */
+@media screen and (max-width: 768px) {
+table:not(.dataframe) {
+display: block;
+overflow-x: auto;
+white-space: nowrap;
+}
+}
+/******************************************************************************/
+
+
+
+
+/******************************************************************************/
+/* Blog Pagination                                                            */
+/******************************************************************************/
+/* --- Mise en page globale --- */
+.md-typeset {
+    font-family: 'Work Sans', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Seule la page avec la classe .active est affichée */
+.pages .page.active {
+    display: block !important;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+/******************************************************************************/
+
+
+/* --- Conteneur des articles --- */
+.blog-post {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    border: 1px solid #f0f0f0;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.blog-post:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+.blog-post-title {
+    margin-top: 0;
+    margin-bottom: 8px;
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+.blog-post-title .link {
+    color: #2c3e50;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.blog-post-title .link:hover {
+    color: #3498db;
+}
+
+/* --- Métadonnées (Date) --- */
+.blog-post-extra {
+    font-size: 0.85rem;
+    color: #7f8c8d;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.blog-post-extra::before {
+    content: "📅";
+    margin-right: 8px;
+}
+/******************************************************************************/
+
+/* --- Tags --- */
+.blogging-tags-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.blogging-tag {
+    text-decoration: none;
+}
+
+.blogging-tag code {
+    background: #eef2f7;
+    color: #475569;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    border: none;
+    transition: background 0.2s, color 0.2s;
+    font-family: inherit;
+}
+
+.blogging-tag:hover code {
+    background: #3498db;
+    color: #ffffff;
+}
+
+/* --- Description --- */
+.blog-post-description {
+    color: #555;
+    margin-bottom: 20px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* --- Bouton Lire Plus --- */
+.md-button {
+    display: inline-block;
+    padding: 8px 20px;
+    background-color: #3498db;
+    color: white !important;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: background 0.3s;
+}
+
+.md-button:hover {
+    background-color: #2980b9;
+}
+/******************************************************************************/
+
+
+/* --- Pagination UI --- */
+.blog-center {
+    margin-top: 40px;
+    text-align: center;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+.blog-pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.page-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    background: #f8f9fa;
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    border: 1px solid #dee2e6;
+    cursor: pointer;
+}
+
+.page-number:hover {
+    background: #e9ecef;
+    border-color: #adb5bd;
+}
+
+.page-number.active {
+    background-color: #3498db !important;
+    color: white !important;
+    border-color: #3498db !important;
+}
+/******************************************************************************/

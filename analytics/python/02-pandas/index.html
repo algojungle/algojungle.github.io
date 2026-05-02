@@ -1,0 +1,1360 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+
+  <!-- Meta tags -->
+  
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <!-- Page description -->
+    
+      <meta name="description" content="Prêt à acquérir les compétences pour lancer votre carrière en Data Science ? <br> Je suis Joseph Konka, Analyste de données Sénior et je vous accompagnerai dans votre aventure.<br> Découvrez Python, SQL, Power BI, Tensorflow et bien d'autres outils gratuitement.<br> C'est parti ! 🚀" />
+    
+
+    <!-- Page author -->
+    
+      <meta name="author" content="Joseph Konka" />
+    
+
+    <!-- Canonical -->
+    
+      <link rel="canonical" href="https://josephkonkathedataguy.com/learning/analytics/python/02-pandas/" />
+    
+
+    <!-- Previous page -->
+    
+      <link rel="prev" href="../01-numpy/" />
+    
+
+    <!-- Next page -->
+    
+      <link rel="next" href="../03-matplotlib/" />
+    
+
+    <!-- Favicon -->
+    <link rel="icon" href="https://algojungle.github.io/algojungle-assets/assets/favicon.png" />
+
+    <!-- Generator banner -->
+    <meta name="generator" content="mkdocs-1.6.1, $md-name$-$md-version$" />
+  
+
+  <title>
+    Pandas | Algo Jungle
+  </title>
+
+  <!-- Google Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,800&display=swap">
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+  <!-- Theme CSS -->
+  <link rel="stylesheet" href="https://joekakone.github.io/static/css/style.blue.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../../../assets/stylesheets/custom.css">
+  
+  <style>
+    body {
+      font-family: 'Work Sans', sans-serif;
+      background-color: #fcfcfc;
+    }
+    /* Style par défaut pour le contenu Markdown */
+    .markdown-content img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+  </style>
+  
+</head>
+
+<body>
+
+  <!-- navbar-->
+<header class="header">
+  <nav class="navbar navbar-light navbar-expand-lg fixed-top" id="navbar">
+    <div class="container"><a class="navbar-brand" href="/learning"><img
+          src="https://algojungle.github.io/algojungle-assets/assets/favicon.png" alt="" height="36.14"></a>
+      <button class="navbar-toggler navbar-toggler-end" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation"><i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        
+  <ul class="navbar-nav ms-auto">
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    <li class="nav-item">
+      
+      <a href="../../.." class="nav-link link-scroll">
+        
+  
+
+  <!-- Navigation link icon -->
+  
+    
+  
+
+  <!-- Navigation link title -->
+  Accueil
+
+      </a>
+      
+    </li>
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../../../informatique/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  Informatique
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../../../algorithmique/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  Algorithmique
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../../../programmation/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  Programmation
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../../../python/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  Python
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+    
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../../" class="nav-link link-scroll active">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  Analytics
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../../sql/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  SQL
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../../powerbi/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  Power BI
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../../../big-data/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  Big Data
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../../../machine-learning/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  Machine Learning
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../../../machine-learning/tensorflow/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  TensorFlow
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../../../mlops/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  MLOps
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../../../blog/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  Blog
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+  </ul>
+
+      </div>
+
+    </div>
+  </nav>
+</header>
+
+  
+
+  <!-- Bloc principal : Sera remplacé par home.html pour la page d'accueil -->
+  
+    <main class="container py-5">
+      <div class="row justify-content-center">
+        <div class="col-lg-10 markdown-content">
+          
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script>
+(function() {
+  function addWidgetsRenderer() {
+    var requireJsScript = document.createElement('script');
+    requireJsScript.src = 'https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js';
+
+    var mimeElement = document.querySelector('script[type="application/vnd.jupyter.widget-view+json"]');
+    var jupyterWidgetsScript = document.createElement('script');
+    var widgetRendererSrc = 'https://unpkg.com/@jupyter-widgets/html-manager@*/dist/embed-amd.js';
+    var widgetState;
+
+    // Fallback for older version:
+    try {
+      widgetState = mimeElement && JSON.parse(mimeElement.innerHTML);
+
+      if (widgetState && (widgetState.version_major < 2 || !widgetState.version_major)) {
+        widgetRendererSrc = 'jupyter-js-widgets@*/dist/embed.js';
+      }
+    } catch(e) {}
+
+    jupyterWidgetsScript.src = widgetRendererSrc;
+
+    document.body.appendChild(requireJsScript);
+    document.body.appendChild(jupyterWidgetsScript);
+  }
+
+  document.addEventListener('DOMContentLoaded', addWidgetsRenderer);
+}());
+</script>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="prise-en-main-de-pandas-le-guide-ultime">Prise en main de Pandas - Le guide ultime<a class="headerlink" href="#prise-en-main-de-pandas-le-guide-ultime" title="Permanent link">#</a></h1>
+<p>Pandas est une libraire <i>Open Source</i> sous licence BSD. Il s'agit d'une librairie de manipulaion et d'analyse de données en python. Elle est la plus populaire et intuitive et facile à prendre.</p>
+<p><img alt="" src="https://algojungle.github.io/algojungle-assets/images/04-analytics/python/covers/python-data-stack-pandas.png" /></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="installer-pandas">Installer Pandas<a class="headerlink" href="#installer-pandas" title="Permanent link">#</a></h2>
+<p>Si vous travaillez avec Anaconda, Pandas est déjà installé sinon Pandas est disponible sur le répertoire PyPi</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="n">pandas</span>
+</code></pre></div>
+
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="importer-pandas">Importer Pandas<a class="headerlink" href="#importer-pandas" title="Permanent link">#</a></h2>
+<p>Pandas n'est pas une librairie native en Python, il faut l'installer au préalable.
+Si vous ne l'avez pas encore installée avez pas
+Pour importer Pandas if suffit de faire ceci <code>import pandas</code> mais il est plus courant de faire ceci <code>import pandas as pd</code></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+</code></pre></div>
+
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Vous pouvez vérifier la version de Pandas</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">print</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
+</code></pre></div>
+
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="pandasseries">pandas.Series<a class="headerlink" href="#pandasseries" title="Permanent link">#</a></h2>
+<p>Les limites trouvent leurs limites lorsqu'il s'agit de faire des analyses statistiques, il est certes possible d'avoir les minimum et maximun mais il n'est pas possible de connaitre la moyenne par exemple
+L'objet pandas.Series nous permet de nous affranchir de ces limites, il est donc possible de calculer les indicateurs statistiques sur les données à svaoir la moyenne, la variance entre autres.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Esso&quot;</span><span class="p">,</span> <span class="s2">&quot;Lendjina&quot;</span><span class="p">,</span> <span class="s2">&quot;Yemi&quot;</span><span class="p">,</span> <span class="s2">&quot;Adboul&quot;</span><span class="p">,</span> <span class="s2">&quot;Tracy&quot;</span><span class="p">,</span> <span class="s2">&quot;Adjo&quot;</span><span class="p">,</span> <span class="s2">&quot;Yacuba&quot;</span><span class="p">,</span> <span class="s2">&quot;Degnon&quot;</span><span class="p">]</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">countries</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Togo&quot;</span><span class="p">,</span> <span class="s2">&quot;Haïti&quot;</span><span class="p">,</span> <span class="s2">&quot;Nigeria&quot;</span><span class="p">,</span> <span class="s2">&quot;Burkina&quot;</span><span class="p">,</span> <span class="s2">&quot;Ivory Cost&quot;</span><span class="p">,</span> <span class="s2">&quot;Togo&quot;</span><span class="p">,</span> <span class="s2">&quot;Niger&quot;</span><span class="p">,</span> <span class="s2">&quot;Benin&quot;</span><span class="p">]</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">sexes</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;M&#39;</span><span class="p">,</span> <span class="s1">&#39;F&#39;</span><span class="p">,</span> <span class="s1">&#39;M&#39;</span><span class="p">,</span> <span class="s1">&#39;M&#39;</span><span class="p">,</span> <span class="s1">&#39;F&#39;</span><span class="p">,</span> <span class="s1">&#39;F&#39;</span><span class="p">,</span> <span class="s1">&#39;F&#39;</span><span class="p">,</span> <span class="s1">&#39;F&#39;</span><span class="p">]</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="n">ages</span> <span class="o">=</span> <span class="p">[</span><span class="mi">22</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span><span class="mi">19</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">26</span><span class="p">,</span> <span class="mi">17</span><span class="p">]</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="n">heights</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.73</span><span class="p">,</span> <span class="mf">1.43</span><span class="p">,</span> <span class="mf">1.52</span><span class="p">,</span> <span class="mf">1.82</span><span class="p">,</span> <span class="mf">1.45</span><span class="p">,</span> <span class="mf">1.61</span><span class="p">,</span> <span class="mf">1.90</span><span class="p">,</span> <span class="mf">1.52</span><span class="p">]</span>
+</code></pre></div>
+
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="statistique-descriptive">Statistique descriptive<a class="headerlink" href="#statistique-descriptive" title="Permanent link">#</a></h3>
+<p>La statistique descriptive est une branche de la Statistique, elle <br/>
+Nous pouvons calculer des indicateurs sur ces données, ce qui n'est pas possible avec les listes natives en python</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">pd_ages</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">ages</span><span class="p">)</span> <span class="c1"># convert list into a pandas.Series</span>
+</code></pre></div>
+
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">mean</span> <span class="o">=</span> <span class="n">pd_ages</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="c1"># Moyenne</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">median</span> <span class="o">=</span> <span class="n">pd_ages</span><span class="o">.</span><span class="n">median</span><span class="p">()</span> <span class="c1"># Médiane</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="n">variance</span> <span class="o">=</span> <span class="n">pd_ages</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">ddof</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># Variancce</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="n">no_biais_variance</span> <span class="o">=</span> <span class="n">pd_ages</span><span class="o">.</span><span class="n">var</span><span class="p">()</span> <span class="c1"># Variance non biasée</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="n">pd_ages</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">ddof</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># Écart-tye</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="n">pd_ages</span><span class="o">.</span><span class="n">std</span><span class="p">()</span> <span class="c1"># Écart-tye non biaisé</span>
+</code></pre></div>
+
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="output_text output_subarea output_execute_result">
+<pre>
+<code>4.65985898008574</code>
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">pd_heights</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">heights</span><span class="p">)</span>
+</code></pre></div>
+
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="pandasdataframe">pandas.DataFrame<a class="headerlink" href="#pandasdataframe" title="Permanent link">#</a></h2>
+<p>Les limites trouvent leurs limites lorsqu'il s'agit de faire des analyses statistiques, il est certes possible d'avoir les minimum et maximun mais il n'est pas possible de connaitre la moyenne par exemple
+L'objet pandas.Series nous permet de nous affranchir de ces limites, il est donc possible de calculer les indicateurs statistiques sur les données à svaoir la moyenne, la variance entre autres.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="n">names</span><span class="p">,</span> <span class="s2">&quot;country&quot;</span><span class="p">:</span> <span class="n">countries</span><span class="p">,</span> <span class="s2">&quot;sex&quot;</span><span class="p">:</span> <span class="n">sexes</span><span class="p">,</span> <span class="s2">&quot;age&quot;</span><span class="p">:</span> <span class="n">ages</span><span class="p">,</span> <span class="s2">&quot;height&quot;</span><span class="p">:</span> <span class="n">heights</span><span class="p">})</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="n">data</span> <span class="c1"># show the table</span>
+</code></pre></div>
+
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>name</th>
+<th>country</th>
+<th>sex</th>
+<th>age</th>
+<th>height</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>Esso</td>
+<td>Togo</td>
+<td>M</td>
+<td>22</td>
+<td>1.73</td>
+</tr>
+<tr>
+<th>1</th>
+<td>Lendjina</td>
+<td>Haïti</td>
+<td>F</td>
+<td>18</td>
+<td>1.43</td>
+</tr>
+<tr>
+<th>2</th>
+<td>Yemi</td>
+<td>Nigeria</td>
+<td>M</td>
+<td>20</td>
+<td>1.52</td>
+</tr>
+<tr>
+<th>3</th>
+<td>Adboul</td>
+<td>Burkina</td>
+<td>M</td>
+<td>19</td>
+<td>1.82</td>
+</tr>
+<tr>
+<th>4</th>
+<td>Tracy</td>
+<td>Ivory Cost</td>
+<td>F</td>
+<td>31</td>
+<td>1.45</td>
+</tr>
+<tr>
+<th>5</th>
+<td>Adjo</td>
+<td>Togo</td>
+<td>F</td>
+<td>23</td>
+<td>1.61</td>
+</tr>
+<tr>
+<th>6</th>
+<td>Yacuba</td>
+<td>Niger</td>
+<td>F</td>
+<td>26</td>
+<td>1.90</td>
+</tr>
+<tr>
+<th>7</th>
+<td>Degnon</td>
+<td>Benin</td>
+<td>F</td>
+<td>17</td>
+<td>1.52</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">data</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</code></pre></div>
+
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>age</th>
+<th>height</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>count</th>
+<td>8.000000</td>
+<td>8.000000</td>
+</tr>
+<tr>
+<th>mean</th>
+<td>22.000000</td>
+<td>1.622500</td>
+</tr>
+<tr>
+<th>std</th>
+<td>4.659859</td>
+<td>0.175479</td>
+</tr>
+<tr>
+<th>min</th>
+<td>17.000000</td>
+<td>1.430000</td>
+</tr>
+<tr>
+<th>25%</th>
+<td>18.750000</td>
+<td>1.502500</td>
+</tr>
+<tr>
+<th>50%</th>
+<td>21.000000</td>
+<td>1.565000</td>
+</tr>
+<tr>
+<th>75%</th>
+<td>23.750000</td>
+<td>1.752500</td>
+</tr>
+<tr>
+<th>max</th>
+<td>31.000000</td>
+<td>1.900000</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="afficher-les-4-premieres-lignes-du-tableau">Afficher les 4 premières lignes du tableau<a class="headerlink" href="#afficher-les-4-premieres-lignes-du-tableau" title="Permanent link">#</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+</code></pre></div>
+
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>name</th>
+<th>country</th>
+<th>sex</th>
+<th>age</th>
+<th>height</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>Esso</td>
+<td>Togo</td>
+<td>M</td>
+<td>22</td>
+<td>1.73</td>
+</tr>
+<tr>
+<th>1</th>
+<td>Lendjina</td>
+<td>Haïti</td>
+<td>F</td>
+<td>18</td>
+<td>1.43</td>
+</tr>
+<tr>
+<th>2</th>
+<td>Yemi</td>
+<td>Nigeria</td>
+<td>M</td>
+<td>20</td>
+<td>1.52</td>
+</tr>
+<tr>
+<th>3</th>
+<td>Adboul</td>
+<td>Burkina</td>
+<td>M</td>
+<td>19</td>
+<td>1.82</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="afficher-les-4-dernieres-lignes-du-tableau">Afficher les 4 dernières lignes du tableau<a class="headerlink" href="#afficher-les-4-dernieres-lignes-du-tableau" title="Permanent link">#</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">data</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+</code></pre></div>
+
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>name</th>
+<th>country</th>
+<th>sex</th>
+<th>age</th>
+<th>height</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>4</th>
+<td>Tracy</td>
+<td>Ivory Cost</td>
+<td>F</td>
+<td>31</td>
+<td>1.45</td>
+</tr>
+<tr>
+<th>5</th>
+<td>Adjo</td>
+<td>Togo</td>
+<td>F</td>
+<td>23</td>
+<td>1.61</td>
+</tr>
+<tr>
+<th>6</th>
+<td>Yacuba</td>
+<td>Niger</td>
+<td>F</td>
+<td>26</td>
+<td>1.90</td>
+</tr>
+<tr>
+<th>7</th>
+<td>Degnon</td>
+<td>Benin</td>
+<td>F</td>
+<td>17</td>
+<td>1.52</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="afficher-4-lignes-du-tableau-choisies-au-hazard">Afficher 4 lignes du tableau choisies au hazard<a class="headerlink" href="#afficher-4-lignes-du-tableau-choisies-au-hazard" title="Permanent link">#</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">data</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+</code></pre></div>
+
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>name</th>
+<th>country</th>
+<th>sex</th>
+<th>age</th>
+<th>height</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>6</th>
+<td>Yacuba</td>
+<td>Niger</td>
+<td>F</td>
+<td>26</td>
+<td>1.90</td>
+</tr>
+<tr>
+<th>7</th>
+<td>Degnon</td>
+<td>Benin</td>
+<td>F</td>
+<td>17</td>
+<td>1.52</td>
+</tr>
+<tr>
+<th>3</th>
+<td>Adboul</td>
+<td>Burkina</td>
+<td>M</td>
+<td>19</td>
+<td>1.82</td>
+</tr>
+<tr>
+<th>1</th>
+<td>Lendjina</td>
+<td>Haïti</td>
+<td>F</td>
+<td>18</td>
+<td>1.43</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="importer-des-donnees">Importer des données<a class="headerlink" href="#importer-des-donnees" title="Permanent link">#</a></h2>
+<p>En général, les données sur lesquelles l'on souhaite travailler sont stockées dans un fichier externe, la libraire Pandas permet d'importer des données depuis un fichier externe. Plusieurs extensions de fichiers sont prises en charge par Pandas, à savoir <code>.csv</code> le plus utilisé, <code>.excel</code>, <code>.pickle</code></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="n">dt</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;datasets/iris.csv&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="exporter-des-donnees">Exporter des données<a class="headerlink" href="#exporter-des-donnees" title="Permanent link">#</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="n">dt</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;backups/&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="visualisation">Visualisation<a class="headerlink" href="#visualisation" title="Permanent link">#</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="references">Références<a class="headerlink" href="#references" title="Permanent link">#</a></h2>
+<ul>
+<li></li>
+<li></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr />
+<p><em>Pour avoir plus de détails, merci de consulter la documentation officielle <a href="https://numpy.org/">Numpy Docs</a></em></p>
+</div>
+</div>
+</div>
+
+        </div>
+      </div>
+    </main>
+  
+
+
+  <!-- Tags -->
+
+<!-- CTA FINAL -->
+<section class="py-5 bg-primary text-white text-center">
+<div class="container py-4">
+    <h3 class="text-uppercase mb-4">Inscrivez-vous à une formation complète</h3>
+    <a href="/#formations" class="btn btn-outline-light btn-lg text-uppercase px-5">Voir le catalogue</a>
+</div>
+</section>
+
+<!-- Footer-->
+<footer class="pt-0">
+    <!-- Bande de Navigation Précédent / Suivant (Style Bootstrap Dark) -->
+    
+    
+    <div class="container text-center py-5">
+        <div class="row px-4">
+            <div class="col-lg-7 mx-auto">
+                <h2 class="text-uppercase mb-0">Joseph Konka </h2>
+                <h6 class="text-primary text-uppercase mb-0 letter-spacing-3">Senior Data Analyst | Data Scientist</h6>
+                <p class="text-muted my-4">Project Management - Data Engineering - Data Analytics - Python Programming</p>
+                <ul class="list-inline mb-0">
+                    <li class="list-inline-item"><a class="social-link" href="https://wa.me/+22891518923" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
+                    <li class="list-inline-item"><a class="social-link" href="https://github.com/joekakone" target="_blank"><i class="fab fa-github"></i></a></li>
+                    <li class="list-inline-item"><a class="social-link" href="https://www.linkedin.com/in/joseph-koami-konka" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+                    <li class="list-inline-item"><a class="social-link" href="https://web.facebook.com/joekakonepage" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                    <li class="list-inline-item"><a class="social-link" href="https://twitter.com/joekakone" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                    <li class="list-inline-item"><a class="social-link" href="https://www.youtube.com/@algojungle" target="_blank"><i class="fab fa-youtube"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="copyrights px-4">
+        <div class="container py-4 border-top text-center">
+        <p class="mb-0 text-muted py-2">&copy; All rights reserved. Template designed by <a
+            href="https://bootstrapious.com/p/bootstrap-resume">Bootstrapious</a>. </p>
+        </div>
+    </div>
+</footer>
+  
+
+  <!-- JS -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script> -->
+  <script src="../../../assets/javascripts/custom.js"></script>
+
+  
+  <!-- JavaScript files-->
+  <script src="https://joekakone.github.io/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="https://joekakone.github.io/static/js/front.js"></script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YPL3847T5N"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-YPL3847T5N');
+  </script>
+
+  <script type='text/javascript'>
+    var divElement = document.getElementById('viz1677099741796'); var vizElement = divElement.getElementsByTagName('object')[0]; if (divElement.offsetWidth > 800) { vizElement.style.width = '1100px'; vizElement.style.height = '627px'; } else if (divElement.offsetWidth > 500) { vizElement.style.width = '1100px'; vizElement.style.height = '627px'; } else { vizElement.style.width = '100%'; vizElement.style.height = '1327px'; } var scriptElement = document.createElement('script'); scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js'; vizElement.parentNode.insertBefore(scriptElement, vizElement);                
+  </script>
+
+  <!-- Google Ads -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2980760029476176"
+      crossorigin="anonymous"></script>
+
+  <!-- ShareThis -->
+  <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=649bd6c6a6672f0012d186bd&product=sop' async='async'></script>
+
+  <!-- Tally -->
+  <script async src="https://tally.so/widgets/embed.js"></script>
+
+  <!-- Facebook -->
+  <div id="fb-root"></div>
+  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v20.0&appId=564181564271850"></script>
+
+  <!-- Messenger Plugin de discussion Code -->
+  <div id="fb-root"></div>
+
+  <!-- Your Plugin de discussion code -->
+  <div id="fb-customer-chat" class="fb-customerchat">
+  </div>
+
+  <script>
+    var chatbox = document.getElementById('fb-customer-chat');
+    chatbox.setAttribute("page_id", "2130664133866857");
+    chatbox.setAttribute("attribution", "biz_inbox");
+
+    window.fbAsyncInit = function () {
+      FB.init({
+        xfbml: true,
+        version: 'v12.0'
+      });
+    };
+
+    (function (d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/fr_FR/sdk/xfbml.customerchat.js';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
+
+  <!-- Contact Form Utils -->
+  <script>
+    function buildMailtoUrl(event) {
+      event.preventDefault(); // Prevent form submission
+
+      var emailInputFirstName = document.getElementById('InputFirstName').value;
+      var emailInputLastName = document.getElementById('InputLastName').value;
+      var emailInputEmail = document.getElementById('InputEmail').value;
+      var emailInputPhone = document.getElementById('InputPhone').value;
+      var emailInputSubject = document.getElementById('InputSubject').value;
+      var emailInputMessage = document.getElementById('InputMessage').value;
+
+      var emailContent = `${emailInputMessage} \n\nFull Name : ${emailInputFirstName} ${emailInputLastName}\nPhone Number : ${emailInputPhone}\nEmail : ${emailInputEmail}`;
+
+      var subject = encodeURIComponent(emailInputSubject);
+      var body = encodeURIComponent(emailContent);
+
+      var mailtoLink = 'mailto:konka.datanalytics@gmail.com' + '?subject=' + subject + '&body=' + body;
+
+      window.location.href = mailtoLink;
+    }
+  </script>
+
+  <!-- Google Ads -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2980760029476176"
+    crossorigin="anonymous"></script>
+
+
+  <!-- FontAwesome CSS - loading as last, so it doesn't block rendering-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+</body>
+</html>

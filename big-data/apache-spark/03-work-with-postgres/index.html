@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+
+  <!-- Meta tags -->
+  
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <!-- Page description -->
+    
+      <meta name="description" content="Prêt à acquérir les compétences pour lancer votre carrière en Data Science ? <br> Je suis Joseph Konka, Analyste de données Sénior et je vous accompagnerai dans votre aventure.<br> Découvrez Python, SQL, Power BI, Tensorflow et bien d'autres outils gratuitement.<br> C'est parti ! 🚀" />
+    
+
+    <!-- Page author -->
+    
+      <meta name="author" content="Joseph Konka" />
+    
+
+    <!-- Canonical -->
+    
+      <link rel="canonical" href="https://josephkonkathedataguy.com/learning/big-data/apache-spark/03-work-with-postgres/" />
+    
+
+    <!-- Previous page -->
+    
+      <link rel="prev" href="../02-import-export/" />
+    
+
+    <!-- Next page -->
+    
+      <link rel="next" href="../applications/" />
+    
+
+    <!-- Favicon -->
+    <link rel="icon" href="https://algojungle.github.io/algojungle-assets/assets/favicon.png" />
+
+    <!-- Generator banner -->
+    <meta name="generator" content="mkdocs-1.6.1, $md-name$-$md-version$" />
+  
+
+  <title>
+    Base de données | Algo Jungle
+  </title>
+
+  <!-- Google Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,800&display=swap">
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+  <!-- Theme CSS -->
+  <link rel="stylesheet" href="https://joekakone.github.io/static/css/style.blue.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../../../assets/stylesheets/custom.css">
+  
+  <style>
+    body {
+      font-family: 'Work Sans', sans-serif;
+      background-color: #fcfcfc;
+    }
+    /* Style par défaut pour le contenu Markdown */
+    .markdown-content img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+  </style>
+  
+</head>
+
+<body>
+
+  <!-- navbar-->
+<header class="header">
+  <nav class="navbar navbar-light navbar-expand-lg fixed-top" id="navbar">
+    <div class="container"><a class="navbar-brand" href="/learning"><img
+          src="https://algojungle.github.io/algojungle-assets/assets/favicon.png" alt="" height="36.14"></a>
+      <button class="navbar-toggler navbar-toggler-end" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation"><i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        
+  <ul class="navbar-nav ms-auto">
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    <li class="nav-item">
+      
+      <a href="../../.." class="nav-link link-scroll">
+        
+  
+
+  <!-- Navigation link icon -->
+  
+    
+  
+
+  <!-- Navigation link title -->
+  Accueil
+
+      </a>
+      
+    </li>
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../../../informatique/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  Informatique
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../../../algorithmique/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  Algorithmique
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../../../programmation/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  Programmation
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../../../python/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  Python
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../../../analytics/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  Analytics
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../../../analytics/sql/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  SQL
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../../../analytics/powerbi/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  Power BI
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+    
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../../" class="nav-link link-scroll active">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  Big Data
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../../../machine-learning/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  Machine Learning
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../../../machine-learning/tensorflow/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  TensorFlow
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../../../mlops/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  MLOps
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../../../blog/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  Blog
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+  </ul>
+
+      </div>
+
+    </div>
+  </nav>
+</header>
+
+  
+
+  <!-- Bloc principal : Sera remplacé par home.html pour la page d'accueil -->
+  
+    <main class="container py-5">
+      <div class="row justify-content-center">
+        <div class="col-lg-10 markdown-content">
+          
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script>
+(function() {
+  function addWidgetsRenderer() {
+    var requireJsScript = document.createElement('script');
+    requireJsScript.src = 'https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js';
+
+    var mimeElement = document.querySelector('script[type="application/vnd.jupyter.widget-view+json"]');
+    var jupyterWidgetsScript = document.createElement('script');
+    var widgetRendererSrc = 'https://unpkg.com/@jupyter-widgets/html-manager@*/dist/embed-amd.js';
+    var widgetState;
+
+    // Fallback for older version:
+    try {
+      widgetState = mimeElement && JSON.parse(mimeElement.innerHTML);
+
+      if (widgetState && (widgetState.version_major < 2 || !widgetState.version_major)) {
+        widgetRendererSrc = 'jupyter-js-widgets@*/dist/embed.js';
+      }
+    } catch(e) {}
+
+    jupyterWidgetsScript.src = widgetRendererSrc;
+
+    document.body.appendChild(requireJsScript);
+    document.body.appendChild(jupyterWidgetsScript);
+  }
+
+  document.addEventListener('DOMContentLoaded', addWidgetsRenderer);
+}());
+</script>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="interagir-avec-une-base-de-donnees">Interagir avec une base de données<a class="headerlink" href="#interagir-avec-une-base-de-donnees" title="Permanent link">#</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Dans cette section, nous explorerons la capacité de Spark à se connecter à une base de données relationnelle à l'aide de JDBC, en mettant en lumière l'exemple de Postgres.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img alt="" src="https://algojungle.github.io/algojungle-assets/images/07-big-data/apache-spark/covers/python-data-stack-pyspark.png" /></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="pre-requis">Pré-requis<a class="headerlink" href="#pre-requis" title="Permanent link">#</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Afin d'accéder à la base de données Postgres, nous aurons besoin du driver Postgres. Rendez-vous sur la page de téléchargement <a href="https://jdbc.postgresql.org/download/">Download pgJDBC</a>. Une fois le téléchargement terminé, placer-le dans un dossier de votre choix facile d'accès depuis le notebook.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>  <span class="c1"># Ignore warnings coming from Arrow optimizations.</span>
+</code></pre></div>
+
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="importer-pyspark">Importer PySpark<a class="headerlink" href="#importer-pyspark" title="Permanent link">#</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">pyspark</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">pyspark.sql</span><span class="w"> </span><span class="kn">import</span> <span class="n">SparkSession</span>
+</code></pre></div>
+
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">pyspark</span><span class="o">.</span><span class="n">__version__</span>
+</code></pre></div>
+
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="output_text output_subarea output_execute_result">
+<pre>
+<code>'3.5.1'</code>
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="creer-une-session-spark">Créer une session Spark<a class="headerlink" href="#creer-une-session-spark" title="Permanent link">#</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># Créer une session Spark</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">spark</span> <span class="o">=</span> <span class="n">SparkSession</span><span class="o">.</span><span class="n">builder</span> \
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    <span class="o">.</span><span class="n">appName</span><span class="p">(</span><span class="s2">&quot;Work with PostgreSQL&quot;</span><span class="p">)</span> \
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    <span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="s2">&quot;spark.driver.extraClassPath&quot;</span><span class="p">,</span> <span class="s2">&quot;/home/joekakone/spark/drivers/postgresql-42.7.3.jar&quot;</span><span class="p">)</span> \
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    <span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="s2">&quot;spark.executor.extraClassPath&quot;</span><span class="p">,</span> <span class="s2">&quot;/home/joekakone/spark/drivers/postgresql-42.7.3.jar&quot;</span><span class="p">)</span> \
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>    <span class="o">.</span><span class="n">getOrCreate</span><span class="p">()</span>
+</code></pre></div>
+
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>
+<code>Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+24/05/12 17:32:19 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+24/05/12 17:32:20 WARN Utils: Service 'SparkUI' could not bind on port 4040. Attempting port 4041.
+</code>
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="database-config">Database Config<a class="headerlink" href="#database-config" title="Permanent link">#</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Faites <code>ip route</code> dans le terminal pour obtenir l'adresse</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>joekakone@UTILISA-GII29BR:~$<span class="w"> </span>ip<span class="w"> </span>route
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>default<span class="w"> </span>via<span class="w"> </span><span class="m">172</span>.31.16.1<span class="w"> </span>dev<span class="w"> </span>eth0<span class="w"> </span>proto<span class="w"> </span>kernel
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="m">172</span>.31.16.0/20<span class="w"> </span>dev<span class="w"> </span>eth0<span class="w"> </span>proto<span class="w"> </span>kernel<span class="w"> </span>scope<span class="w"> </span>link<span class="w"> </span>src<span class="w"> </span><span class="m">172</span>.31.27.239
+</code></pre></div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1">## Database Infos &amp;amp; Credentials</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">HOST</span> <span class="o">=</span> <span class="s2">&quot;172.31.16.1&quot;</span> <span class="c1"># Windows localhost (Ubuntu WSL)</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="n">PORT</span> <span class="o">=</span> <span class="s2">&quot;5432&quot;</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="n">DATABASE</span> <span class="o">=</span> <span class="s2">&quot;postgres&quot;</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="n">USERNAME</span> <span class="o">=</span> <span class="s2">&quot;postgres&quot;</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="n">PASSWORD</span> <span class="o">=</span> <span class="s2">&quot;admin&quot;</span>
+</code></pre></div>
+
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="connection-string">Connection String<a class="headerlink" href="#connection-string" title="Permanent link">#</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">postgresql_url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;jdbc:postgresql://</span><span class="si">{</span><span class="n">HOST</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="n">PORT</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">DATABASE</span><span class="si">}</span><span class="s2">&quot;</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="n">postgresql_long_url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;jdbc:postgresql://</span><span class="si">{</span><span class="n">HOST</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="n">PORT</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">DATABASE</span><span class="si">}</span><span class="s2">?user=</span><span class="si">{</span><span class="n">USERNAME</span><span class="si">}</span><span class="s2">&amp;amp;password=</span><span class="si">{</span><span class="n">PASSWORD</span><span class="si">}</span><span class="s2">&quot;</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="n">connection_properties</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>    <span class="c1"># &quot;user&quot;: USERNAME,</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>    <span class="c1"># &quot;password&quot;: PASSWORD,</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>    <span class="s2">&quot;driver&quot;</span><span class="p">:</span> <span class="s2">&quot;org.postgresql.Driver&quot;</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="p">}</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="nb">print</span><span class="p">(</span><span class="n">postgresql_url</span><span class="p">)</span>
+</code></pre></div>
+
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+<code>jdbc:postgresql://172.31.16.1:5432/postgres
+</code>
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Nous devons importer la classe <code>SparkSession</code> depuis le module <code>pyspark.sql</code></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="importer-une-table">Importer une table<a class="headerlink" href="#importer-une-table" title="Permanent link">#</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">table_name</span> <span class="o">=</span> <span class="s2">&quot;public.covid19_daily_kpi&quot;</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="n">df</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">jdbc</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">postgresql_long_url</span><span class="p">,</span> <span class="n">table</span><span class="o">=</span><span class="n">table_name</span><span class="p">,</span> <span class="n">properties</span><span class="o">=</span><span class="n">connection_properties</span><span class="p">)</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="n">df</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div>
+
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>
+<code>                                                                                
+</code>
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+<code>+----------+-------------+--------------------+--------------------+---------+------+---------+------+--------------------+
+|        dt|      country|            latitude|           longitude|confirmed|deaths|recovered|active|       load_datetime|
++----------+-------------+--------------------+--------------------+---------+------+---------+------+--------------------+
+|2021-06-18|        Benin|9.307700000000000000|2.315800000000000000|     8140|   103|     7979|    58|2023-06-18 22:56:...|
+|2021-06-18| Burkina Faso|12.23830000000000...|-1.56160000000000...|    13460|   167|    13287|     6|2023-06-18 22:56:...|
+|2021-06-18|   Cabo Verde|16.53880000000000...|-23.0418000000000...|    31858|   280|    30796|   782|2023-06-18 22:56:...|
+|2021-06-18|Cote d'Ivoire|7.540000000000000000|-5.54710000000000...|    47973|   306|    47346|   321|2023-06-18 22:56:...|
+|2021-06-18|       Gambia|13.44320000000000...|-15.3101000000000...|     6024|   181|     5827|    16|2023-06-18 22:56:...|
+|2021-06-18|        Ghana|7.946500000000000000|-1.02320000000000...|    94824|   790|    92806|  1228|2023-06-18 22:56:...|
+|2021-06-18|       Guinea|9.945600000000000000|-9.69660000000000...|    23431|   167|    21488|  1776|2023-06-18 22:56:...|
+|2021-06-18|Guinea-Bissau|11.80370000000000...|-15.1804000000000...|     3819|    69|     3553|   197|2023-06-18 22:56:...|
+|2021-06-18|      Liberia|6.428055000000000500|-9.42949900000000...|     2729|    95|     2105|   529|2023-06-18 22:56:...|
+|2021-06-18|         Mali|17.57069200000000...|-3.99616600000000...|    14364|   523|    10001|  3840|2023-06-18 22:56:...|
+|2021-06-18|        Niger|17.60778900000000...|8.081666000000000000|     5457|   193|     5178|    86|2023-06-18 22:56:...|
+|2021-06-18|      Nigeria|9.082000000000000000|8.675300000000000000|   167142|  2117|   163535|  1490|2023-06-18 22:56:...|
+|2021-06-18|      Senegal|14.49740000000000...|-14.4524000000000...|    42206|  1158|    40707|   341|2023-06-18 22:56:...|
+|2021-06-18| Sierra Leone|8.460555000000001000|-11.7798890000000...|     4553|    82|     3208|  1263|2023-06-18 22:56:...|
+|2021-06-18|         Togo|8.619500000000000000|0.824800000000000000|    13682|   127|    13334|   221|2023-06-18 22:56:...|
+|2021-06-21|        Benin|9.307700000000000000|2.315800000000000000|     8140|   103|     7979|    58|2023-06-21 04:42:...|
+|2021-06-21| Burkina Faso|12.23830000000000...|-1.56160000000000...|    13469|   167|    13293|     9|2023-06-21 04:42:...|
+|2021-06-21|   Cabo Verde|16.53880000000000...|-23.0418000000000...|    32002|   283|    30988|   731|2023-06-21 04:42:...|
+|2021-06-21|Cote d'Ivoire|7.540000000000000000|-5.54710000000000...|    48044|   308|    47445|   291|2023-06-21 04:42:...|
+|2021-06-21|       Gambia|13.44320000000000...|-15.3101000000000...|     6024|   181|     5827|    16|2023-06-21 04:42:...|
++----------+-------------+--------------------+--------------------+---------+------+---------+------+--------------------+
+only showing top 20 rows
+
+</code>
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">table_name</span> <span class="o">=</span> <span class="s2">&quot;public.covid19_daily_kpi&quot;</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="n">df</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;jdbc&quot;</span><span class="p">)</span> \
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>    <span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s2">&quot;url&quot;</span><span class="p">,</span> <span class="n">postgresql_long_url</span><span class="p">)</span> \
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>    <span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s2">&quot;dbtable&quot;</span><span class="p">,</span> <span class="n">table_name</span><span class="p">)</span> \
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>    <span class="o">.</span><span class="n">load</span><span class="p">()</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="n">df</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div>
+
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+<code>+----------+-------------+--------------------+--------------------+---------+------+---------+------+--------------------+
+|        dt|      country|            latitude|           longitude|confirmed|deaths|recovered|active|       load_datetime|
++----------+-------------+--------------------+--------------------+---------+------+---------+------+--------------------+
+|2021-06-18|        Benin|9.307700000000000000|2.315800000000000000|     8140|   103|     7979|    58|2023-06-18 22:56:...|
+|2021-06-18| Burkina Faso|12.23830000000000...|-1.56160000000000...|    13460|   167|    13287|     6|2023-06-18 22:56:...|
+|2021-06-18|   Cabo Verde|16.53880000000000...|-23.0418000000000...|    31858|   280|    30796|   782|2023-06-18 22:56:...|
+|2021-06-18|Cote d'Ivoire|7.540000000000000000|-5.54710000000000...|    47973|   306|    47346|   321|2023-06-18 22:56:...|
+|2021-06-18|       Gambia|13.44320000000000...|-15.3101000000000...|     6024|   181|     5827|    16|2023-06-18 22:56:...|
+|2021-06-18|        Ghana|7.946500000000000000|-1.02320000000000...|    94824|   790|    92806|  1228|2023-06-18 22:56:...|
+|2021-06-18|       Guinea|9.945600000000000000|-9.69660000000000...|    23431|   167|    21488|  1776|2023-06-18 22:56:...|
+|2021-06-18|Guinea-Bissau|11.80370000000000...|-15.1804000000000...|     3819|    69|     3553|   197|2023-06-18 22:56:...|
+|2021-06-18|      Liberia|6.428055000000000500|-9.42949900000000...|     2729|    95|     2105|   529|2023-06-18 22:56:...|
+|2021-06-18|         Mali|17.57069200000000...|-3.99616600000000...|    14364|   523|    10001|  3840|2023-06-18 22:56:...|
+|2021-06-18|        Niger|17.60778900000000...|8.081666000000000000|     5457|   193|     5178|    86|2023-06-18 22:56:...|
+|2021-06-18|      Nigeria|9.082000000000000000|8.675300000000000000|   167142|  2117|   163535|  1490|2023-06-18 22:56:...|
+|2021-06-18|      Senegal|14.49740000000000...|-14.4524000000000...|    42206|  1158|    40707|   341|2023-06-18 22:56:...|
+|2021-06-18| Sierra Leone|8.460555000000001000|-11.7798890000000...|     4553|    82|     3208|  1263|2023-06-18 22:56:...|
+|2021-06-18|         Togo|8.619500000000000000|0.824800000000000000|    13682|   127|    13334|   221|2023-06-18 22:56:...|
+|2021-06-21|        Benin|9.307700000000000000|2.315800000000000000|     8140|   103|     7979|    58|2023-06-21 04:42:...|
+|2021-06-21| Burkina Faso|12.23830000000000...|-1.56160000000000...|    13469|   167|    13293|     9|2023-06-21 04:42:...|
+|2021-06-21|   Cabo Verde|16.53880000000000...|-23.0418000000000...|    32002|   283|    30988|   731|2023-06-21 04:42:...|
+|2021-06-21|Cote d'Ivoire|7.540000000000000000|-5.54710000000000...|    48044|   308|    47445|   291|2023-06-21 04:42:...|
+|2021-06-21|       Gambia|13.44320000000000...|-15.3101000000000...|     6024|   181|     5827|    16|2023-06-21 04:42:...|
++----------+-------------+--------------------+--------------------+---------+------+---------+------+--------------------+
+only showing top 20 rows
+
+</code>
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="a-partir-dune-requete-sql">A partir d'une requête SQL<a class="headerlink" href="#a-partir-dune-requete-sql" title="Permanent link">#</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">sql_query</span> <span class="o">=</span> <span class="s2">&quot;(select * from public.covid19_daily_kpi) as sq&quot;</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="n">df</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;jdbc&quot;</span><span class="p">)</span> \
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>    <span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s2">&quot;url&quot;</span><span class="p">,</span> <span class="n">postgresql_url</span><span class="p">)</span> \
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>    <span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s2">&quot;dbtable&quot;</span><span class="p">,</span> <span class="n">sql_query</span><span class="p">)</span> \
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>    <span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="n">USERNAME</span><span class="p">)</span> \
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>    <span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s2">&quot;password&quot;</span><span class="p">,</span> <span class="n">PASSWORD</span><span class="p">)</span> \
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>    <span class="o">.</span><span class="n">load</span><span class="p">()</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="n">df</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div>
+
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+<code>+----------+-------------+--------------------+--------------------+---------+------+---------+------+--------------------+
+|        dt|      country|            latitude|           longitude|confirmed|deaths|recovered|active|       load_datetime|
++----------+-------------+--------------------+--------------------+---------+------+---------+------+--------------------+
+|2021-06-18|        Benin|9.307700000000000000|2.315800000000000000|     8140|   103|     7979|    58|2023-06-18 22:56:...|
+|2021-06-18| Burkina Faso|12.23830000000000...|-1.56160000000000...|    13460|   167|    13287|     6|2023-06-18 22:56:...|
+|2021-06-18|   Cabo Verde|16.53880000000000...|-23.0418000000000...|    31858|   280|    30796|   782|2023-06-18 22:56:...|
+|2021-06-18|Cote d'Ivoire|7.540000000000000000|-5.54710000000000...|    47973|   306|    47346|   321|2023-06-18 22:56:...|
+|2021-06-18|       Gambia|13.44320000000000...|-15.3101000000000...|     6024|   181|     5827|    16|2023-06-18 22:56:...|
+|2021-06-18|        Ghana|7.946500000000000000|-1.02320000000000...|    94824|   790|    92806|  1228|2023-06-18 22:56:...|
+|2021-06-18|       Guinea|9.945600000000000000|-9.69660000000000...|    23431|   167|    21488|  1776|2023-06-18 22:56:...|
+|2021-06-18|Guinea-Bissau|11.80370000000000...|-15.1804000000000...|     3819|    69|     3553|   197|2023-06-18 22:56:...|
+|2021-06-18|      Liberia|6.428055000000000500|-9.42949900000000...|     2729|    95|     2105|   529|2023-06-18 22:56:...|
+|2021-06-18|         Mali|17.57069200000000...|-3.99616600000000...|    14364|   523|    10001|  3840|2023-06-18 22:56:...|
+|2021-06-18|        Niger|17.60778900000000...|8.081666000000000000|     5457|   193|     5178|    86|2023-06-18 22:56:...|
+|2021-06-18|      Nigeria|9.082000000000000000|8.675300000000000000|   167142|  2117|   163535|  1490|2023-06-18 22:56:...|
+|2021-06-18|      Senegal|14.49740000000000...|-14.4524000000000...|    42206|  1158|    40707|   341|2023-06-18 22:56:...|
+|2021-06-18| Sierra Leone|8.460555000000001000|-11.7798890000000...|     4553|    82|     3208|  1263|2023-06-18 22:56:...|
+|2021-06-18|         Togo|8.619500000000000000|0.824800000000000000|    13682|   127|    13334|   221|2023-06-18 22:56:...|
+|2021-06-21|        Benin|9.307700000000000000|2.315800000000000000|     8140|   103|     7979|    58|2023-06-21 04:42:...|
+|2021-06-21| Burkina Faso|12.23830000000000...|-1.56160000000000...|    13469|   167|    13293|     9|2023-06-21 04:42:...|
+|2021-06-21|   Cabo Verde|16.53880000000000...|-23.0418000000000...|    32002|   283|    30988|   731|2023-06-21 04:42:...|
+|2021-06-21|Cote d'Ivoire|7.540000000000000000|-5.54710000000000...|    48044|   308|    47445|   291|2023-06-21 04:42:...|
+|2021-06-21|       Gambia|13.44320000000000...|-15.3101000000000...|     6024|   181|     5827|    16|2023-06-21 04:42:...|
++----------+-------------+--------------------+--------------------+---------+------+---------+------+--------------------+
+only showing top 20 rows
+
+</code>
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="exporter-vers-une-base-de-donnees">Exporter vers une base de données<a class="headerlink" href="#exporter-vers-une-base-de-donnees" title="Permanent link">#</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Uen fois vos mainupulations terminées, Spark offre la possibilité d'exporter les données dans une table dans la base de données pour un usage ultérieur.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">destination_table</span> <span class="o">=</span> <span class="s2">&quot;public.saprk_table&quot;</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="n">colums_types</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="s2">dt            date,</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="s2">country       varchar(200),</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="s2">latitude      numeric,</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="s2">longitude     numeric,</span>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="s2">confirmed     integer,</span>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="s2">deaths        integer,</span>
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="s2">recovered     integer,</span>
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="s2">active        integer,</span>
+<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a><span class="s2">load_datetime timestamp</span>
+<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a><span class="s2">&quot;&quot;&quot;</span>
+<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a>
+<a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a><span class="n">df</span><span class="o">.</span><span class="n">write</span> \
+<a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a>    <span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s2">&quot;createTableColumnTypes&quot;</span><span class="p">,</span> <span class="n">colums_types</span><span class="p">)</span> \
+<a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a>    <span class="o">.</span><span class="n">jdbc</span><span class="p">(</span><span class="n">postgresql_long_url</span><span class="p">,</span> <span class="n">destination_table</span><span class="p">)</span>
+</code></pre></div>
+
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Pour vérifier que l'exportation a été bien effectuée, on va importer la table</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">df</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;jdbc&quot;</span><span class="p">)</span> \
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>    <span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s2">&quot;url&quot;</span><span class="p">,</span> <span class="n">postgresql_long_url</span><span class="p">)</span> \
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>    <span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s2">&quot;dbtable&quot;</span><span class="p">,</span> <span class="n">destination_table</span><span class="p">)</span> \
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>    <span class="o">.</span><span class="n">load</span><span class="p">()</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="n">df</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div>
+
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+<code>+----------+-------------+--------+---------+---------+------+---------+------+--------------------+
+|        dt|      country|latitude|longitude|confirmed|deaths|recovered|active|       load_datetime|
++----------+-------------+--------+---------+---------+------+---------+------+--------------------+
+|2021-06-18|        Benin|       9|        2|     8140|   103|     7979|    58|2023-06-18 22:56:...|
+|2021-06-18| Burkina Faso|      12|       -2|    13460|   167|    13287|     6|2023-06-18 22:56:...|
+|2021-06-18|   Cabo Verde|      17|      -23|    31858|   280|    30796|   782|2023-06-18 22:56:...|
+|2021-06-18|Cote d'Ivoire|       8|       -6|    47973|   306|    47346|   321|2023-06-18 22:56:...|
+|2021-06-18|       Gambia|      13|      -15|     6024|   181|     5827|    16|2023-06-18 22:56:...|
+|2021-06-18|        Ghana|       8|       -1|    94824|   790|    92806|  1228|2023-06-18 22:56:...|
+|2021-06-18|       Guinea|      10|      -10|    23431|   167|    21488|  1776|2023-06-18 22:56:...|
+|2021-06-18|Guinea-Bissau|      12|      -15|     3819|    69|     3553|   197|2023-06-18 22:56:...|
+|2021-06-18|      Liberia|       6|       -9|     2729|    95|     2105|   529|2023-06-18 22:56:...|
+|2021-06-18|         Mali|      18|       -4|    14364|   523|    10001|  3840|2023-06-18 22:56:...|
+|2021-06-18|        Niger|      18|        8|     5457|   193|     5178|    86|2023-06-18 22:56:...|
+|2021-06-18|      Nigeria|       9|        9|   167142|  2117|   163535|  1490|2023-06-18 22:56:...|
+|2021-06-18|      Senegal|      14|      -14|    42206|  1158|    40707|   341|2023-06-18 22:56:...|
+|2021-06-18| Sierra Leone|       8|      -12|     4553|    82|     3208|  1263|2023-06-18 22:56:...|
+|2021-06-18|         Togo|       9|        1|    13682|   127|    13334|   221|2023-06-18 22:56:...|
+|2021-06-21|        Benin|       9|        2|     8140|   103|     7979|    58|2023-06-21 04:42:...|
+|2021-06-21| Burkina Faso|      12|       -2|    13469|   167|    13293|     9|2023-06-21 04:42:...|
+|2021-06-21|   Cabo Verde|      17|      -23|    32002|   283|    30988|   731|2023-06-21 04:42:...|
+|2021-06-21|Cote d'Ivoire|       8|       -6|    48044|   308|    47445|   291|2023-06-21 04:42:...|
+|2021-06-21|       Gambia|      13|      -15|     6024|   181|     5827|    16|2023-06-21 04:42:...|
++----------+-------------+--------+---------+---------+------+---------+------+--------------------+
+only showing top 20 rows
+
+</code>
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="fermer-la-session-spark">Fermer la session Spark<a class="headerlink" href="#fermer-la-session-spark" title="Permanent link">#</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Une fois notre travail terminé, nous devons fermer la session. </p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="n">spark</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+</code></pre></div>
+
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr />
+<p><em>Dans la prochaine section, nous verrons comment importer des données depuis des fichiers.</em></p>
+</div>
+</div>
+</div>
+
+        </div>
+      </div>
+    </main>
+  
+
+
+  <!-- Tags -->
+
+<!-- CTA FINAL -->
+<section class="py-5 bg-primary text-white text-center">
+<div class="container py-4">
+    <h3 class="text-uppercase mb-4">Inscrivez-vous à une formation complète</h3>
+    <a href="/#formations" class="btn btn-outline-light btn-lg text-uppercase px-5">Voir le catalogue</a>
+</div>
+</section>
+
+<!-- Footer-->
+<footer class="pt-0">
+    <!-- Bande de Navigation Précédent / Suivant (Style Bootstrap Dark) -->
+    
+    
+    <div class="container text-center py-5">
+        <div class="row px-4">
+            <div class="col-lg-7 mx-auto">
+                <h2 class="text-uppercase mb-0">Joseph Konka </h2>
+                <h6 class="text-primary text-uppercase mb-0 letter-spacing-3">Senior Data Analyst | Data Scientist</h6>
+                <p class="text-muted my-4">Project Management - Data Engineering - Data Analytics - Python Programming</p>
+                <ul class="list-inline mb-0">
+                    <li class="list-inline-item"><a class="social-link" href="https://wa.me/+22891518923" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
+                    <li class="list-inline-item"><a class="social-link" href="https://github.com/joekakone" target="_blank"><i class="fab fa-github"></i></a></li>
+                    <li class="list-inline-item"><a class="social-link" href="https://www.linkedin.com/in/joseph-koami-konka" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+                    <li class="list-inline-item"><a class="social-link" href="https://web.facebook.com/joekakonepage" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                    <li class="list-inline-item"><a class="social-link" href="https://twitter.com/joekakone" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                    <li class="list-inline-item"><a class="social-link" href="https://www.youtube.com/@algojungle" target="_blank"><i class="fab fa-youtube"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="copyrights px-4">
+        <div class="container py-4 border-top text-center">
+        <p class="mb-0 text-muted py-2">&copy; All rights reserved. Template designed by <a
+            href="https://bootstrapious.com/p/bootstrap-resume">Bootstrapious</a>. </p>
+        </div>
+    </div>
+</footer>
+  
+
+  <!-- JS -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script> -->
+  <script src="../../../assets/javascripts/custom.js"></script>
+
+  
+  <!-- JavaScript files-->
+  <script src="https://joekakone.github.io/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="https://joekakone.github.io/static/js/front.js"></script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YPL3847T5N"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-YPL3847T5N');
+  </script>
+
+  <script type='text/javascript'>
+    var divElement = document.getElementById('viz1677099741796'); var vizElement = divElement.getElementsByTagName('object')[0]; if (divElement.offsetWidth > 800) { vizElement.style.width = '1100px'; vizElement.style.height = '627px'; } else if (divElement.offsetWidth > 500) { vizElement.style.width = '1100px'; vizElement.style.height = '627px'; } else { vizElement.style.width = '100%'; vizElement.style.height = '1327px'; } var scriptElement = document.createElement('script'); scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js'; vizElement.parentNode.insertBefore(scriptElement, vizElement);                
+  </script>
+
+  <!-- Google Ads -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2980760029476176"
+      crossorigin="anonymous"></script>
+
+  <!-- ShareThis -->
+  <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=649bd6c6a6672f0012d186bd&product=sop' async='async'></script>
+
+  <!-- Tally -->
+  <script async src="https://tally.so/widgets/embed.js"></script>
+
+  <!-- Facebook -->
+  <div id="fb-root"></div>
+  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v20.0&appId=564181564271850"></script>
+
+  <!-- Messenger Plugin de discussion Code -->
+  <div id="fb-root"></div>
+
+  <!-- Your Plugin de discussion code -->
+  <div id="fb-customer-chat" class="fb-customerchat">
+  </div>
+
+  <script>
+    var chatbox = document.getElementById('fb-customer-chat');
+    chatbox.setAttribute("page_id", "2130664133866857");
+    chatbox.setAttribute("attribution", "biz_inbox");
+
+    window.fbAsyncInit = function () {
+      FB.init({
+        xfbml: true,
+        version: 'v12.0'
+      });
+    };
+
+    (function (d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/fr_FR/sdk/xfbml.customerchat.js';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
+
+  <!-- Contact Form Utils -->
+  <script>
+    function buildMailtoUrl(event) {
+      event.preventDefault(); // Prevent form submission
+
+      var emailInputFirstName = document.getElementById('InputFirstName').value;
+      var emailInputLastName = document.getElementById('InputLastName').value;
+      var emailInputEmail = document.getElementById('InputEmail').value;
+      var emailInputPhone = document.getElementById('InputPhone').value;
+      var emailInputSubject = document.getElementById('InputSubject').value;
+      var emailInputMessage = document.getElementById('InputMessage').value;
+
+      var emailContent = `${emailInputMessage} \n\nFull Name : ${emailInputFirstName} ${emailInputLastName}\nPhone Number : ${emailInputPhone}\nEmail : ${emailInputEmail}`;
+
+      var subject = encodeURIComponent(emailInputSubject);
+      var body = encodeURIComponent(emailContent);
+
+      var mailtoLink = 'mailto:konka.datanalytics@gmail.com' + '?subject=' + subject + '&body=' + body;
+
+      window.location.href = mailtoLink;
+    }
+  </script>
+
+  <!-- Google Ads -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2980760029476176"
+    crossorigin="anonymous"></script>
+
+
+  <!-- FontAwesome CSS - loading as last, so it doesn't block rendering-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+</body>
+</html>

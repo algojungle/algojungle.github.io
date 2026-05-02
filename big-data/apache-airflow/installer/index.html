@@ -1,0 +1,2051 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+
+  <!-- Meta tags -->
+  
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <!-- Page description -->
+    
+      <meta name="description" content="Lorsqu'il s'agit d'orchestrer des flux de travail data de plus en plus complexes avec Python, Apache Airflow est la solution qu'il vous faut. Il permet de créer des interfaces web pour les modèles de machine learning." />
+    
+
+    <!-- Page author -->
+    
+      <meta name="author" content="Joseph Konka" />
+    
+
+    <!-- Canonical -->
+    
+      <link rel="canonical" href="https://josephkonkathedataguy.com/learning/big-data/apache-airflow/installer/" />
+    
+
+    <!-- Previous page -->
+    
+      <link rel="prev" href="../" />
+    
+
+    <!-- Next page -->
+    
+      <link rel="next" href="../interface/" />
+    
+
+    <!-- Favicon -->
+    <link rel="icon" href="https://algojungle.github.io/algojungle-assets/assets/favicon.png" />
+
+    <!-- Generator banner -->
+    <meta name="generator" content="mkdocs-1.6.1, $md-name$-$md-version$" />
+  
+
+  <title>
+    Installer Airflow | Algo Jungle
+  </title>
+
+  <!-- Google Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,800&display=swap">
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+  <!-- Theme CSS -->
+  <link rel="stylesheet" href="https://joekakone.github.io/static/css/style.blue.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../../../assets/stylesheets/custom.css">
+  
+  <style>
+    body {
+      font-family: 'Work Sans', sans-serif;
+      background-color: #fcfcfc;
+    }
+    /* Style par défaut pour le contenu Markdown */
+    .markdown-content img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+  </style>
+  
+</head>
+
+<body>
+
+  <!-- navbar-->
+<header class="header">
+  <nav class="navbar navbar-light navbar-expand-lg fixed-top" id="navbar">
+    <div class="container"><a class="navbar-brand" href="/learning"><img
+          src="https://algojungle.github.io/algojungle-assets/assets/favicon.png" alt="" height="36.14"></a>
+      <button class="navbar-toggler navbar-toggler-end" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation"><i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        
+  <ul class="navbar-nav ms-auto">
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    <li class="nav-item">
+      
+      <a href="../../.." class="nav-link link-scroll">
+        
+  
+
+  <!-- Navigation link icon -->
+  
+    
+  
+
+  <!-- Navigation link title -->
+  Accueil
+
+      </a>
+      
+    </li>
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../../../informatique/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  Informatique
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../../../algorithmique/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  Algorithmique
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../../../programmation/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  Programmation
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../../../python/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  Python
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../../../analytics/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  Analytics
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../../../analytics/sql/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  SQL
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../../../analytics/powerbi/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  Power BI
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+    
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../../" class="nav-link link-scroll active">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  Big Data
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../../../machine-learning/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  Machine Learning
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../../../machine-learning/tensorflow/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  TensorFlow
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../../../mlops/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  MLOps
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../../../blog/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  Blog
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+  </ul>
+
+      </div>
+
+    </div>
+  </nav>
+</header>
+
+  
+
+  <!-- Bloc principal : Sera remplacé par home.html pour la page d'accueil -->
+  
+<div class="algo-jungle-article">
+
+    <!-- Header de l'Article -->
+    
+    <section class="article-header bg-light border-bottom">
+        <div class="container py-5 text-center">
+            
+            <!-- Titre avec marge haute pour le descendre -->
+            <div class="pt-5 mt-5">
+                
+                    <h1 class="text-uppercase fw-bold mb-4 display-5" style="color: #333;">Installer Apache Airflow avec Docker</h1>
+                
+            </div>
+
+            <!-- Infos Auteur -->
+            
+
+            <!-- Tags -->
+            
+
+            <!-- Description / Overview centrée et justifiée -->
+            
+            <div class="row justify-content-center mt-5">
+                <div class="col-lg-10">
+                    <p class="lead text-muted cust-justify mb-0" style="line-height: 1.6;">
+                        Lorsqu'il s'agit d'orchestrer des flux de travail data de plus en plus complexes avec Python, Apache Airflow est la solution qu'il vous faut. Il permet de créer des interfaces web pour les modèles de machine learning.
+                    </p>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+    
+
+    <!-- Structure Corps de page (Sidebar + Contenu) -->
+    <div class="container py-5">
+        <div class="row gx-lg-5">
+            
+            <!-- Sidebar Navigation (Sous-sections du module actif) -->
+            <!-- <aside class="col-lg-3 d-none d-lg-block">
+                <div class="sticky-sidebar-container">
+                </div>
+            </aside> -->
+            <!-- Sidebar Navigation (droite) -->
+
+<aside class="col-lg-3 d-none d-lg-block">
+    <div class="sticky-sidebar-container">
+        <div class="p-4 bg-white border rounded shadow-sm mb-4">
+
+            
+
+            <!-- Initialisation navigation -->
+            <div class="sidebar-scroll-wrapper">
+                <div class="nav flex-column sidebar-nav" id="sidebarAccordion">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../"
+                style="padding-left: 0px; font-size: 1.0rem;">
+                Les fondamentaux du Big Data
+            </a>
+            
+            
+            
+                    
+                    
+            
+            
+
+            
+            <!-- SECTION AVEC ENFANTS -->
+            <div class="nav-item mb-1">
+                <div class="d-flex justify-content-between align-items-center">
+
+                    
+                    
+                    <a class="nav-link flex-grow-1 text-dark"
+                        href="../../analysis-services/" style="padding-left: 0px;">
+                        Analysis Services
+                    </a>
+
+                    <button
+                        class="btn btn-link p-2 text-decoration-none shadow-none collapse-trigger collapsed"
+                        data-bs-toggle="collapse" data-bs-target="#collapse-83"
+                        aria-expanded="false">
+                        <i class="fas fa-chevron-right chevron-icon"></i>
+                    </button>
+                </div>
+
+                <div class="collapse " id="collapse-83">
+                    <nav class="nav flex-column ms-2 mt-1">
+
+                        
+                        
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../analysis-services/installer/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Installer Analysis Services
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../analysis-services/preparer-les-donnees/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Préparer les données
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../analysis-services/creer-un-cube-tabulaire/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Créer un cube tabulaire
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../analysis-services/creer-un-cube-multi-dimensionnel/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Créer un cube multi-dimensionnel
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../analysis-services/actualiser-un-cube/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Actualiser un cube
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../analysis-services/exploiter-un-cube-dans-excel/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Requêter un cube dans Excel
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../analysis-services/ressources/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Ressources
+            </a>
+            
+            
+            
+                        
+                        
+
+                    </nav>
+                </div>
+            </div>
+
+            
+            
+            
+                    
+                    
+            
+            
+
+            
+            <!-- SECTION AVEC ENFANTS -->
+            <div class="nav-item mb-1">
+                <div class="d-flex justify-content-between align-items-center">
+
+                    
+                    
+                    <a class="nav-link flex-grow-1 text-dark"
+                        href="../../mongo-db/" style="padding-left: 0px;">
+                        MongoDB
+                    </a>
+
+                    <button
+                        class="btn btn-link p-2 text-decoration-none shadow-none collapse-trigger collapsed"
+                        data-bs-toggle="collapse" data-bs-target="#collapse-4838"
+                        aria-expanded="false">
+                        <i class="fas fa-chevron-right chevron-icon"></i>
+                    </button>
+                </div>
+
+                <div class="collapse " id="collapse-4838">
+                    <nav class="nav flex-column ms-2 mt-1">
+
+                        
+                        
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../mongo-db/installer/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Installer Mongo DB
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../mongo-db/interagir-avec-mongo-db/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Interagir avec Mongo DB
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../mongo-db/applications/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Applications
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../mongo-db/ressources/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Ressources
+            </a>
+            
+            
+            
+                        
+                        
+
+                    </nav>
+                </div>
+            </div>
+
+            
+            
+            
+                    
+                    
+            
+            
+
+            
+            <!-- SECTION AVEC ENFANTS -->
+            <div class="nav-item mb-1">
+                <div class="d-flex justify-content-between align-items-center">
+
+                    
+                    
+                    <a class="nav-link flex-grow-1 text-dark"
+                        href="../../neo4j/" style="padding-left: 0px;">
+                        Neo4j
+                    </a>
+
+                    <button
+                        class="btn btn-link p-2 text-decoration-none shadow-none collapse-trigger collapsed"
+                        data-bs-toggle="collapse" data-bs-target="#collapse-1748"
+                        aria-expanded="false">
+                        <i class="fas fa-chevron-right chevron-icon"></i>
+                    </button>
+                </div>
+
+                <div class="collapse " id="collapse-1748">
+                    <nav class="nav flex-column ms-2 mt-1">
+
+                        
+                        
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../neo4j/installer/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Installer Neo4j
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../neo4j/creer-des-noeuds/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Créer des nœuds
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../neo4j/applications/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Applications
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../neo4j/ressources/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Ressources
+            </a>
+            
+            
+            
+                        
+                        
+
+                    </nav>
+                </div>
+            </div>
+
+            
+            
+            
+                    
+                    
+            
+            
+
+            
+            <!-- SECTION AVEC ENFANTS -->
+            <div class="nav-item mb-1">
+                <div class="d-flex justify-content-between align-items-center">
+
+                    
+                    
+                    <a class="nav-link flex-grow-1 text-dark"
+                        href="../../apache-spark/" style="padding-left: 0px;">
+                        Apache Spark
+                    </a>
+
+                    <button
+                        class="btn btn-link p-2 text-decoration-none shadow-none collapse-trigger collapsed"
+                        data-bs-toggle="collapse" data-bs-target="#collapse-2832"
+                        aria-expanded="false">
+                        <i class="fas fa-chevron-right chevron-icon"></i>
+                    </button>
+                </div>
+
+                <div class="collapse " id="collapse-2832">
+                    <nav class="nav flex-column ms-2 mt-1">
+
+                        
+                        
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../apache-spark/installer/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Installer PySpark
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../apache-spark/01-get-started/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Démarrer avec PySpark
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../apache-spark/02-import-export/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Import & Export
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../apache-spark/03-work-with-postgres/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Base de données
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../apache-spark/applications/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Applications
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../apache-spark/ressources/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Ressources
+            </a>
+            
+            
+            
+                        
+                        
+
+                    </nav>
+                </div>
+            </div>
+
+            
+            
+            
+                    
+                    
+            
+            
+
+            
+            <!-- SECTION AVEC ENFANTS -->
+            <div class="nav-item mb-1">
+                <div class="d-flex justify-content-between align-items-center">
+
+                    
+                    
+                    <a class="nav-link flex-grow-1 active-parent fw-bold"
+                        href="../" style="padding-left: 0px;">
+                        Apache Airflow
+                    </a>
+
+                    <button
+                        class="btn btn-link p-2 text-decoration-none shadow-none collapse-trigger "
+                        data-bs-toggle="collapse" data-bs-target="#collapse-1426"
+                        aria-expanded="true">
+                        <i class="fas fa-chevron-right chevron-icon"></i>
+                    </button>
+                </div>
+
+                <div class="collapse show" id="collapse-1426">
+                    <nav class="nav flex-column ms-2 mt-1">
+
+                        
+                        
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 fw-bold text-primary active-child"
+                href="./"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Installer Airflow
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../interface/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Interface Airflow
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../get-started/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Créer un DAG
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../schedule-dags/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Planifier un DAG
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../run-dags/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Exécuter un DAG
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../define-dependencies/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Définir des dépendances
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../airflow-cli-commands/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Commandes Airflow CLI
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../config-mailing/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Configurer l'envoi de mail
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../creer-une-connexion-de-source-de-donnees/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Créer une connexion
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../applications/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Applications
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../ressources/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Ressources
+            </a>
+            
+            
+            
+                        
+                        
+
+                    </nav>
+                </div>
+            </div>
+
+            
+            
+            
+                    
+                    
+            
+            
+
+            
+            <!-- SECTION AVEC ENFANTS -->
+            <div class="nav-item mb-1">
+                <div class="d-flex justify-content-between align-items-center">
+
+                    
+                    
+                    <a class="nav-link flex-grow-1 text-dark"
+                        href="../../talend/" style="padding-left: 0px;">
+                        Talend (Data Integration)
+                    </a>
+
+                    <button
+                        class="btn btn-link p-2 text-decoration-none shadow-none collapse-trigger collapsed"
+                        data-bs-toggle="collapse" data-bs-target="#collapse-8217"
+                        aria-expanded="false">
+                        <i class="fas fa-chevron-right chevron-icon"></i>
+                    </button>
+                </div>
+
+                <div class="collapse " id="collapse-8217">
+                    <nav class="nav flex-column ms-2 mt-1">
+
+                        
+                        
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../talend/installer/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Installer Talend
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../talend/decouvrir-interface/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Découvrir l'interface
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../talend/creer-une-connexion-de-base-de-donnees/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Créer une connexion de BD
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../talend/creer-un-job/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Créer un job
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../talend/afficher-des-messages/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Afficher des messages
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../talend/fonctions-predefinies/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Fonctions prédéfinies
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../talend/manipuler-les-dates/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Manipuler les dates
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../talend/exporter-un-job/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Exporter un job
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../talend/applications/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Applications
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../talend/ressources/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Ressources
+            </a>
+            
+            
+            
+                        
+                        
+
+                    </nav>
+                </div>
+            </div>
+
+            
+            
+            
+                    
+                    
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../ressources/"
+                style="padding-left: 0px; font-size: 1.0rem;">
+                Ressources
+            </a>
+            
+            
+            
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Bloc Abonnement -->
+        <div class="p-4 bg-primary text-white rounded shadow text-center">
+            <p class="small mb-3">Abonnez-vous à la newsletter !</p>
+            <a href="#tally-open=mJzBvX&tally-layout=modal&tally-emoji-text=👋&tally-emoji-animation=wave"
+                class="btn btn-outline-light btn-sm text-uppercase w-100">
+                S'abonner
+            </a>
+        </div>
+
+    </div>
+</aside>
+
+            <!-- Contenu Principal -->
+            <main class="col-lg-9 col-md-12">
+                <article class="markdown-content bg-white p-4 p-md-5 border rounded shadow-sm">                        
+                    
+
+                    
+                    <div class="featured-image mb-5">
+                        <img src="https://algojungle.github.io/algojungle-assets/images/07-big-data/apache-airflow/covers/install-apache-airflow.png" class="img-fluid rounded shadow-sm w-100" alt="Installer Airflow">
+                    </div>
+                    
+
+                    <section class="" id="blog">
+
+                        
+
+                        <p>Docker est le meilleur moyen de déployer Apache Airflow. Dans ce tutoriel je vous montre comment procéder.</p>
+<h2 id="telecharger-le-fichier-docker-composeyaml">Télécharger le fichier docker-compose.yaml<a class="headerlink" href="#telecharger-le-fichier-docker-composeyaml" title="Permanent link">#</a></h2>
+<p>Veuillez créer un dossier dédié à Apache Airflow
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>mkdir<span class="w"> </span>apache-airflow
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">cd</span><span class="w"> </span>apache-airflow
+</code></pre></div></p>
+<p>Télechargez le fichier <code>docker-compose.yaml</code> indiqué dans la documentation officielle.<br>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>wgets<span class="w"> </span>https://airflow.apache.org/docs/apache-airflow/2.6.1/docker-compose.yaml
+</code></pre></div>
+Le fichier <code>docker-compose.yaml</code> est téléchargé sur votre machine dossier courant.</p>
+<p>Créez les répertoires suivants
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>mkdir<span class="w"> </span>-p<span class="w"> </span>./dags<span class="w"> </span>./logs<span class="w"> </span>./plugins<span class="w"> </span>./config
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;AIRFLOW_UID=</span><span class="k">$(</span>id<span class="w"> </span>-u<span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>.env
+</code></pre></div></p>
+<h2 id="definir-airflow_home">Définir AIRFLOW_HOME<a class="headerlink" href="#definir-airflow_home" title="Permanent link">#</a></h2>
+<p>La variable <code>AIRFLOW_HOME</code> indique le chemin vers le dossier d'Apache Airflow
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">AIRFLOW_HOME</span><span class="o">=</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;export AIRFLOW_HOME=$(pwd)&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
+</code></pre></div></p>
+<h2 id="initialiser-la-base-de-donnees">Initialiser la base de données<a class="headerlink" href="#initialiser-la-base-de-donnees" title="Permanent link">#</a></h2>
+<p>Dans un premier, il faut initialiser la base de données qui va stocker les données des utilisateurs et des flux qui seront créés.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>airflow-init<span class="w"> </span>-d
+</code></pre></div>
+Un utilisateur <code>airflow</code> est également créé avec le mot de passe <code>airflow</code> et le rôle <strong>Admin</strong>.</p>
+<h2 id="demarrer-les-services-de-airflow">Démarrer les services de Airflow<a class="headerlink" href="#demarrer-les-services-de-airflow" title="Permanent link">#</a></h2>
+<p>Maintenant, il faut lancer les différents services d'Apache Airflow à savoir <code>airflow-scheduler</code>, <code>airflow-apiserver</code>, <code>airflow-worker</code>, <code>airflow-dag-processor</code> et <code>airflow-triggerer</code>.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>-d
+</code></pre></div></p>
+<p>Une fois la commande exécutée, vous pouvez vérifier l'état des conteneurs déployés avec la commande suivante
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>docker<span class="w"> </span>ps
+</code></pre></div>
+<div class="highlight"><span class="filename">Output</span><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>CONTAINER ID   IMAGE                                  COMMAND                  CREATED         STATUS                PORTS                                           NAMES
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>dffe55153e76   apache-airflow-airflow-worker          &quot;/usr/bin/dumb-init …&quot;   12 days ago     Up 9 days (healthy)   8080/tcp                                        apache-airflow-airflow-worker-1
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>c2f46e2e2f60   apache-airflow-airflow-apiserver       &quot;/usr/bin/dumb-init …&quot;   12 days ago     Up 9 days (healthy)   0.0.0.0:8080-&gt;8080/tcp, :::8080-&gt;8080/tcp       apache-airflow-airflow-apiserver-1
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>6212b8a06ed0   apache-airflow-airflow-triggerer       &quot;/usr/bin/dumb-init …&quot;   12 days ago     Up 9 days (healthy)   8080/tcp                                        apache-airflow-airflow-triggerer-1
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>a2ea46509997   apache-airflow-airflow-dag-processor   &quot;/usr/bin/dumb-init …&quot;   12 days ago     Up 9 days (healthy)   8080/tcp                                        apache-airflow-airflow-dag-processor-1
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>62c6c0029c6d   apache-airflow-airflow-scheduler       &quot;/usr/bin/dumb-init …&quot;   12 days ago     Up 9 days (healthy)   8080/tcp                                        apache-airflow-airflow-scheduler-1
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>c06f21ba45b7   postgres:13                            &quot;docker-entrypoint.s…&quot;   12 days ago     Up 9 days (healthy)   5432/tcp                                        apache-airflow-postgres-1
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>3cccfbc13578   redis:7.2-bookworm                     &quot;docker-entrypoint.s…&quot;   12 days ago     Up 9 days (healthy)   6379/tcp                                        apache-airflow-redis-1
+</code></pre></div></p>
+<p>Docs Apache Airflow : <a href="https://airflow.apache.org/docs/apache-airflow/stable/howto/docker-compose/index.html">Running Airflow in Docker</a></p>
+<h2 id="connexion">Connexion<a class="headerlink" href="#connexion" title="Permanent link">#</a></h2>
+<p>Rendez-vous à l'adresse <a href="http://localhost:8080/">http://localhost:8080/</a>. Vous serez redirigé vers la page de connexion<br>
+<img alt="" src="https://algojungle.github.io/algojungle-assets/images/07-big-data/apache-airflow/apache-airflow-login-2.png" /></p>
+<p>Connectez-vous avec l'utilisateur <code>airflow</code> avec le mot de passe <code>airflow</code><br>
+<img alt="" src="https://algojungle.github.io/algojungle-assets/images/07-big-data/apache-airflow/apache-airflow-home-page.png" /></p>
+<!-- Modifier le mot de passe -->
+
+<!-- 
+## Install Ubuntu
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>update
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>upgrade
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>python3-pip
+</code></pre></div>
+
+## Install pip
+
+
+## Install
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>mkdir<span class="w"> </span>airflow
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="nb">cd</span><span class="w"> </span>airflow/
+</code></pre></div>
+
+## Activate Virtual Environment
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>python3.10-venv
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>env
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="nb">source</span><span class="w"> </span>env/bin/activate
+</code></pre></div>
+
+## Packages
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>pip<span class="w"> </span>install<span class="w"> </span>snscrape<span class="w"> </span>pandas
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>pip<span class="w"> </span>install<span class="w"> </span>psycopg2-binary
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>pip<span class="w"> </span>install<span class="w"> </span>apache-airflow-providers-postgres
+</code></pre></div>
+
+## Create a user account
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>airflow<span class="w"> </span>users<span class="w"> </span>create<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">    </span>--username<span class="w"> </span>admin<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">    </span>--firstname<span class="w"> </span>Joseph<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">    </span>--lastname<span class="w"> </span>Konka<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">    </span>--role<span class="w"> </span>Admin<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w">    </span>--email<span class="w"> </span>joseph.kakone@gmail.com<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="w">    </span>--password<span class="w"> </span>admin
+</code></pre></div>
+
+## Launch scheduler
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>screen<span class="w"> </span>-S<span class="w"> </span>scheduler
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>airflow<span class="w"> </span>scheduler
+</code></pre></div>
+
+## Launch server
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>sudo<span class="w"> </span>screen<span class="w"> </span>-S<span class="w"> </span>server
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>airflow<span class="w"> </span>webserver
+</code></pre></div>
+-->
+
+<h2 id="arreter-apache-airflow">Arrêter Apache Airflow<a class="headerlink" href="#arreter-apache-airflow" title="Permanent link">#</a></h2>
+<p>Pour arrêter Apache Airflow, depuis le dossier d'Apache Airflow, lancez la commande suivante<br>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>docker<span class="w"> </span>compose<span class="w"> </span>down
+</code></pre></div>
+<div class="highlight"><span class="filename">Output</span><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>PS C:\Users\Administrateur\Documents\dev\apache-airflow&gt; docker compose down
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>time=&quot;2023-06-17T23:25:55Z&quot; level=warning msg=&quot;The \&quot;AIRFLOW_UID\&quot; variable is not set. Defaulting to a blank string.&quot;
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>time=&quot;2023-06-17T23:25:55Z&quot; level=warning msg=&quot;The \&quot;AIRFLOW_UID\&quot; variable is not set. Defaulting to a blank string.&quot;
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>[+] Running 8/8
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a> - Container apache-airflow-airflow-worker-1     Removed                                                          11.3s
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a> - Container apache-airflow-airflow-webserver-1  Removed                                                          12.0s
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a> - Container apache-airflow-airflow-triggerer-1  Removed                                                           5.5s
+<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a> - Container apache-airflow-airflow-scheduler-1  Removed                                                           9.1s
+<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a> - Container apache-airflow-airflow-init-1       Removed                                                           0.7s
+<a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a> - Container apache-airflow-postgres-1           Removed                                                           0.8s
+<a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a> - Container apache-airflow-redis-1              Removed                                                           0.6s
+<a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a> - Network apache-airflow_default                Removed                                                           0.7s
+</code></pre></div>
+NB : Docker arrête simplement les contenuers, vos données ne seront pas perdues. Vous pourrez redémarrer à tout moment.</p>
+<p>Il est souvent nécessaire d'installer des packages additionnels, on peut se connecter au conteneur et </p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w">  </span>apache-airflow-airflow-scheduler-1<span class="w"> </span>/bin/bash
+</code></pre></div>
+Une fois à 'linstérieur du conteneur, vous pouvez installer les packages avec pip
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>pip<span class="w"> </span>install<span class="w"> </span>pandas<span class="w"> </span>db-analytics-tools
+</code></pre></div>
+Cela marche bien mais ce n'est pas la bonne manière de faire. L'idéal c'est reconstruire l'image Airflow. Pour cela, créez un fichier <code>Dockerfile</code> dans le dossier que <code>docker-compose.yml</code> avec le contenu suivant
+<div class="highlight"><span class="filename">Dockerfile</span><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="k">FROM</span><span class="w"> </span><span class="s">apache/airflow:2.6.1</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="k">USER</span><span class="w"> </span><span class="s">airflow</span>
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="k">COPY</span><span class="w"> </span>requirements.txt<span class="w"> </span>/requirements.txt
+<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a>
+<a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="k">RUN</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--no-cache-dir<span class="w"> </span>-r<span class="w"> </span>/requirements.txt
+</code></pre></div></p>
+<div class="highlight"><span class="filename">deploy.sh</span><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="ch">#!usr/bin/bash</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>docker<span class="w"> </span>compose<span class="w"> </span>down
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>
+<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>docker<span class="w"> </span>compose<span class="w"> </span>build
+<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a>
+<a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>airflow-init<span class="w"> </span>-d
+<a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a>
+<a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>-d
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>bash<span class="w"> </span>deploy
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Airflow Component</th>
+<th>Container</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Web Server</td>
+<td><code>apache-airflow-airflow-webserver</code></td>
+</tr>
+<tr>
+<td>Scheduler</td>
+<td><code>apache-airflow-airflow-scheduler</code></td>
+</tr>
+<tr>
+<td>Executor</td>
+<td><code>apache-airflow-airflow-worker</code>, <code>apache-airflow-airflow-triggerer</code></td>
+</tr>
+<tr>
+<td>Queue</td>
+<td><code>apache-airflow-redis</code></td>
+</tr>
+<tr>
+<td>Workers</td>
+<td><code>apache-airflow-airflow-worker</code></td>
+</tr>
+<tr>
+<td>Metadatabase</td>
+<td><code>apache-airflow-postgres</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="configurer-airflow">Configurer Airflow<a class="headerlink" href="#configurer-airflow" title="Permanent link">#</a></h2>
+<p>Airflow peut être personnalisé via des variables d’environnement. Voici les paramètres essentiels à configurer dans un contexte de production ou de développement contrôlé.</p>
+<h3 id="descativer-les-exemples-airflow">Déscativer les exemples Airflow<a class="headerlink" href="#descativer-les-exemples-airflow" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>AIRFLOW__CORE__LOAD_EXAMPLES = &#39;false&#39;
+</code></pre></div>
+<h3 id="descativer-les-exemples-airflow_1">Déscativer les exemples Airflow<a class="headerlink" href="#descativer-les-exemples-airflow_1" title="Permanent link">#</a></h3>
+<p>Par défaut Airflow charge des jobs d'exemple ainsi que des datasets, vous pouvez activer ou désactiver via le paramètre suivant :
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION = &#39;true&#39;
+</code></pre></div></p>
+<h3 id="activer-le-test-des-connexions">Activer le test des connexions 🧪<a class="headerlink" href="#activer-le-test-des-connexions" title="Permanent link">#</a></h3>
+<p>Permet de tester la validité des connexions dans l'interface utilisateur :
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>AIRFLOW__CORE__TEST_CONNECTION = &#39;Enabled&#39;
+</code></pre></div></p>
+<h3 id="configurer-lenvoi-demails-smtp">Configurer l’envoi d’emails (SMTP) ✉️<a class="headerlink" href="#configurer-lenvoi-demails-smtp" title="Permanent link">#</a></h3>
+<p>Utilisé pour les notifications (échecs, alertes, etc.). Exemple avec un compte Gmail :
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>AIRFLOW__SMTP__SMTP_HOST=smtp.gmail.com
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>AIRFLOW__SMTP__SMTP_PORT=587
+<a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a>AIRFLOW__SMTP__SMTP_STARTTLS=True
+<a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a>AIRFLOW__SMTP__SMTP_SSL=False
+<a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a>AIRFLOW__SMTP__SMTP_USER=konka.dataanalytics@gmail.com
+<a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a>AIRFLOW__SMTP__SMTP_PASSWORD=xxx  # Utiliser un mot de passe d&#39;application
+<a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a>AIRFLOW__SMTP__SMTP_MAIL_FROM=Konka Analytics &lt;konka.dataanalytics@gmail.com&gt;
+</code></pre></div></p>
+<blockquote>
+<p>⚠️ Attention : Pour utiliser Gmail, il faut activer l’accès SMTP ou générer un mot de passe d’application si la double authentification est activée.</p>
+</blockquote>
+<hr />
+<p><em>Bravo, tout est prêt maintenant. Dans la prochaine section, vous découvrirez les composants d'Apache Airflow.</em></p>
+
+                    </section>
+
+                </article>
+
+                <!-- Navigation Précédent / Suivant -->
+                <nav class="row mt-5 pt-4 border-top">
+                    <div class="col-6">
+                        
+                        <a href="../" class="text-decoration-none">
+                            <span class="d-block small text-muted text-uppercase mb-1"><i class="fas fa-arrow-left me-1"></i> Précédent</span>
+                            <span class="fw-bold text-primary">Implémenter un ETL avec Apache Airflow</span>
+                        </a>
+                        
+                    </div>
+                    <div class="col-6 text-end">
+                        
+                        <a href="../interface/" class="text-decoration-none">
+                            <span class="d-block small text-muted text-uppercase mb-1">Suivant <i class="fas fa-arrow-right ms-1"></i></span>
+                            <span class="fw-bold text-primary">Interface Airflow</span>
+                        </a>
+                        
+                    </div>
+                </nav>
+
+                <section class="mt-5 border-top pt-4">
+                    
+                    <div class="share-section mb-5">
+                        <h2 class="h4 mb-3">Partagez sur les réseaux sociaux</h2>
+                        <!-- ShareThis BEGIN -->
+                        <div class="sharethis-inline-share-buttons"></div>
+                        <!-- ShareThis END -->
+                    </div>
+
+                    
+                    
+                    <div class="comments-section">
+                        <h2 id="__comments" class="h4 mb-4">Commentaires</h2>
+                        
+                        
+                        <script src="https://giscus.app/client.js"
+                                data-repo="joekakone/Departement-De-Maths"
+                                data-repo-id="MDEwOlJlcG9zaXRvcnkzMzY4MjEwNTY="
+                                data-category="General"
+                                data-category-id="DIC_kwDOFBN7QM4CORj9"
+                                data-mapping="pathname"
+                                data-reactions-enabled="1"
+                                data-emit-metadata="0"
+                                data-input-position="bottom"
+                                
+                                data-theme="preferred_color_scheme"
+                                data-lang="fr"
+                                crossorigin="anonymous"
+                                async>
+                        </script>
+                    </div>
+                    
+                </section>
+            </main>
+
+        </div>
+    </div>
+
+</div>
+
+
+
+
+  <!-- Tags -->
+
+<!-- CTA FINAL -->
+<section class="py-5 bg-primary text-white text-center">
+<div class="container py-4">
+    <h3 class="text-uppercase mb-4">Inscrivez-vous à une formation complète</h3>
+    <a href="/#formations" class="btn btn-outline-light btn-lg text-uppercase px-5">Voir le catalogue</a>
+</div>
+</section>
+
+<!-- Footer-->
+<footer class="pt-0">
+    <!-- Bande de Navigation Précédent / Suivant (Style Bootstrap Dark) -->
+    
+    
+    <div class="container text-center py-5">
+        <div class="row px-4">
+            <div class="col-lg-7 mx-auto">
+                <h2 class="text-uppercase mb-0">Joseph Konka </h2>
+                <h6 class="text-primary text-uppercase mb-0 letter-spacing-3">Senior Data Analyst | Data Scientist</h6>
+                <p class="text-muted my-4">Project Management - Data Engineering - Data Analytics - Python Programming</p>
+                <ul class="list-inline mb-0">
+                    <li class="list-inline-item"><a class="social-link" href="https://wa.me/+22891518923" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
+                    <li class="list-inline-item"><a class="social-link" href="https://github.com/joekakone" target="_blank"><i class="fab fa-github"></i></a></li>
+                    <li class="list-inline-item"><a class="social-link" href="https://www.linkedin.com/in/joseph-koami-konka" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+                    <li class="list-inline-item"><a class="social-link" href="https://web.facebook.com/joekakonepage" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                    <li class="list-inline-item"><a class="social-link" href="https://twitter.com/joekakone" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                    <li class="list-inline-item"><a class="social-link" href="https://www.youtube.com/@algojungle" target="_blank"><i class="fab fa-youtube"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="copyrights px-4">
+        <div class="container py-4 border-top text-center">
+        <p class="mb-0 text-muted py-2">&copy; All rights reserved. Template designed by <a
+            href="https://bootstrapious.com/p/bootstrap-resume">Bootstrapious</a>. </p>
+        </div>
+    </div>
+</footer>
+  
+
+  <!-- JS -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script> -->
+  <script src="../../../assets/javascripts/custom.js"></script>
+
+  
+  <!-- JavaScript files-->
+  <script src="https://joekakone.github.io/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="https://joekakone.github.io/static/js/front.js"></script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YPL3847T5N"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-YPL3847T5N');
+  </script>
+
+  <script type='text/javascript'>
+    var divElement = document.getElementById('viz1677099741796'); var vizElement = divElement.getElementsByTagName('object')[0]; if (divElement.offsetWidth > 800) { vizElement.style.width = '1100px'; vizElement.style.height = '627px'; } else if (divElement.offsetWidth > 500) { vizElement.style.width = '1100px'; vizElement.style.height = '627px'; } else { vizElement.style.width = '100%'; vizElement.style.height = '1327px'; } var scriptElement = document.createElement('script'); scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js'; vizElement.parentNode.insertBefore(scriptElement, vizElement);                
+  </script>
+
+  <!-- Google Ads -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2980760029476176"
+      crossorigin="anonymous"></script>
+
+  <!-- ShareThis -->
+  <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=649bd6c6a6672f0012d186bd&product=sop' async='async'></script>
+
+  <!-- Tally -->
+  <script async src="https://tally.so/widgets/embed.js"></script>
+
+  <!-- Facebook -->
+  <div id="fb-root"></div>
+  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v20.0&appId=564181564271850"></script>
+
+  <!-- Messenger Plugin de discussion Code -->
+  <div id="fb-root"></div>
+
+  <!-- Your Plugin de discussion code -->
+  <div id="fb-customer-chat" class="fb-customerchat">
+  </div>
+
+  <script>
+    var chatbox = document.getElementById('fb-customer-chat');
+    chatbox.setAttribute("page_id", "2130664133866857");
+    chatbox.setAttribute("attribution", "biz_inbox");
+
+    window.fbAsyncInit = function () {
+      FB.init({
+        xfbml: true,
+        version: 'v12.0'
+      });
+    };
+
+    (function (d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/fr_FR/sdk/xfbml.customerchat.js';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
+
+  <!-- Contact Form Utils -->
+  <script>
+    function buildMailtoUrl(event) {
+      event.preventDefault(); // Prevent form submission
+
+      var emailInputFirstName = document.getElementById('InputFirstName').value;
+      var emailInputLastName = document.getElementById('InputLastName').value;
+      var emailInputEmail = document.getElementById('InputEmail').value;
+      var emailInputPhone = document.getElementById('InputPhone').value;
+      var emailInputSubject = document.getElementById('InputSubject').value;
+      var emailInputMessage = document.getElementById('InputMessage').value;
+
+      var emailContent = `${emailInputMessage} \n\nFull Name : ${emailInputFirstName} ${emailInputLastName}\nPhone Number : ${emailInputPhone}\nEmail : ${emailInputEmail}`;
+
+      var subject = encodeURIComponent(emailInputSubject);
+      var body = encodeURIComponent(emailContent);
+
+      var mailtoLink = 'mailto:konka.datanalytics@gmail.com' + '?subject=' + subject + '&body=' + body;
+
+      window.location.href = mailtoLink;
+    }
+  </script>
+
+  <!-- Google Ads -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2980760029476176"
+    crossorigin="anonymous"></script>
+
+
+  <!-- FontAwesome CSS - loading as last, so it doesn't block rendering-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+</body>
+</html>

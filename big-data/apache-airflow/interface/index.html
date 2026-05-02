@@ -1,0 +1,1936 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+
+  <!-- Meta tags -->
+  
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <!-- Page description -->
+    
+      <meta name="description" content="L'interface web Apache Airflow permet de superviser et de gérer les DAGs (Directed Acyclic Graphs) de manière visuelle. Cette interface intuitive facilite la gestion des workflows, leur planification, et la surveillance des tâches. Dans cette section, nous allons explorer les principales sections de l'interface d'Apache Airflow et comment naviguer à travers ses fonctionnalités." />
+    
+
+    <!-- Page author -->
+    
+      <meta name="author" content="Joseph Konka" />
+    
+
+    <!-- Canonical -->
+    
+      <link rel="canonical" href="https://josephkonkathedataguy.com/learning/big-data/apache-airflow/interface/" />
+    
+
+    <!-- Previous page -->
+    
+      <link rel="prev" href="../installer/" />
+    
+
+    <!-- Next page -->
+    
+      <link rel="next" href="../get-started/" />
+    
+
+    <!-- Favicon -->
+    <link rel="icon" href="https://algojungle.github.io/algojungle-assets/assets/favicon.png" />
+
+    <!-- Generator banner -->
+    <meta name="generator" content="mkdocs-1.6.1, $md-name$-$md-version$" />
+  
+
+  <title>
+    Interface Airflow | Algo Jungle
+  </title>
+
+  <!-- Google Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,800&display=swap">
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+  <!-- Theme CSS -->
+  <link rel="stylesheet" href="https://joekakone.github.io/static/css/style.blue.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../../../assets/stylesheets/custom.css">
+  
+  <style>
+    body {
+      font-family: 'Work Sans', sans-serif;
+      background-color: #fcfcfc;
+    }
+    /* Style par défaut pour le contenu Markdown */
+    .markdown-content img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+  </style>
+  
+</head>
+
+<body>
+
+  <!-- navbar-->
+<header class="header">
+  <nav class="navbar navbar-light navbar-expand-lg fixed-top" id="navbar">
+    <div class="container"><a class="navbar-brand" href="/learning"><img
+          src="https://algojungle.github.io/algojungle-assets/assets/favicon.png" alt="" height="36.14"></a>
+      <button class="navbar-toggler navbar-toggler-end" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation"><i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        
+  <ul class="navbar-nav ms-auto">
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    <li class="nav-item">
+      
+      <a href="../../.." class="nav-link link-scroll">
+        
+  
+
+  <!-- Navigation link icon -->
+  
+    
+  
+
+  <!-- Navigation link title -->
+  Accueil
+
+      </a>
+      
+    </li>
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../../../informatique/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  Informatique
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../../../algorithmique/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  Algorithmique
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../../../programmation/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  Programmation
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../../../python/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  Python
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../../../analytics/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  Analytics
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../../../analytics/sql/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  SQL
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../../../analytics/powerbi/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  Power BI
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+    
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../../" class="nav-link link-scroll active">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  Big Data
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../../../machine-learning/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  Machine Learning
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../../../machine-learning/tensorflow/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  TensorFlow
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../../../mlops/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  MLOps
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../../../blog/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  Blog
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+  </ul>
+
+      </div>
+
+    </div>
+  </nav>
+</header>
+
+  
+
+  <!-- Bloc principal : Sera remplacé par home.html pour la page d'accueil -->
+  
+<div class="algo-jungle-article">
+
+    <!-- Header de l'Article -->
+    
+    <section class="article-header bg-light border-bottom">
+        <div class="container py-5 text-center">
+            
+            <!-- Titre avec marge haute pour le descendre -->
+            <div class="pt-5 mt-5">
+                
+                    <h1 class="text-uppercase fw-bold mb-4 display-5" style="color: #333;">Prise en main de l'interface d'Apache Airflow</h1>
+                
+            </div>
+
+            <!-- Infos Auteur -->
+            
+
+            <!-- Tags -->
+            
+
+            <!-- Description / Overview centrée et justifiée -->
+            
+            <div class="row justify-content-center mt-5">
+                <div class="col-lg-10">
+                    <p class="lead text-muted cust-justify mb-0" style="line-height: 1.6;">
+                        L'interface web Apache Airflow permet de superviser et de gérer les DAGs (Directed Acyclic Graphs) de manière visuelle. Cette interface intuitive facilite la gestion des workflows, leur planification, et la surveillance des tâches. Dans cette section, nous allons explorer les principales sections de l'interface d'Apache Airflow et comment naviguer à travers ses fonctionnalités.
+                    </p>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+    
+
+    <!-- Structure Corps de page (Sidebar + Contenu) -->
+    <div class="container py-5">
+        <div class="row gx-lg-5">
+            
+            <!-- Sidebar Navigation (Sous-sections du module actif) -->
+            <!-- <aside class="col-lg-3 d-none d-lg-block">
+                <div class="sticky-sidebar-container">
+                </div>
+            </aside> -->
+            <!-- Sidebar Navigation (droite) -->
+
+<aside class="col-lg-3 d-none d-lg-block">
+    <div class="sticky-sidebar-container">
+        <div class="p-4 bg-white border rounded shadow-sm mb-4">
+
+            
+
+            <!-- Initialisation navigation -->
+            <div class="sidebar-scroll-wrapper">
+                <div class="nav flex-column sidebar-nav" id="sidebarAccordion">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../"
+                style="padding-left: 0px; font-size: 1.0rem;">
+                Les fondamentaux du Big Data
+            </a>
+            
+            
+            
+                    
+                    
+            
+            
+
+            
+            <!-- SECTION AVEC ENFANTS -->
+            <div class="nav-item mb-1">
+                <div class="d-flex justify-content-between align-items-center">
+
+                    
+                    
+                    <a class="nav-link flex-grow-1 text-dark"
+                        href="../../analysis-services/" style="padding-left: 0px;">
+                        Analysis Services
+                    </a>
+
+                    <button
+                        class="btn btn-link p-2 text-decoration-none shadow-none collapse-trigger collapsed"
+                        data-bs-toggle="collapse" data-bs-target="#collapse-8817"
+                        aria-expanded="false">
+                        <i class="fas fa-chevron-right chevron-icon"></i>
+                    </button>
+                </div>
+
+                <div class="collapse " id="collapse-8817">
+                    <nav class="nav flex-column ms-2 mt-1">
+
+                        
+                        
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../analysis-services/installer/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Installer Analysis Services
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../analysis-services/preparer-les-donnees/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Préparer les données
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../analysis-services/creer-un-cube-tabulaire/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Créer un cube tabulaire
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../analysis-services/creer-un-cube-multi-dimensionnel/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Créer un cube multi-dimensionnel
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../analysis-services/actualiser-un-cube/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Actualiser un cube
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../analysis-services/exploiter-un-cube-dans-excel/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Requêter un cube dans Excel
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../analysis-services/ressources/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Ressources
+            </a>
+            
+            
+            
+                        
+                        
+
+                    </nav>
+                </div>
+            </div>
+
+            
+            
+            
+                    
+                    
+            
+            
+
+            
+            <!-- SECTION AVEC ENFANTS -->
+            <div class="nav-item mb-1">
+                <div class="d-flex justify-content-between align-items-center">
+
+                    
+                    
+                    <a class="nav-link flex-grow-1 text-dark"
+                        href="../../mongo-db/" style="padding-left: 0px;">
+                        MongoDB
+                    </a>
+
+                    <button
+                        class="btn btn-link p-2 text-decoration-none shadow-none collapse-trigger collapsed"
+                        data-bs-toggle="collapse" data-bs-target="#collapse-5108"
+                        aria-expanded="false">
+                        <i class="fas fa-chevron-right chevron-icon"></i>
+                    </button>
+                </div>
+
+                <div class="collapse " id="collapse-5108">
+                    <nav class="nav flex-column ms-2 mt-1">
+
+                        
+                        
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../mongo-db/installer/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Installer Mongo DB
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../mongo-db/interagir-avec-mongo-db/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Interagir avec Mongo DB
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../mongo-db/applications/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Applications
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../mongo-db/ressources/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Ressources
+            </a>
+            
+            
+            
+                        
+                        
+
+                    </nav>
+                </div>
+            </div>
+
+            
+            
+            
+                    
+                    
+            
+            
+
+            
+            <!-- SECTION AVEC ENFANTS -->
+            <div class="nav-item mb-1">
+                <div class="d-flex justify-content-between align-items-center">
+
+                    
+                    
+                    <a class="nav-link flex-grow-1 text-dark"
+                        href="../../neo4j/" style="padding-left: 0px;">
+                        Neo4j
+                    </a>
+
+                    <button
+                        class="btn btn-link p-2 text-decoration-none shadow-none collapse-trigger collapsed"
+                        data-bs-toggle="collapse" data-bs-target="#collapse-4433"
+                        aria-expanded="false">
+                        <i class="fas fa-chevron-right chevron-icon"></i>
+                    </button>
+                </div>
+
+                <div class="collapse " id="collapse-4433">
+                    <nav class="nav flex-column ms-2 mt-1">
+
+                        
+                        
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../neo4j/installer/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Installer Neo4j
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../neo4j/creer-des-noeuds/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Créer des nœuds
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../neo4j/applications/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Applications
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../neo4j/ressources/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Ressources
+            </a>
+            
+            
+            
+                        
+                        
+
+                    </nav>
+                </div>
+            </div>
+
+            
+            
+            
+                    
+                    
+            
+            
+
+            
+            <!-- SECTION AVEC ENFANTS -->
+            <div class="nav-item mb-1">
+                <div class="d-flex justify-content-between align-items-center">
+
+                    
+                    
+                    <a class="nav-link flex-grow-1 text-dark"
+                        href="../../apache-spark/" style="padding-left: 0px;">
+                        Apache Spark
+                    </a>
+
+                    <button
+                        class="btn btn-link p-2 text-decoration-none shadow-none collapse-trigger collapsed"
+                        data-bs-toggle="collapse" data-bs-target="#collapse-8671"
+                        aria-expanded="false">
+                        <i class="fas fa-chevron-right chevron-icon"></i>
+                    </button>
+                </div>
+
+                <div class="collapse " id="collapse-8671">
+                    <nav class="nav flex-column ms-2 mt-1">
+
+                        
+                        
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../apache-spark/installer/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Installer PySpark
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../apache-spark/01-get-started/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Démarrer avec PySpark
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../apache-spark/02-import-export/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Import & Export
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../apache-spark/03-work-with-postgres/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Base de données
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../apache-spark/applications/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Applications
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../apache-spark/ressources/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Ressources
+            </a>
+            
+            
+            
+                        
+                        
+
+                    </nav>
+                </div>
+            </div>
+
+            
+            
+            
+                    
+                    
+            
+            
+
+            
+            <!-- SECTION AVEC ENFANTS -->
+            <div class="nav-item mb-1">
+                <div class="d-flex justify-content-between align-items-center">
+
+                    
+                    
+                    <a class="nav-link flex-grow-1 active-parent fw-bold"
+                        href="../" style="padding-left: 0px;">
+                        Apache Airflow
+                    </a>
+
+                    <button
+                        class="btn btn-link p-2 text-decoration-none shadow-none collapse-trigger "
+                        data-bs-toggle="collapse" data-bs-target="#collapse-3526"
+                        aria-expanded="true">
+                        <i class="fas fa-chevron-right chevron-icon"></i>
+                    </button>
+                </div>
+
+                <div class="collapse show" id="collapse-3526">
+                    <nav class="nav flex-column ms-2 mt-1">
+
+                        
+                        
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../installer/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Installer Airflow
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 fw-bold text-primary active-child"
+                href="./"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Interface Airflow
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../get-started/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Créer un DAG
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../schedule-dags/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Planifier un DAG
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../run-dags/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Exécuter un DAG
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../define-dependencies/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Définir des dépendances
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../airflow-cli-commands/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Commandes Airflow CLI
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../config-mailing/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Configurer l'envoi de mail
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../creer-une-connexion-de-source-de-donnees/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Créer une connexion
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../applications/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Applications
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../ressources/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Ressources
+            </a>
+            
+            
+            
+                        
+                        
+
+                    </nav>
+                </div>
+            </div>
+
+            
+            
+            
+                    
+                    
+            
+            
+
+            
+            <!-- SECTION AVEC ENFANTS -->
+            <div class="nav-item mb-1">
+                <div class="d-flex justify-content-between align-items-center">
+
+                    
+                    
+                    <a class="nav-link flex-grow-1 text-dark"
+                        href="../../talend/" style="padding-left: 0px;">
+                        Talend (Data Integration)
+                    </a>
+
+                    <button
+                        class="btn btn-link p-2 text-decoration-none shadow-none collapse-trigger collapsed"
+                        data-bs-toggle="collapse" data-bs-target="#collapse-2406"
+                        aria-expanded="false">
+                        <i class="fas fa-chevron-right chevron-icon"></i>
+                    </button>
+                </div>
+
+                <div class="collapse " id="collapse-2406">
+                    <nav class="nav flex-column ms-2 mt-1">
+
+                        
+                        
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../talend/installer/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Installer Talend
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../talend/decouvrir-interface/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Découvrir l'interface
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../talend/creer-une-connexion-de-base-de-donnees/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Créer une connexion de BD
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../talend/creer-un-job/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Créer un job
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../talend/afficher-des-messages/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Afficher des messages
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../talend/fonctions-predefinies/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Fonctions prédéfinies
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../talend/manipuler-les-dates/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Manipuler les dates
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../talend/exporter-un-job/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Exporter un job
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../talend/applications/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Applications
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../talend/ressources/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Ressources
+            </a>
+            
+            
+            
+                        
+                        
+
+                    </nav>
+                </div>
+            </div>
+
+            
+            
+            
+                    
+                    
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../ressources/"
+                style="padding-left: 0px; font-size: 1.0rem;">
+                Ressources
+            </a>
+            
+            
+            
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Bloc Abonnement -->
+        <div class="p-4 bg-primary text-white rounded shadow text-center">
+            <p class="small mb-3">Abonnez-vous à la newsletter !</p>
+            <a href="#tally-open=mJzBvX&tally-layout=modal&tally-emoji-text=👋&tally-emoji-animation=wave"
+                class="btn btn-outline-light btn-sm text-uppercase w-100">
+                S'abonner
+            </a>
+        </div>
+
+    </div>
+</aside>
+
+            <!-- Contenu Principal -->
+            <main class="col-lg-9 col-md-12">
+                <article class="markdown-content bg-white p-4 p-md-5 border rounded shadow-sm">                        
+                    
+
+                    
+                    <div class="featured-image mb-5">
+                        <img src="https://algojungle.github.io/algojungle-assets/images/07-big-data/apache-airflow/covers/apache-airflow.png" class="img-fluid rounded shadow-sm w-100" alt="Interface Airflow">
+                    </div>
+                    
+
+                    <section class="" id="blog">
+
+                        
+
+                        <h2 id="menu-de-navigation">Menu de navigation<a class="headerlink" href="#menu-de-navigation" title="Permanent link">#</a></h2>
+<p>L'interface d'Airflow propose un menu de navigation qui permet d'accéder rapidement aux différentes sections de la plateforme.</p>
+<p><img alt="" src="https://algojungle.github.io/algojungle-assets/images/07-big-data/apache-airflow/apache-airflow-interface-menu.png" /></p>
+<h2 id="dags">DAGs<a class="headerlink" href="#dags" title="Permanent link">#</a></h2>
+<p>Les DAGs (Graphes Acycliques Dirigés) sont la base de l'orchestration dans Airflow. Cette section vous permet de visualiser et de gérer les DAGs existants. Vous pouvez voir leurs statuts, planifier des exécutions et accéder à des informations détaillées sur chaque tâche.</p>
+<p><img alt="" src="https://algojungle.github.io/algojungle-assets/images/07-big-data/apache-airflow/apache-airflow-interface-dags-1.png" /></p>
+<h2 id="datasets">Datasets<a class="headerlink" href="#datasets" title="Permanent link">#</a></h2>
+<p>Cette section présente les datasets utilisés dans vos workflows. Vous pouvez y trouver des informations sur les données entrantes et sortantes de chaque tâche.</p>
+<p><img alt="" src="https://algojungle.github.io/algojungle-assets/images/07-big-data/apache-airflow/apache-airflow-interface-datasets-2.png" /></p>
+<h2 id="security">Security<a class="headerlink" href="#security" title="Permanent link">#</a></h2>
+<p>Dans cette partie, vous pouvez gérer la sécurité de la plateforme, y compris les utilisateurs, leurs rôles et les permissions.</p>
+<h3 id="users">Users<a class="headerlink" href="#users" title="Permanent link">#</a></h3>
+<p>Gérez les utilisateurs qui ont accès à Airflow. Vous pouvez définir les informations d’identification et attribuer des rôles à chaque utilisateur.</p>
+<p><img alt="" src="https://algojungle.github.io/algojungle-assets/images/07-big-data/apache-airflow/apache-airflow-interface-users-31.png" /></p>
+<h3 id="roles">Roles<a class="headerlink" href="#roles" title="Permanent link">#</a></h3>
+<p>Les rôles permettent de gérer les permissions et l'accès des utilisateurs aux différentes parties de l'interface d'Airflow.</p>
+<p><img alt="" src="https://algojungle.github.io/algojungle-assets/images/07-big-data/apache-airflow/apache-airflow-interface-roles-32.png" /></p>
+<h3 id="users-statistics">Users Statistics<a class="headerlink" href="#users-statistics" title="Permanent link">#</a></h3>
+<p>Cette section montre les statistiques sur l’utilisation de l’interface par les utilisateurs.</p>
+<p><img alt="" src="https://algojungle.github.io/algojungle-assets/images/07-big-data/apache-airflow/apache-airflow-interface-users-statistics-33.png" /></p>
+<h3 id="actions">Actions<a class="headerlink" href="#actions" title="Permanent link">#</a></h3>
+<p>Consultez les actions effectuées par les utilisateurs dans l’interface d’Airflow.</p>
+<p><img alt="" src="https://algojungle.github.io/algojungle-assets/images/07-big-data/apache-airflow/apache-airflow-interface-actions-34.png" /></p>
+<h3 id="ressources">Ressources<a class="headerlink" href="#ressources" title="Permanent link">#</a></h3>
+<p>Gérez les ressources d'Airflow, y compris la gestion des pools et des tâches.</p>
+<p><img alt="" src="https://algojungle.github.io/algojungle-assets/images/07-big-data/apache-airflow/apache-airflow-interface-resources-35.png" /></p>
+<h3 id="permissions">Permissions<a class="headerlink" href="#permissions" title="Permanent link">#</a></h3>
+<p>Définissez les permissions des utilisateurs pour chaque ressource et section d'Airflow.</p>
+<p><img alt="" src="https://algojungle.github.io/algojungle-assets/images/07-big-data/apache-airflow/apache-airflow-interface-permissions-36.png" /></p>
+<h2 id="browser">Browser<a class="headerlink" href="#browser" title="Permanent link">#</a></h2>
+<p>La section Browser est dédiée à la surveillance des exécutions des DAGs et à la gestion des tâches.</p>
+<h3 id="dag-runs">DAG Runs<a class="headerlink" href="#dag-runs" title="Permanent link">#</a></h3>
+<p>Ici, vous pouvez visualiser les exécutions de vos DAGs, suivre leur statut et accéder aux détails de chaque run.</p>
+<p><img alt="" src="https://algojungle.github.io/algojungle-assets/images/07-big-data/apache-airflow/apache-airflow-interface-dags-runs-41.png" /></p>
+<h3 id="jobs">Jobs<a class="headerlink" href="#jobs" title="Permanent link">#</a></h3>
+<p>Cette section affiche les jobs en cours d’exécution, ainsi que leurs résultats.</p>
+<p><img alt="" src="https://algojungle.github.io/algojungle-assets/images/07-big-data/apache-airflow/apache-airflow-interface-jobs-42.png" /></p>
+<h3 id="audit-logs">Audit Logs<a class="headerlink" href="#audit-logs" title="Permanent link">#</a></h3>
+<p>Les logs d’audit permettent de suivre les actions réalisées sur la plateforme, comme les modifications des configurations ou des tâches.</p>
+<p><img alt="" src="https://algojungle.github.io/algojungle-assets/images/07-big-data/apache-airflow/apache-airflow-interface-logs-43.png" /></p>
+<h3 id="task-instances">Task Instances<a class="headerlink" href="#task-instances" title="Permanent link">#</a></h3>
+<p>Affiche l'état d'exécution des instances de tâches pour chaque DAG.</p>
+<p><img alt="" src="https://algojungle.github.io/algojungle-assets/images/07-big-data/apache-airflow/apache-airflow-interface-tasks-instances-44.png" /></p>
+<h3 id="task-reschedules">Task Reschedules<a class="headerlink" href="#task-reschedules" title="Permanent link">#</a></h3>
+<p>Cette section permet de suivre les tâches qui ont été replanifiées.</p>
+<p><img alt="" src="https://algojungle.github.io/algojungle-assets/images/07-big-data/apache-airflow/apache-airflow-interface-tasks-reschedules-45.png" /></p>
+<h3 id="triggers">Triggers<a class="headerlink" href="#triggers" title="Permanent link">#</a></h3>
+<p>Vous pouvez surveiller les déclencheurs des tâches dans cette section.</p>
+<p><img alt="" src="https://algojungle.github.io/algojungle-assets/images/07-big-data/apache-airflow/apache-airflow-interface-triggers-46.png" /></p>
+<h3 id="sla-misses">SLA Misses<a class="headerlink" href="#sla-misses" title="Permanent link">#</a></h3>
+<p>Consultez les tâches qui n’ont pas respecté leurs SLA (Service Level Agreement).</p>
+<p><img alt="" src="https://algojungle.github.io/algojungle-assets/images/07-big-data/apache-airflow/apache-airflow-interface-sla-misses-47.png" /></p>
+<h3 id="dag-dependencies">DAG Dependencies<a class="headerlink" href="#dag-dependencies" title="Permanent link">#</a></h3>
+<p>Affiche les dépendances entre les différentes tâches d'un DAG.</p>
+<p><img alt="" src="https://algojungle.github.io/algojungle-assets/images/07-big-data/apache-airflow/apache-airflow-interface-dagsdepencies-48.png" /></p>
+<h2 id="admin">Admin<a class="headerlink" href="#admin" title="Permanent link">#</a></h2>
+<p>La section Admin est dédiée à la gestion de la configuration d'Airflow, des connexions et des variables.</p>
+<h3 id="variables">Variables<a class="headerlink" href="#variables" title="Permanent link">#</a></h3>
+<p>Vous pouvez y gérer les variables utilisées par les DAGs, ce qui permet de les rendre dynamiques.</p>
+<p><img alt="" src="https://algojungle.github.io/algojungle-assets/images/07-big-data/apache-airflow/apache-airflow-interface-variables-51.png" /></p>
+<h3 id="configurations">Configurations<a class="headerlink" href="#configurations" title="Permanent link">#</a></h3>
+<p>Accédez aux configurations globales d’Airflow, où vous pouvez ajuster les paramètres de fonctionnement.</p>
+<p><img alt="" src="https://algojungle.github.io/algojungle-assets/images/07-big-data/apache-airflow/apache-airflow-interface-configurations-52.png" /></p>
+<h3 id="connections">Connections<a class="headerlink" href="#connections" title="Permanent link">#</a></h3>
+<p>Gérez les connexions à d’autres services ou bases de données depuis Airflow.</p>
+<p><img alt="" src="https://algojungle.github.io/algojungle-assets/images/07-big-data/apache-airflow/apache-airflow-interface-connections-53.png" /></p>
+<h3 id="plugins">Plugins<a class="headerlink" href="#plugins" title="Permanent link">#</a></h3>
+<p>Airflow permet d’étendre ses fonctionnalités avec des plugins personnalisés. Cette section vous permet de les gérer.</p>
+<p><img alt="" src="https://algojungle.github.io/algojungle-assets/images/07-big-data/apache-airflow/apache-airflow-interface-plugins-54.png" /></p>
+<h3 id="providers">Providers<a class="headerlink" href="#providers" title="Permanent link">#</a></h3>
+<p>Les providers ajoutent des intégrations avec d'autres outils ou services comme AWS, Google Cloud, etc.</p>
+<p><img alt="" src="https://algojungle.github.io/algojungle-assets/images/07-big-data/apache-airflow/apache-airflow-interface-providers-55.png" /></p>
+<h3 id="sla-misses_1">SLA Misses<a class="headerlink" href="#sla-misses_1" title="Permanent link">#</a></h3>
+<p>Affiche les événements de SLA manqués par vos DAGs.</p>
+<p><img alt="" src="https://algojungle.github.io/algojungle-assets/images/07-big-data/apache-airflow/apache-airflow-interface-pools-56.png" /></p>
+<h3 id="xcoms">Xcoms<a class="headerlink" href="#xcoms" title="Permanent link">#</a></h3>
+<p>Les Xcoms sont des messages permettant la communication entre les différentes tâches d’un DAG.</p>
+<p><img alt="" src="https://algojungle.github.io/algojungle-assets/images/07-big-data/apache-airflow/apache-airflow-interface-xcoms-57.png" /></p>
+<h2 id="docs">Docs<a class="headerlink" href="#docs" title="Permanent link">#</a></h2>
+<p>Airflow propose également une documentation détaillée via son interface.</p>
+<h3 id="swagger-ui">Swagger UI<a class="headerlink" href="#swagger-ui" title="Permanent link">#</a></h3>
+<p>Un outil interactif pour explorer l'API d'Airflow et tester les différentes opérations disponibles.</p>
+<p><img alt="" src="https://algojungle.github.io/algojungle-assets/images/07-big-data/apache-airflow/apache-airflow-interface-api-swagger-64.png" /></p>
+<h3 id="api-docs">API Docs<a class="headerlink" href="#api-docs" title="Permanent link">#</a></h3>
+<p>Une documentation complète sur l'API d'Airflow.</p>
+<p><img alt="" src="https://algojungle.github.io/algojungle-assets/images/07-big-data/apache-airflow/apache-airflow-interface-api-docs-65.png" /></p>
+<hr />
+<p><em>Nous avons maintenant une vue d'ensemble des principales sections de l'interface d'Apache Airflow. Cette interface offre une gestion complète des workflows, de la planification à la surveillance des exécutions. Vous êtes maintenant prêt à vous lancer dans la création de votre premier pipeline avec Apache Airflow ! Dans la prochaine section, nous allons voir comment créer un premier pipeline pour automatiser vos workflows.</em></p>
+
+                    </section>
+
+                </article>
+
+                <!-- Navigation Précédent / Suivant -->
+                <nav class="row mt-5 pt-4 border-top">
+                    <div class="col-6">
+                        
+                        <a href="../installer/" class="text-decoration-none">
+                            <span class="d-block small text-muted text-uppercase mb-1"><i class="fas fa-arrow-left me-1"></i> Précédent</span>
+                            <span class="fw-bold text-primary">Installer Airflow</span>
+                        </a>
+                        
+                    </div>
+                    <div class="col-6 text-end">
+                        
+                        <a href="../get-started/" class="text-decoration-none">
+                            <span class="d-block small text-muted text-uppercase mb-1">Suivant <i class="fas fa-arrow-right ms-1"></i></span>
+                            <span class="fw-bold text-primary">Créer un DAG</span>
+                        </a>
+                        
+                    </div>
+                </nav>
+
+                <section class="mt-5 border-top pt-4">
+                    
+                    <div class="share-section mb-5">
+                        <h2 class="h4 mb-3">Partagez sur les réseaux sociaux</h2>
+                        <!-- ShareThis BEGIN -->
+                        <div class="sharethis-inline-share-buttons"></div>
+                        <!-- ShareThis END -->
+                    </div>
+
+                    
+                    
+                    <div class="comments-section">
+                        <h2 id="__comments" class="h4 mb-4">Commentaires</h2>
+                        
+                        
+                        <script src="https://giscus.app/client.js"
+                                data-repo="joekakone/Departement-De-Maths"
+                                data-repo-id="MDEwOlJlcG9zaXRvcnkzMzY4MjEwNTY="
+                                data-category="General"
+                                data-category-id="DIC_kwDOFBN7QM4CORj9"
+                                data-mapping="pathname"
+                                data-reactions-enabled="1"
+                                data-emit-metadata="0"
+                                data-input-position="bottom"
+                                
+                                data-theme="preferred_color_scheme"
+                                data-lang="fr"
+                                crossorigin="anonymous"
+                                async>
+                        </script>
+                    </div>
+                    
+                </section>
+            </main>
+
+        </div>
+    </div>
+
+</div>
+
+
+
+
+  <!-- Tags -->
+
+<!-- CTA FINAL -->
+<section class="py-5 bg-primary text-white text-center">
+<div class="container py-4">
+    <h3 class="text-uppercase mb-4">Inscrivez-vous à une formation complète</h3>
+    <a href="/#formations" class="btn btn-outline-light btn-lg text-uppercase px-5">Voir le catalogue</a>
+</div>
+</section>
+
+<!-- Footer-->
+<footer class="pt-0">
+    <!-- Bande de Navigation Précédent / Suivant (Style Bootstrap Dark) -->
+    
+    
+    <div class="container text-center py-5">
+        <div class="row px-4">
+            <div class="col-lg-7 mx-auto">
+                <h2 class="text-uppercase mb-0">Joseph Konka </h2>
+                <h6 class="text-primary text-uppercase mb-0 letter-spacing-3">Senior Data Analyst | Data Scientist</h6>
+                <p class="text-muted my-4">Project Management - Data Engineering - Data Analytics - Python Programming</p>
+                <ul class="list-inline mb-0">
+                    <li class="list-inline-item"><a class="social-link" href="https://wa.me/+22891518923" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
+                    <li class="list-inline-item"><a class="social-link" href="https://github.com/joekakone" target="_blank"><i class="fab fa-github"></i></a></li>
+                    <li class="list-inline-item"><a class="social-link" href="https://www.linkedin.com/in/joseph-koami-konka" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+                    <li class="list-inline-item"><a class="social-link" href="https://web.facebook.com/joekakonepage" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                    <li class="list-inline-item"><a class="social-link" href="https://twitter.com/joekakone" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                    <li class="list-inline-item"><a class="social-link" href="https://www.youtube.com/@algojungle" target="_blank"><i class="fab fa-youtube"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="copyrights px-4">
+        <div class="container py-4 border-top text-center">
+        <p class="mb-0 text-muted py-2">&copy; All rights reserved. Template designed by <a
+            href="https://bootstrapious.com/p/bootstrap-resume">Bootstrapious</a>. </p>
+        </div>
+    </div>
+</footer>
+  
+
+  <!-- JS -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script> -->
+  <script src="../../../assets/javascripts/custom.js"></script>
+
+  
+  <!-- JavaScript files-->
+  <script src="https://joekakone.github.io/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="https://joekakone.github.io/static/js/front.js"></script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YPL3847T5N"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-YPL3847T5N');
+  </script>
+
+  <script type='text/javascript'>
+    var divElement = document.getElementById('viz1677099741796'); var vizElement = divElement.getElementsByTagName('object')[0]; if (divElement.offsetWidth > 800) { vizElement.style.width = '1100px'; vizElement.style.height = '627px'; } else if (divElement.offsetWidth > 500) { vizElement.style.width = '1100px'; vizElement.style.height = '627px'; } else { vizElement.style.width = '100%'; vizElement.style.height = '1327px'; } var scriptElement = document.createElement('script'); scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js'; vizElement.parentNode.insertBefore(scriptElement, vizElement);                
+  </script>
+
+  <!-- Google Ads -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2980760029476176"
+      crossorigin="anonymous"></script>
+
+  <!-- ShareThis -->
+  <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=649bd6c6a6672f0012d186bd&product=sop' async='async'></script>
+
+  <!-- Tally -->
+  <script async src="https://tally.so/widgets/embed.js"></script>
+
+  <!-- Facebook -->
+  <div id="fb-root"></div>
+  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v20.0&appId=564181564271850"></script>
+
+  <!-- Messenger Plugin de discussion Code -->
+  <div id="fb-root"></div>
+
+  <!-- Your Plugin de discussion code -->
+  <div id="fb-customer-chat" class="fb-customerchat">
+  </div>
+
+  <script>
+    var chatbox = document.getElementById('fb-customer-chat');
+    chatbox.setAttribute("page_id", "2130664133866857");
+    chatbox.setAttribute("attribution", "biz_inbox");
+
+    window.fbAsyncInit = function () {
+      FB.init({
+        xfbml: true,
+        version: 'v12.0'
+      });
+    };
+
+    (function (d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/fr_FR/sdk/xfbml.customerchat.js';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
+
+  <!-- Contact Form Utils -->
+  <script>
+    function buildMailtoUrl(event) {
+      event.preventDefault(); // Prevent form submission
+
+      var emailInputFirstName = document.getElementById('InputFirstName').value;
+      var emailInputLastName = document.getElementById('InputLastName').value;
+      var emailInputEmail = document.getElementById('InputEmail').value;
+      var emailInputPhone = document.getElementById('InputPhone').value;
+      var emailInputSubject = document.getElementById('InputSubject').value;
+      var emailInputMessage = document.getElementById('InputMessage').value;
+
+      var emailContent = `${emailInputMessage} \n\nFull Name : ${emailInputFirstName} ${emailInputLastName}\nPhone Number : ${emailInputPhone}\nEmail : ${emailInputEmail}`;
+
+      var subject = encodeURIComponent(emailInputSubject);
+      var body = encodeURIComponent(emailContent);
+
+      var mailtoLink = 'mailto:konka.datanalytics@gmail.com' + '?subject=' + subject + '&body=' + body;
+
+      window.location.href = mailtoLink;
+    }
+  </script>
+
+  <!-- Google Ads -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2980760029476176"
+    crossorigin="anonymous"></script>
+
+
+  <!-- FontAwesome CSS - loading as last, so it doesn't block rendering-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+</body>
+</html>

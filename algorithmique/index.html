@@ -1,0 +1,1631 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+
+  <!-- Meta tags -->
+  
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <!-- Page description -->
+    
+      <meta name="description" content="Les algorithmes permettent de résoudre des problèmes et c'est à travers que les mathématiciens décrivent les méthodologies de résolution. L'algorithmique s'est invité dans le dévélopemmenent et un bon développeur doit en maîtriser les bases. Dans cette formation, vous apprendrez les notions de bases de l'algorithmique, comment construire des algorithmes et choisir les structures de données appropriées." />
+    
+
+    <!-- Page author -->
+    
+      <meta name="author" content="Joseph Konka" />
+    
+
+    <!-- Canonical -->
+    
+      <link rel="canonical" href="https://josephkonkathedataguy.com/learning/algorithmique/" />
+    
+
+    <!-- Previous page -->
+    
+      <link rel="prev" href="../informatique/ressources/" />
+    
+
+    <!-- Next page -->
+    
+      <link rel="next" href="partie-1-les-bases/" />
+    
+
+    <!-- Favicon -->
+    <link rel="icon" href="https://algojungle.github.io/algojungle-assets/assets/favicon.png" />
+
+    <!-- Generator banner -->
+    <meta name="generator" content="mkdocs-1.6.1, $md-name$-$md-version$" />
+  
+
+  <title>
+    Introduction à l'algorithmique | Algo Jungle
+  </title>
+
+  <!-- Google Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,800&display=swap">
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+  <!-- Theme CSS -->
+  <link rel="stylesheet" href="https://joekakone.github.io/static/css/style.blue.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../assets/stylesheets/custom.css">
+  
+  <style>
+    body {
+      font-family: 'Work Sans', sans-serif;
+      background-color: #fcfcfc;
+    }
+    /* Style par défaut pour le contenu Markdown */
+    .markdown-content img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+  </style>
+  
+</head>
+
+<body>
+
+  <!-- navbar-->
+<header class="header">
+  <nav class="navbar navbar-light navbar-expand-lg fixed-top" id="navbar">
+    <div class="container"><a class="navbar-brand" href="/learning"><img
+          src="https://algojungle.github.io/algojungle-assets/assets/favicon.png" alt="" height="36.14"></a>
+      <button class="navbar-toggler navbar-toggler-end" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation"><i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        
+  <ul class="navbar-nav ms-auto">
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    <li class="nav-item">
+      
+      <a href=".." class="nav-link link-scroll">
+        
+  
+
+  <!-- Navigation link icon -->
+  
+    
+  
+
+  <!-- Navigation link title -->
+  Accueil
+
+      </a>
+      
+    </li>
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../informatique/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  Informatique
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+    
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="./" class="nav-link link-scroll active">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  Algorithmique
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../programmation/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  Programmation
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../python/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  Python
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../analytics/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  Analytics
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../analytics/sql/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  SQL
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../analytics/powerbi/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  Power BI
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../big-data/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  Big Data
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../machine-learning/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  Machine Learning
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../machine-learning/tensorflow/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  TensorFlow
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../mlops/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  MLOps
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../blog/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  Blog
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+  </ul>
+
+      </div>
+
+    </div>
+  </nav>
+</header>
+
+  
+
+  <!-- Bloc principal : Sera remplacé par home.html pour la page d'accueil -->
+  
+<div class="algo-jungle-article">
+
+    <!-- Header de l'Article -->
+    
+    <section class="article-header bg-light border-bottom">
+        <div class="container py-5 text-center">
+            
+            <!-- Titre avec marge haute pour le descendre -->
+            <div class="pt-5 mt-5">
+                
+                    <h1 class="text-uppercase fw-bold mb-4 display-5" style="color: #333;">Introduction à l'algorithmique</h1>
+                
+            </div>
+
+            <!-- Infos Auteur -->
+            
+            <div class="d-flex align-items-center justify-content-center mb-4">
+                
+                <img src="https://avatars.githubusercontent.com/joekakone" alt="@joekakone" class="rounded-circle me-3 border border-2 border-primary" style="width: 55px; height: 55px; object-fit: cover;">
+                
+                <div class="text-start">
+                    <p class="mb-0 fw-bold text-dark">
+                        Joseph Konka 
+                        
+                        <a href="https://github.com/joekakone" class="text-primary text-decoration-none small">@joekakone</a>
+                        
+                    </p>
+                    <p class="small text-muted mb-0">
+                        <i class="far fa-calendar-alt me-1"></i> 03/03/2026 
+                        <span class="mx-2">·</span> 
+                        <i class="far fa-clock me-1"></i> 3 min
+                    </p>
+                </div>
+            </div>
+            
+
+            <!-- Tags -->
+            
+                <div class="tags">
+                    
+                        <a href="/tags/#fondamentaux">
+                            <span class="skill-tag text-uppercase">fondamentaux</span>
+                        </a>
+                    
+                        <a href="/tags/#informatique">
+                            <span class="skill-tag text-uppercase">informatique</span>
+                        </a>
+                    
+                        <a href="/tags/#algorithmique">
+                            <span class="skill-tag text-uppercase">algorithmique</span>
+                        </a>
+                    
+                        <a href="/tags/#algorithmes">
+                            <span class="skill-tag text-uppercase">algorithmes</span>
+                        </a>
+                    
+                        <a href="/tags/#structures-de-donnees">
+                            <span class="skill-tag text-uppercase">structures-de-donnees</span>
+                        </a>
+                    
+                </div>
+            
+
+            <!-- Description / Overview centrée et justifiée -->
+            
+            <div class="row justify-content-center mt-5">
+                <div class="col-lg-10">
+                    <p class="lead text-muted cust-justify mb-0" style="line-height: 1.6;">
+                        Les algorithmes permettent de résoudre des problèmes et c'est à travers que les mathématiciens décrivent les méthodologies de résolution. L'algorithmique s'est invité dans le dévélopemmenent et un bon développeur doit en maîtriser les bases. Dans cette formation, vous apprendrez les notions de bases de l'algorithmique, comment construire des algorithmes et choisir les structures de données appropriées.
+                    </p>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+    
+
+    <!-- Structure Corps de page (Sidebar + Contenu) -->
+    <div class="container py-5">
+        <div class="row gx-lg-5">
+            
+            <!-- Sidebar Navigation (Sous-sections du module actif) -->
+            <!-- <aside class="col-lg-3 d-none d-lg-block">
+                <div class="sticky-sidebar-container">
+                </div>
+            </aside> -->
+            <!-- Sidebar Navigation (droite) -->
+
+<aside class="col-lg-3 d-none d-lg-block">
+    <div class="sticky-sidebar-container">
+        <div class="p-4 bg-white border rounded shadow-sm mb-4">
+
+            
+
+            <!-- Initialisation navigation -->
+            <div class="sidebar-scroll-wrapper">
+                <div class="nav flex-column sidebar-nav" id="sidebarAccordion">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 fw-bold text-primary active-child"
+                href="./"
+                style="padding-left: 0px; font-size: 1.0rem;">
+                Introduction à l'algorithmique
+            </a>
+            
+            
+            
+                    
+                    
+            
+            
+
+            
+            <!-- SECTION AVEC ENFANTS -->
+            <div class="nav-item mb-1">
+                <div class="d-flex justify-content-between align-items-center">
+
+                    
+                    
+                    <a class="nav-link flex-grow-1 text-dark"
+                        href="partie-1-les-bases/" style="padding-left: 0px;">
+                        Partie 1 - Les bases
+                    </a>
+
+                    <button
+                        class="btn btn-link p-2 text-decoration-none shadow-none collapse-trigger collapsed"
+                        data-bs-toggle="collapse" data-bs-target="#collapse-9787"
+                        aria-expanded="false">
+                        <i class="fas fa-chevron-right chevron-icon"></i>
+                    </button>
+                </div>
+
+                <div class="collapse " id="collapse-9787">
+                    <nav class="nav flex-column ms-2 mt-1">
+
+                        
+                        
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="partie-1-les-bases/les-variables/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Constantes & Variables
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="partie-1-les-bases/les-operations/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Opérations
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="partie-1-les-bases/affichage-et-saisie/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Affichage & Saisie
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="partie-1-les-bases/les-fonctions-predefnies/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Fonctions predéfinies
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="partie-1-les-bases/les-conditions/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Conditions
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="partie-1-les-bases/la-structure-de-choix/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Choix
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="partie-1-les-bases/les-boucles/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Boucles
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="partie-1-les-bases/outro/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Outro
+            </a>
+            
+            
+            
+                        
+                        
+
+                    </nav>
+                </div>
+            </div>
+
+            
+            
+            
+                    
+                    
+            
+            
+
+            
+            <!-- SECTION AVEC ENFANTS -->
+            <div class="nav-item mb-1">
+                <div class="d-flex justify-content-between align-items-center">
+
+                    
+                    
+                    <a class="nav-link flex-grow-1 text-dark"
+                        href="partie-2-les-tableaux/" style="padding-left: 0px;">
+                        Partie 2 - Les tableaux
+                    </a>
+
+                    <button
+                        class="btn btn-link p-2 text-decoration-none shadow-none collapse-trigger collapsed"
+                        data-bs-toggle="collapse" data-bs-target="#collapse-7332"
+                        aria-expanded="false">
+                        <i class="fas fa-chevron-right chevron-icon"></i>
+                    </button>
+                </div>
+
+                <div class="collapse " id="collapse-7332">
+                    <nav class="nav flex-column ms-2 mt-1">
+
+                        
+                        
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="partie-2-les-tableaux/les-tableaux-a-une-dimension/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Tableaux à une dimension
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="partie-2-les-tableaux/les-tableaux-a-deux-dimensions/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Tableaux à deux dimension
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="partie-2-les-tableaux/les-tableaux-a-plusieurs-dimensions/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Tableaux à n dimension
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="partie-2-les-tableaux/outro/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Outro
+            </a>
+            
+            
+            
+                        
+                        
+
+                    </nav>
+                </div>
+            </div>
+
+            
+            
+            
+                    
+                    
+            
+            
+
+            
+            <!-- SECTION AVEC ENFANTS -->
+            <div class="nav-item mb-1">
+                <div class="d-flex justify-content-between align-items-center">
+
+                    
+                    
+                    <a class="nav-link flex-grow-1 text-dark"
+                        href="partie-3-les-sous-programmes/" style="padding-left: 0px;">
+                        Partie 3 - Procédures et Fonctions
+                    </a>
+
+                    <button
+                        class="btn btn-link p-2 text-decoration-none shadow-none collapse-trigger collapsed"
+                        data-bs-toggle="collapse" data-bs-target="#collapse-4390"
+                        aria-expanded="false">
+                        <i class="fas fa-chevron-right chevron-icon"></i>
+                    </button>
+                </div>
+
+                <div class="collapse " id="collapse-4390">
+                    <nav class="nav flex-column ms-2 mt-1">
+
+                        
+                        
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="partie-3-les-sous-programmes/procedures/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Les procédures
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="partie-3-les-sous-programmes/fonctions/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Les fonctions
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="partie-3-les-sous-programmes/outro/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Comparaison
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="partie-3-les-sous-programmes/outro/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Comparaison
+            </a>
+            
+            
+            
+                        
+                        
+
+                    </nav>
+                </div>
+            </div>
+
+            
+            
+            
+                    
+                    
+            
+            
+
+            
+            <!-- SECTION AVEC ENFANTS -->
+            <div class="nav-item mb-1">
+                <div class="d-flex justify-content-between align-items-center">
+
+                    
+                    
+                    <a class="nav-link flex-grow-1 text-dark"
+                        href="partie-4-les-structures-de-donnees/" style="padding-left: 0px;">
+                        Partie 4 - Structures de données
+                    </a>
+
+                    <button
+                        class="btn btn-link p-2 text-decoration-none shadow-none collapse-trigger collapsed"
+                        data-bs-toggle="collapse" data-bs-target="#collapse-6177"
+                        aria-expanded="false">
+                        <i class="fas fa-chevron-right chevron-icon"></i>
+                    </button>
+                </div>
+
+                <div class="collapse " id="collapse-6177">
+                    <nav class="nav flex-column ms-2 mt-1">
+
+                        
+                        
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="partie-4-les-structures-de-donnees/les-listes-chainees/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Les listes chaînées
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="partie-4-les-structures-de-donnees/les-piles/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Les piles
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="partie-4-les-structures-de-donnees/les-files/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Les files
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="partie-4-les-structures-de-donnees/les-arbres/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Les arbres
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="partie-4-les-structures-de-donnees/outro/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Outro
+            </a>
+            
+            
+            
+                        
+                        
+
+                    </nav>
+                </div>
+            </div>
+
+            
+            
+            
+                    
+                    
+            
+            
+
+            
+            <!-- SECTION AVEC ENFANTS -->
+            <div class="nav-item mb-1">
+                <div class="d-flex justify-content-between align-items-center">
+
+                    
+                    
+                    <a class="nav-link flex-grow-1 text-dark"
+                        href="partie-5-problemes/probleme-1/" style="padding-left: 0px;">
+                        Partie 5 - Problèmes
+                    </a>
+
+                    <button
+                        class="btn btn-link p-2 text-decoration-none shadow-none collapse-trigger collapsed"
+                        data-bs-toggle="collapse" data-bs-target="#collapse-4904"
+                        aria-expanded="false">
+                        <i class="fas fa-chevron-right chevron-icon"></i>
+                    </button>
+                </div>
+
+                <div class="collapse " id="collapse-4904">
+                    <nav class="nav flex-column ms-2 mt-1">
+
+                        
+                        
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="partie-5-problemes/probleme-2/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Problème 2
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="partie-5-problemes/probleme-3/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Problème 3
+            </a>
+            
+            
+            
+                        
+                        
+
+                    </nav>
+                </div>
+            </div>
+
+            
+            
+            
+                    
+                    
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="ressources/"
+                style="padding-left: 0px; font-size: 1.0rem;">
+                Ressources
+            </a>
+            
+            
+            
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Bloc Abonnement -->
+        <div class="p-4 bg-primary text-white rounded shadow text-center">
+            <p class="small mb-3">Abonnez-vous à la newsletter !</p>
+            <a href="#tally-open=mJzBvX&tally-layout=modal&tally-emoji-text=👋&tally-emoji-animation=wave"
+                class="btn btn-outline-light btn-sm text-uppercase w-100">
+                S'abonner
+            </a>
+        </div>
+
+    </div>
+</aside>
+
+            <!-- Contenu Principal -->
+            <main class="col-lg-9 col-md-12">
+                <article class="markdown-content bg-white p-4 p-md-5 border rounded shadow-sm">                        
+                    
+
+                    
+                    <div class="featured-image mb-5">
+                        <img src="https://algojungle.github.io/algojungle-assets/images/01-algorithmique/covers/algorithmique.png" class="img-fluid rounded shadow-sm w-100" alt="Introduction à l'algorithmique">
+                    </div>
+                    
+
+                    <section class="" id="blog">
+
+                        
+
+                        <p>Afin de bien planter le décor, je vous propose de partir en immersion avec ces deux vidéos.</p>
+<h2 id="pourquoi-tu-cherches">Pourquoi tu cherches ?<a class="headerlink" href="#pourquoi-tu-cherches" title="Permanent link">#</a></h2>
+<p>Première immersion avec ce court métrage <strong>«Pourquoi tu cherches ?»</strong> narré par <strong>Berry Gérard, Professeur au Collège de France</strong> et qui parle de l'informatique et notamment de l'algorithmique. Un court métrage «docu-fiction» pour découvrir les grands personnages de l’Informatique et des Sciences du Numérique et partager quelques unes de leurs grandes idées.</p>
+<div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;"> <iframe style="width:100%;height:100%;position:absolute;left:0px;top:0px;overflow:hidden" frameborder="0" type="text/html" src="https://www.dailymotion.com/embed/video/xjb5e7?autoplay=1" width="100%" height="100%" allowfullscreen title="Dailymotion Video Player" allow="autoplay"> </iframe> </div>
+
+<h2 id="gerard-berry">Gérard Berry<a class="headerlink" href="#gerard-berry" title="Permanent link">#</a></h2>
+<p>Deuxième immersion avec cette conférence de <strong>Gérard Berry, Professeur du Collège de France</strong> (oui encore lui) intitulée <strong>Enseigner les algorithmes en mode « débranché » pour mieux les comprendre</strong>. Il nous parle d'algorithmique et d'informatique.</p>
+<iframe width="100%" height="400" src="https://www.youtube.com/embed/z3WMylYYUiA" title="Enseigner les algorithmes en mode « débranché » pour mieux les comprendre - Gérard Berry" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<p>Dans la vie réelle, lorsque nous faisons face à un problème dans la vie, nous l'analysons afin de mieux le comprendre. Ensuite nous rassemblons les élements nécessaires</p>
+<p><img alt="" src="https://algojungle.github.io/algojungle-assets/images/01-algorithmique/intro/algo-flow.png" /></p>
+<h2 id="motivations">Motivations<a class="headerlink" href="#motivations" title="Permanent link">#</a></h2>
+<p>Selon moi, l'algorithmique est le point de départ de toute chose, c'est le commencement. Nul ne saurait se lancer dans le code sans en maîtriser les notions de base.</p>
+<p>Algorithme est un mot que vous avez déjà entendu. Les algorithmes de Facebook ou de Linkedin qui </p>
+<p><img alt="" src="https://www.qs.com/wp-content/uploads/2015/07/facebook-76536_1280.png" /></p>
+<p>L'algorithmique est une discipline à part entière, elle est enseignée à partir du lycée dans les pays occidentaux. Malheureusement, elle n'est enseignée qu'à partir de l'université en Afrique et seulement dans quelques filières telles que l'informatique, les mathématiques ou encore la physique. C'est l'une des défaillances de nos systèmes éducatifs dépassés.</p>
+<h2 id="algorithmes-et-structures-de-donnees">Algorithmes et Structures de données<a class="headerlink" href="#algorithmes-et-structures-de-donnees" title="Permanent link">#</a></h2>
+<p>L'algorithmique couvre deux sujets à savoir les algorithmes et les structures de données. Les algorithmes décrivents les méthodes de résolution de problèmes tandis que les structures de données définssent la représentation des données.</p>
+<p>Qu'est-ce que l'algorithmique ? Pourquoi est-elle si importante ? Comment construit t-on un algorihtme ? Si cela vous intéresse alors allons-y, je vous explique tout 🚀.</p>
+<h2 id="des-origines-mathematiques">Des origines mathématiques<a class="headerlink" href="#des-origines-mathematiques" title="Permanent link">#</a></h2>
+<p>L'algorithmique a des origines mathématiques. En effet, le mot «algorithme» vient du nom du mathématicien arabe d'Al-Khwârizmî du IXe siècle. Les mathématiciens proposent des méthodes de résolution sous forme d'algorithme. Les choses ont bien évolué depuis avec le dévéloppement de l'informatique. Aujoud'hui, l'algorithmique se situe en écharpe entre les mathématiques et l'informatique. Les algoithmes sont de plus en plus exécutés par l'ordinateur via les programmes informatiques mais ils peuvent être exécutés par des humains, il faut attendre l'avènement de l'ordinateur pour voir naître les programmes qui permettent de faire. La cryptographie est une belle illustration du chevauchent entre les mathématiques et l'informatique. Autant il s'agit d'analyse, d'arithmétique, il s'agit également d'informatique et de sécurisation des communications.</p>
+<h2 id="lalgorithme-dabord">L'algorithme d'abord<a class="headerlink" href="#lalgorithme-dabord" title="Permanent link">#</a></h2>
+<p>Dans la vie réelle, lorsque nous voulons résoudre un problème, nous l'analysons, nous identifions les resources nécessaires à la résolution, puis nous élaborons un plan qui utlise les ressources afin de résoudre le problème. Une fois le plan bien établi, nous passons à sa mise en oœvre. Dans le monde du dévéloppement informatique, les besoins des utilisateurs constituent les problèmes auxquels le dévéloppeur doit apporter des solutions et pour ce faire, les algorithmes sont au cœur du développement informatique, un développeur ne devrait pas s'attaquer au codage sans définir au préalable ainsi que les structures de données adaptées pour manipuler les données. C'est un travail de modélisation qui fera du codage une simple tâche de traduction. Le développement informatique repose essentiellement sur l'algorithmique. Une étape de modélisation algorithmqiue devrait toujours et systématiquement précéder le codage. En tant qu'étudiant en mathématiques, je pense que maîtriser la modélisation algorithmique fera de vous un bien meilleur développeur (programmeur), meilleur que les étudiants en informatique. L'algorithmique est le terrain parfait pour appliquer le raisonnement mathématique.</p>
+<p>Un développeur ne devrait pas s'attaquer au codage sans définir au préalable la méthode de résolution ainsi que les structures de données adaptées pour manipuler les données. C'est un travail de modélisation qui fera du codage une simple tâche de traduction. La notion d'algorithme peut vous sembler étrangère et pourtant les algorithmes sont constamment présents autour de vous. Vous les utilisez tous les jours, vous en concevez d'ailleurs.</p>
+<p>Dans la réalité, on shcématise l'algorithme sur du papier voire même dans la tête.</p>
+<h2 id="lalgorithme-de-laddition">L'algorithme de l'addition<a class="headerlink" href="#lalgorithme-de-laddition" title="Permanent link">#</a></h2>
+<p>L'algorithme de l'addition est le tout premier algorithme que nous apprenons à l'école primaire. Bien-sûr, l'instituteur . Si jusqu'ici, la notion d'algorithme vous semble toujours étrangère, voici un algorithme qui vous connaissez très bien, l'algorithme d'addition de deux nombres entiers naturels. Rappelez-vous, c'est l'une des premières notions que l'on apprend au cours primaires. L'instituteur décrit les différentes étapes à suivre pour additionner deux nombres.</p>
+<h2 id="lalgorithme-deuclide">L’algorithme d’Euclide<a class="headerlink" href="#lalgorithme-deuclide" title="Permanent link">#</a></h2>
+<p>L'algorithme d'Euclide est l'un des algorithmes les plus populaires. Pour rappel, cet algorithme permet de déterminer le PGCD de deux nombres entiers (le cours de mathématiques de la cinquième). On l'utilise pour vérifier si deux nombres sont premiers entre eux. En effet, lorsque deux nombres sont premiers entre eux leur PGCD est égal à 1.</p>
+<p><img alt="" src="https://algojungle.github.io/algojungle-assets/images/Euclide.jpg" /></p>
+<h2 id="les-algorithmes-de-notre-quotidien">Les algorithmes de notre quotidien<a class="headerlink" href="#les-algorithmes-de-notre-quotidien" title="Permanent link">#</a></h2>
+<p>Essayons de comprendre ce que c'est qu'un algorithme avec des tâches courantes de la vie.</p>
+<h3 id="1-shabiller">1. S'habiller<a class="headerlink" href="#1-shabiller" title="Permanent link">#</a></h3>
+<p>Tous les matins vous vous habillez avant de sortir. Nous allons décrire le différentes étapes à suivre pour atteindre cet objectif. Très facile, n'est-ce pas ? On y va, voici les différentes étapes à suivre:</p>
+<ol>
+<li>Mettre le caleçon</li>
+<li>Mettre le débardeur</li>
+<li>Mettre les chaussettes</li>
+<li>Mettre le pantalon</li>
+<li>Mettre les chaussures  </li>
+<li>Mettre la chemise</li>
+<li>Piquer la chemise</li>
+<li>Mettre la ceinture</li>
+</ol>
+<p>Cette serie d'actions est bien et bel un algorithme. Il s'agit d'actions effectuées dans un ordre précis.</p>
+<h2 id="algorithme-et-cuisine">Algorithme et Cuisine<a class="headerlink" href="#algorithme-et-cuisine" title="Permanent link">#</a></h2>
+<p>Les recettes de cuisine sont également de parfaits exemples d’algorithmes. Pour cuisiner un plat, le cuisinier doit suivre des étapes bien précises et ce dans un certain ordre, nous y reviendrons. D'une part, la recette représente l'algorithme et d'autre part les ingrédients et le plat final représentent respectivement les entrées et la sortie de l'algorithme.</p>
+<p><img alt="" src="https://2.bp.blogspot.com/-NJFWnVZo0QQ/UuJ4xXu6B2I/AAAAAAAAFNs/3mW6Gl-jnXg/s1600/recette+cr%C3%AApes+algorithme.png" /></p>
+<ol>
+<li>Mettre la marmite au feu</li>
+<li>Verser une quantité X d'eau</li>
+<li>Ajouter du sel</li>
+<li>Attendre pendant 5 minutes</li>
+<li>Verser une quantité Y de riz</li>
+<li>Mélanger le contenu</li>
+<li>Attendre pendant 10 minutes</li>
+<li>Retirer la marmite du feu</li>
+</ol>
+<p>Voilà un exemple de recette de cusine. Cuisiner consiste en des étapes bien précises qui aboutissent à un plat final.</p>
+<h3 id="3-se-deplacer">3. Se déplacer<a class="headerlink" href="#3-se-deplacer" title="Permanent link">#</a></h3>
+<p>Analysons mon parcours chaque matin lorsque j'arrive au bureau. Voici en ordre les différentes étapes de la porte d'entrée à mon bureau:</p>
+<ol>
+<li>Passer la port d'entrée</li>
+<li>Marcher vers l'ascenceur</li>
+<li>Appeler l'ascenceur</li>
+<li>Entrer dans l'ascenceur</li>
+<li>Appuyer sur le numéro de l'étage</li>
+<li>Sortir de l'ascenceur</li>
+<li>Marcher vers la porte de mon bureau</li>
+<li>Vérifier si la porte est ouverte</li>
+<li>Ouvrir à clé si la porte est fermée</li>
+<li>M'asseoir dans mon fauteuil</li>
+</ol>
+<p>Dans tous ces trois exemples, il y a un objectif précis au bout des actions, un problème à résoudre ou encore un besoin à satisfaire.</p>
+<h2 id="a-quoi-ressemble-un-algorithme">À quoi ressemble un algorithme ?<a class="headerlink" href="#a-quoi-ressemble-un-algorithme" title="Permanent link">#</a></h2>
+<p><div class="highlight"><span class="filename">Example d&#x27;algorithme</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ALGORITHME SaisirNom
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>VAR nom : chaîne de caractères
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    n, i: entiers
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>DÉBUT
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    AFFICHER(&quot;Saisir votre nom :&quot;)
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    SAISIR(nom)
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    AFFICHER(&quot;Bonjour&quot;, nom)
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    n &lt;- 5
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    POUR i&lt;-1 JQA n FAIRE
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>        AFFICHER(i)
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>    FPOUR
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>FIN
+</code></pre></div>
+C'est ce format de pseudo-code que j'adopterai tout au long de la formation. Cette synthaxe est assez proche du code ce qui vous facilitera le passage aux langages de programmation.</p>
+<h2 id="le-programme-de-la-formation">Le programme de la formation<a class="headerlink" href="#le-programme-de-la-formation" title="Permanent link">#</a></h2>
+<p>Cette formation est un véritable voyage au pays des algorithmes et des structures de données. Elle est organisée en cinq (5) parties, dans la première partie, j'introduis les définitions et les notions de base de l'algorithmique. La deuxième partie est consacrée aux tableaux. La troisième partie est une introduction à la modularité, je montre comment découper les problèmes en de petits problèmes avec les procédures et les fonctions. Enfin, dans la quatrième et dernière partie, je vous parlerai des structures de données qui sont un sujet essentiel en algorithmique.</p>
+<ul>
+<li>Partie 1 : Les bases</li>
+<li>Partie 2 : Les tableaux</li>
+<li>Partie 3 : Procédures et Fonctions</li>
+<li>Partie 4 : Les structures de données</li>
+<li>Partie 5 : Les fichiers</li>
+<li>Partie 6 : Complexité algorithmique</li>
+</ul>
+<p>L'algorithmique et les structures de données consituent le socle du dévéloppement informatique et donc un <strong>MUST HAVE</strong> dans votre parcours Python et Data.</p>
+<hr />
+<p><em>Aucun outil n'est nécessaire pour concevoir des algorithmes si ce n'est du papier et de quoi écrire. L'algorithmique consiste essentiellement en la réflexion. Vous êtes prêts, je vous donne rendez-vous dans la première partie !</em></p>
+
+                    </section>
+
+                </article>
+
+                <!-- Navigation Précédent / Suivant -->
+                <nav class="row mt-5 pt-4 border-top">
+                    <div class="col-6">
+                        
+                        <a href="../informatique/ressources/" class="text-decoration-none">
+                            <span class="d-block small text-muted text-uppercase mb-1"><i class="fas fa-arrow-left me-1"></i> Précédent</span>
+                            <span class="fw-bold text-primary">Aller plus loin</span>
+                        </a>
+                        
+                    </div>
+                    <div class="col-6 text-end">
+                        
+                        <a href="partie-1-les-bases/" class="text-decoration-none">
+                            <span class="d-block small text-muted text-uppercase mb-1">Suivant <i class="fas fa-arrow-right ms-1"></i></span>
+                            <span class="fw-bold text-primary">Les bases de l'algorithmique</span>
+                        </a>
+                        
+                    </div>
+                </nav>
+
+                <section class="mt-5 border-top pt-4">
+                    
+                    <div class="share-section mb-5">
+                        <h2 class="h4 mb-3">Partagez sur les réseaux sociaux</h2>
+                        <!-- ShareThis BEGIN -->
+                        <div class="sharethis-inline-share-buttons"></div>
+                        <!-- ShareThis END -->
+                    </div>
+
+                    
+                    
+                    <div class="comments-section">
+                        <h2 id="__comments" class="h4 mb-4">Commentaires</h2>
+                        
+                        
+                        <script src="https://giscus.app/client.js"
+                                data-repo="joekakone/Departement-De-Maths"
+                                data-repo-id="MDEwOlJlcG9zaXRvcnkzMzY4MjEwNTY="
+                                data-category="General"
+                                data-category-id="DIC_kwDOFBN7QM4CORj9"
+                                data-mapping="pathname"
+                                data-reactions-enabled="1"
+                                data-emit-metadata="0"
+                                data-input-position="bottom"
+                                
+                                data-theme="preferred_color_scheme"
+                                data-lang="fr"
+                                crossorigin="anonymous"
+                                async>
+                        </script>
+                    </div>
+                    
+                </section>
+            </main>
+
+        </div>
+    </div>
+
+</div>
+
+
+
+
+  <!-- Tags -->
+
+<!-- CTA FINAL -->
+<section class="py-5 bg-primary text-white text-center">
+<div class="container py-4">
+    <h3 class="text-uppercase mb-4">Inscrivez-vous à une formation complète</h3>
+    <a href="/#formations" class="btn btn-outline-light btn-lg text-uppercase px-5">Voir le catalogue</a>
+</div>
+</section>
+
+<!-- Footer-->
+<footer class="pt-0">
+    <!-- Bande de Navigation Précédent / Suivant (Style Bootstrap Dark) -->
+    
+    
+    <div class="container text-center py-5">
+        <div class="row px-4">
+            <div class="col-lg-7 mx-auto">
+                <h2 class="text-uppercase mb-0">Joseph Konka </h2>
+                <h6 class="text-primary text-uppercase mb-0 letter-spacing-3">Senior Data Analyst | Data Scientist</h6>
+                <p class="text-muted my-4">Project Management - Data Engineering - Data Analytics - Python Programming</p>
+                <ul class="list-inline mb-0">
+                    <li class="list-inline-item"><a class="social-link" href="https://wa.me/+22891518923" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
+                    <li class="list-inline-item"><a class="social-link" href="https://github.com/joekakone" target="_blank"><i class="fab fa-github"></i></a></li>
+                    <li class="list-inline-item"><a class="social-link" href="https://www.linkedin.com/in/joseph-koami-konka" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+                    <li class="list-inline-item"><a class="social-link" href="https://web.facebook.com/joekakonepage" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                    <li class="list-inline-item"><a class="social-link" href="https://twitter.com/joekakone" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                    <li class="list-inline-item"><a class="social-link" href="https://www.youtube.com/@algojungle" target="_blank"><i class="fab fa-youtube"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="copyrights px-4">
+        <div class="container py-4 border-top text-center">
+        <p class="mb-0 text-muted py-2">&copy; All rights reserved. Template designed by <a
+            href="https://bootstrapious.com/p/bootstrap-resume">Bootstrapious</a>. </p>
+        </div>
+    </div>
+</footer>
+  
+
+  <!-- JS -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script> -->
+  <script src="../assets/javascripts/custom.js"></script>
+
+  
+  <!-- JavaScript files-->
+  <script src="https://joekakone.github.io/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="https://joekakone.github.io/static/js/front.js"></script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YPL3847T5N"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-YPL3847T5N');
+  </script>
+
+  <script type='text/javascript'>
+    var divElement = document.getElementById('viz1677099741796'); var vizElement = divElement.getElementsByTagName('object')[0]; if (divElement.offsetWidth > 800) { vizElement.style.width = '1100px'; vizElement.style.height = '627px'; } else if (divElement.offsetWidth > 500) { vizElement.style.width = '1100px'; vizElement.style.height = '627px'; } else { vizElement.style.width = '100%'; vizElement.style.height = '1327px'; } var scriptElement = document.createElement('script'); scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js'; vizElement.parentNode.insertBefore(scriptElement, vizElement);                
+  </script>
+
+  <!-- Google Ads -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2980760029476176"
+      crossorigin="anonymous"></script>
+
+  <!-- ShareThis -->
+  <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=649bd6c6a6672f0012d186bd&product=sop' async='async'></script>
+
+  <!-- Tally -->
+  <script async src="https://tally.so/widgets/embed.js"></script>
+
+  <!-- Facebook -->
+  <div id="fb-root"></div>
+  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v20.0&appId=564181564271850"></script>
+
+  <!-- Messenger Plugin de discussion Code -->
+  <div id="fb-root"></div>
+
+  <!-- Your Plugin de discussion code -->
+  <div id="fb-customer-chat" class="fb-customerchat">
+  </div>
+
+  <script>
+    var chatbox = document.getElementById('fb-customer-chat');
+    chatbox.setAttribute("page_id", "2130664133866857");
+    chatbox.setAttribute("attribution", "biz_inbox");
+
+    window.fbAsyncInit = function () {
+      FB.init({
+        xfbml: true,
+        version: 'v12.0'
+      });
+    };
+
+    (function (d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/fr_FR/sdk/xfbml.customerchat.js';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
+
+  <!-- Contact Form Utils -->
+  <script>
+    function buildMailtoUrl(event) {
+      event.preventDefault(); // Prevent form submission
+
+      var emailInputFirstName = document.getElementById('InputFirstName').value;
+      var emailInputLastName = document.getElementById('InputLastName').value;
+      var emailInputEmail = document.getElementById('InputEmail').value;
+      var emailInputPhone = document.getElementById('InputPhone').value;
+      var emailInputSubject = document.getElementById('InputSubject').value;
+      var emailInputMessage = document.getElementById('InputMessage').value;
+
+      var emailContent = `${emailInputMessage} \n\nFull Name : ${emailInputFirstName} ${emailInputLastName}\nPhone Number : ${emailInputPhone}\nEmail : ${emailInputEmail}`;
+
+      var subject = encodeURIComponent(emailInputSubject);
+      var body = encodeURIComponent(emailContent);
+
+      var mailtoLink = 'mailto:konka.datanalytics@gmail.com' + '?subject=' + subject + '&body=' + body;
+
+      window.location.href = mailtoLink;
+    }
+  </script>
+
+  <!-- Google Ads -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2980760029476176"
+    crossorigin="anonymous"></script>
+
+
+  <!-- FontAwesome CSS - loading as last, so it doesn't block rendering-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+</body>
+</html>

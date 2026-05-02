@@ -1,0 +1,2113 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+
+  <!-- Meta tags -->
+  
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <!-- Page description -->
+    
+      <meta name="description" content="Savoir ce qu'il s'est passé, comprendre le pourquoi et pouvoir prédire ce qu'il va se passer constituent les enjeux de l'analyse de données pour une entreprise qui souhaite prendre des décisions éclairées. Dans cette formation, vous apprendrez les fondamentaux de l'analyse de données et les outils utilisés." />
+    
+
+    <!-- Page author -->
+    
+      <meta name="author" content="Joseph Konka" />
+    
+
+    <!-- Canonical -->
+    
+      <link rel="canonical" href="https://josephkonkathedataguy.com/learning/analytics/" />
+    
+
+    <!-- Previous page -->
+    
+      <link rel="prev" href="../python/ressources/" />
+    
+
+    <!-- Next page -->
+    
+      <link rel="next" href="data-monetization/" />
+    
+
+    <!-- Favicon -->
+    <link rel="icon" href="https://algojungle.github.io/algojungle-assets/assets/favicon.png" />
+
+    <!-- Generator banner -->
+    <meta name="generator" content="mkdocs-1.6.1, $md-name$-$md-version$" />
+  
+
+  <title>
+    Introduction générale à l'analyse de données | Algo Jungle
+  </title>
+
+  <!-- Google Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,800&display=swap">
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+  <!-- Theme CSS -->
+  <link rel="stylesheet" href="https://joekakone.github.io/static/css/style.blue.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../assets/stylesheets/custom.css">
+  
+  <style>
+    body {
+      font-family: 'Work Sans', sans-serif;
+      background-color: #fcfcfc;
+    }
+    /* Style par défaut pour le contenu Markdown */
+    .markdown-content img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+  </style>
+  
+</head>
+
+<body>
+
+  <!-- navbar-->
+<header class="header">
+  <nav class="navbar navbar-light navbar-expand-lg fixed-top" id="navbar">
+    <div class="container"><a class="navbar-brand" href="/learning"><img
+          src="https://algojungle.github.io/algojungle-assets/assets/favicon.png" alt="" height="36.14"></a>
+      <button class="navbar-toggler navbar-toggler-end" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation"><i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        
+  <ul class="navbar-nav ms-auto">
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    <li class="nav-item">
+      
+      <a href=".." class="nav-link link-scroll">
+        
+  
+
+  <!-- Navigation link icon -->
+  
+    
+  
+
+  <!-- Navigation link title -->
+  Accueil
+
+      </a>
+      
+    </li>
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../informatique/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  Informatique
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../algorithmique/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  Algorithmique
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../programmation/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  Programmation
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../python/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  Python
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+    
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="./" class="nav-link link-scroll active">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  Analytics
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="sql/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  SQL
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="powerbi/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  Power BI
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../big-data/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  Big Data
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../machine-learning/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  Machine Learning
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../machine-learning/tensorflow/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  TensorFlow
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../mlops/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  MLOps
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../blog/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  Blog
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+  </ul>
+
+      </div>
+
+    </div>
+  </nav>
+</header>
+
+  
+
+  <!-- Bloc principal : Sera remplacé par home.html pour la page d'accueil -->
+  
+<div class="algo-jungle-article">
+
+    <!-- Header de l'Article -->
+    
+    <section class="article-header bg-light border-bottom">
+        <div class="container py-5 text-center">
+            
+            <!-- Titre avec marge haute pour le descendre -->
+            <div class="pt-5 mt-5">
+                
+                    <h1 class="text-uppercase fw-bold mb-4 display-5" style="color: #333;">Introduction générale à l'analyse de données</h1>
+                
+            </div>
+
+            <!-- Infos Auteur -->
+            
+            <div class="d-flex align-items-center justify-content-center mb-4">
+                
+                <img src="https://avatars.githubusercontent.com/joekakone" alt="@joekakone" class="rounded-circle me-3 border border-2 border-primary" style="width: 55px; height: 55px; object-fit: cover;">
+                
+                <div class="text-start">
+                    <p class="mb-0 fw-bold text-dark">
+                        Joseph Konka 
+                        
+                        <a href="https://github.com/joekakone" class="text-primary text-decoration-none small">@joekakone</a>
+                        
+                    </p>
+                    <p class="small text-muted mb-0">
+                        <i class="far fa-calendar-alt me-1"></i> 03/03/2026 
+                        <span class="mx-2">·</span> 
+                        <i class="far fa-clock me-1"></i> 3 min
+                    </p>
+                </div>
+            </div>
+            
+
+            <!-- Tags -->
+            
+                <div class="tags">
+                    
+                        <a href="/tags/#fondamentaux">
+                            <span class="skill-tag text-uppercase">fondamentaux</span>
+                        </a>
+                    
+                        <a href="/tags/#business-intelligence">
+                            <span class="skill-tag text-uppercase">business-intelligence</span>
+                        </a>
+                    
+                        <a href="/tags/#data-engineering">
+                            <span class="skill-tag text-uppercase">data-engineering</span>
+                        </a>
+                    
+                        <a href="/tags/#data-analytics">
+                            <span class="skill-tag text-uppercase">data-analytics</span>
+                        </a>
+                    
+                </div>
+            
+
+            <!-- Description / Overview centrée et justifiée -->
+            
+            <div class="row justify-content-center mt-5">
+                <div class="col-lg-10">
+                    <p class="lead text-muted cust-justify mb-0" style="line-height: 1.6;">
+                        Savoir ce qu'il s'est passé, comprendre le pourquoi et pouvoir prédire ce qu'il va se passer constituent les enjeux de l'analyse de données pour une entreprise qui souhaite prendre des décisions éclairées. Dans cette formation, vous apprendrez les fondamentaux de l'analyse de données et les outils utilisés.
+                    </p>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+    
+
+    <!-- Structure Corps de page (Sidebar + Contenu) -->
+    <div class="container py-5">
+        <div class="row gx-lg-5">
+            
+            <!-- Sidebar Navigation (Sous-sections du module actif) -->
+            <!-- <aside class="col-lg-3 d-none d-lg-block">
+                <div class="sticky-sidebar-container">
+                </div>
+            </aside> -->
+            <!-- Sidebar Navigation (droite) -->
+
+<aside class="col-lg-3 d-none d-lg-block">
+    <div class="sticky-sidebar-container">
+        <div class="p-4 bg-white border rounded shadow-sm mb-4">
+
+            
+
+            <!-- Initialisation navigation -->
+            <div class="sidebar-scroll-wrapper">
+                <div class="nav flex-column sidebar-nav" id="sidebarAccordion">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 fw-bold text-primary active-child"
+                href="./"
+                style="padding-left: 0px; font-size: 1.0rem;">
+                Introduction générale à l'analyse de données
+            </a>
+            
+            
+            
+                    
+                    
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="data-monetization/"
+                style="padding-left: 0px; font-size: 1.0rem;">
+                Data Monetization
+            </a>
+            
+            
+            
+                    
+                    
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="data-warehousing/"
+                style="padding-left: 0px; font-size: 1.0rem;">
+                Data Warehousing
+            </a>
+            
+            
+            
+                    
+                    
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="data-governance/"
+                style="padding-left: 0px; font-size: 1.0rem;">
+                Data Governance
+            </a>
+            
+            
+            
+                    
+                    
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="data-workflow/"
+                style="padding-left: 0px; font-size: 1.0rem;">
+                Data Workflow
+            </a>
+            
+            
+            
+                    
+                    
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="data-visualization/"
+                style="padding-left: 0px; font-size: 1.0rem;">
+                Data Visualization
+            </a>
+            
+            
+            
+                    
+                    
+            
+            
+
+            
+            <!-- SECTION AVEC ENFANTS -->
+            <div class="nav-item mb-1">
+                <div class="d-flex justify-content-between align-items-center">
+
+                    
+                    
+                    <a class="nav-link flex-grow-1 text-dark"
+                        href="excel/" style="padding-left: 0px;">
+                        Excel
+                    </a>
+
+                    <button
+                        class="btn btn-link p-2 text-decoration-none shadow-none collapse-trigger collapsed"
+                        data-bs-toggle="collapse" data-bs-target="#collapse-6914"
+                        aria-expanded="false">
+                        <i class="fas fa-chevron-right chevron-icon"></i>
+                    </button>
+                </div>
+
+                <div class="collapse " id="collapse-6914">
+                    <nav class="nav flex-column ms-2 mt-1">
+
+                        
+                        
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="excel/installer/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Installer Excel
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="excel/interface/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Découvrir l'interface
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="excel/les-tableaux/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Les tableaux
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="excel/les-graphiques/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Les graphiques
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="excel/les-tableaux-croises-dynamiques/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Les tableaux croisés dynamiques
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="excel/obtenir-des-donnees/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Obtenir des données
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="excel/creer-un-modele-de-donnees/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Créer un modèle de données
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="excel/ressources/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Ressources
+            </a>
+            
+            
+            
+                        
+                        
+
+                    </nav>
+                </div>
+            </div>
+
+            
+            
+            
+                    
+                    
+            
+            
+
+            
+            <!-- SECTION AVEC ENFANTS -->
+            <div class="nav-item mb-1">
+                <div class="d-flex justify-content-between align-items-center">
+
+                    
+                    
+                    <a class="nav-link flex-grow-1 text-dark"
+                        href="tableau/" style="padding-left: 0px;">
+                        Tableau
+                    </a>
+
+                    <button
+                        class="btn btn-link p-2 text-decoration-none shadow-none collapse-trigger collapsed"
+                        data-bs-toggle="collapse" data-bs-target="#collapse-4555"
+                        aria-expanded="false">
+                        <i class="fas fa-chevron-right chevron-icon"></i>
+                    </button>
+                </div>
+
+                <div class="collapse " id="collapse-4555">
+                    <nav class="nav flex-column ms-2 mt-1">
+
+                        
+                        
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="tableau/installer/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Installer Tableau
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="tableau/01-obtenir-les-donnees/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Obtenir les données
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="tableau/02-creer-des-champs-calcules/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Créer des champs calculés
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="tableau/03-creer-des-visuels/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Créer des visules
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="tableau/04-assembler-le-dashbord/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Assembler le rapport
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="tableau/05-partager-sur-tableau-public/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Publier sur Tableau Public
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="tableau/ressources/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Ressources
+            </a>
+            
+            
+            
+                        
+                        
+
+                    </nav>
+                </div>
+            </div>
+
+            
+            
+            
+                    
+                    
+            
+            
+
+            
+            <!-- SECTION AVEC ENFANTS -->
+            <div class="nav-item mb-1">
+                <div class="d-flex justify-content-between align-items-center">
+
+                    
+                    
+                    <a class="nav-link flex-grow-1 text-dark"
+                        href="python/" style="padding-left: 0px;">
+                        Python
+                    </a>
+
+                    <button
+                        class="btn btn-link p-2 text-decoration-none shadow-none collapse-trigger collapsed"
+                        data-bs-toggle="collapse" data-bs-target="#collapse-5758"
+                        aria-expanded="false">
+                        <i class="fas fa-chevron-right chevron-icon"></i>
+                    </button>
+                </div>
+
+                <div class="collapse " id="collapse-5758">
+                    <nav class="nav flex-column ms-2 mt-1">
+
+                        
+                        
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="python/installer-anaconda/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Installer Anaconda
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="python/01-numpy/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Numpy
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="python/02-pandas/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Pandas
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="python/03-matplotlib/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Matplotlib
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="python/04-bokeh/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Bokeh
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="python/ressources/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Ressources
+            </a>
+            
+            
+            
+                        
+                        
+
+                    </nav>
+                </div>
+            </div>
+
+            
+            
+            
+                    
+                    
+            
+            
+
+            
+            <!-- SECTION AVEC ENFANTS -->
+            <div class="nav-item mb-1">
+                <div class="d-flex justify-content-between align-items-center">
+
+                    
+                    
+                    <a class="nav-link flex-grow-1 text-dark"
+                        href="r/" style="padding-left: 0px;">
+                        R
+                    </a>
+
+                    <button
+                        class="btn btn-link p-2 text-decoration-none shadow-none collapse-trigger collapsed"
+                        data-bs-toggle="collapse" data-bs-target="#collapse-3845"
+                        aria-expanded="false">
+                        <i class="fas fa-chevron-right chevron-icon"></i>
+                    </button>
+                </div>
+
+                <div class="collapse " id="collapse-3845">
+                    <nav class="nav flex-column ms-2 mt-1">
+
+                        
+                        
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="r/installer/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Installer R
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- SECTION AVEC ENFANTS -->
+            <div class="nav-item mb-1">
+                <div class="d-flex justify-content-between align-items-center">
+
+                    
+                    
+                    <a class="nav-link flex-grow-1 text-dark"
+                        href="r/bases/" style="padding-left: 10px;">
+                        Les bases
+                    </a>
+
+                    <button
+                        class="btn btn-link p-2 text-decoration-none shadow-none collapse-trigger collapsed"
+                        data-bs-toggle="collapse" data-bs-target="#collapse-8687"
+                        aria-expanded="false">
+                        <i class="fas fa-chevron-right chevron-icon"></i>
+                    </button>
+                </div>
+
+                <div class="collapse " id="collapse-8687">
+                    <nav class="nav flex-column ms-2 mt-1">
+
+                        
+                        
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="r/bases/chemins/"
+                style="padding-left: 30px; font-size: 0.9rem;">
+                Les chemins
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="r/bases/objets/"
+                style="padding-left: 30px; font-size: 0.9rem;">
+                Les objets
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="r/bases/vecteurs/"
+                style="padding-left: 30px; font-size: 0.9rem;">
+                Les vecteurs
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="r/bases/facteurs/"
+                style="padding-left: 30px; font-size: 0.9rem;">
+                Les facteurs
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="r/bases/listes/"
+                style="padding-left: 30px; font-size: 0.9rem;">
+                Les listes
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="r/bases/matrices/"
+                style="padding-left: 30px; font-size: 0.9rem;">
+                Les matrices
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="r/bases/dataframes/"
+                style="padding-left: 30px; font-size: 0.9rem;">
+                Les tableaux
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="r/bases/import/"
+                style="padding-left: 30px; font-size: 0.9rem;">
+                Import
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="r/bases/export/"
+                style="padding-left: 30px; font-size: 0.9rem;">
+                Export
+            </a>
+            
+            
+            
+                        
+                        
+
+                    </nav>
+                </div>
+            </div>
+
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- SECTION AVEC ENFANTS -->
+            <div class="nav-item mb-1">
+                <div class="d-flex justify-content-between align-items-center">
+
+                    
+                    
+                    <a class="nav-link flex-grow-1 text-dark"
+                        href="r/programmation/" style="padding-left: 10px;">
+                        Programmation
+                    </a>
+
+                    <button
+                        class="btn btn-link p-2 text-decoration-none shadow-none collapse-trigger collapsed"
+                        data-bs-toggle="collapse" data-bs-target="#collapse-6390"
+                        aria-expanded="false">
+                        <i class="fas fa-chevron-right chevron-icon"></i>
+                    </button>
+                </div>
+
+                <div class="collapse " id="collapse-6390">
+                    <nav class="nav flex-column ms-2 mt-1">
+
+                        
+                        
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="r/programmation/conditions/"
+                style="padding-left: 30px; font-size: 0.9rem;">
+                Les conditions
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="r/programmation/boucles/"
+                style="padding-left: 30px; font-size: 0.9rem;">
+                Les boucles
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="r/programmation/fonctions/"
+                style="padding-left: 30px; font-size: 0.9rem;">
+                Les fonctions
+            </a>
+            
+            
+            
+                        
+                        
+
+                    </nav>
+                </div>
+            </div>
+
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- SECTION AVEC ENFANTS -->
+            <div class="nav-item mb-1">
+                <div class="d-flex justify-content-between align-items-center">
+
+                    
+                    
+                    <a class="nav-link flex-grow-1 text-dark"
+                        href="r/statistique-descriptive/" style="padding-left: 10px;">
+                        Statistique Descriptive
+                    </a>
+
+                    <button
+                        class="btn btn-link p-2 text-decoration-none shadow-none collapse-trigger collapsed"
+                        data-bs-toggle="collapse" data-bs-target="#collapse-1154"
+                        aria-expanded="false">
+                        <i class="fas fa-chevron-right chevron-icon"></i>
+                    </button>
+                </div>
+
+                <div class="collapse " id="collapse-1154">
+                    <nav class="nav flex-column ms-2 mt-1">
+
+                        
+                        
+                        
+                        
+
+                    </nav>
+                </div>
+            </div>
+
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- SECTION AVEC ENFANTS -->
+            <div class="nav-item mb-1">
+                <div class="d-flex justify-content-between align-items-center">
+
+                    
+                    
+                    <a class="nav-link flex-grow-1 text-dark"
+                        href="r/probabilites/" style="padding-left: 10px;">
+                        Probabilités
+                    </a>
+
+                    <button
+                        class="btn btn-link p-2 text-decoration-none shadow-none collapse-trigger collapsed"
+                        data-bs-toggle="collapse" data-bs-target="#collapse-5754"
+                        aria-expanded="false">
+                        <i class="fas fa-chevron-right chevron-icon"></i>
+                    </button>
+                </div>
+
+                <div class="collapse " id="collapse-5754">
+                    <nav class="nav flex-column ms-2 mt-1">
+
+                        
+                        
+                        
+                        
+
+                    </nav>
+                </div>
+            </div>
+
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- SECTION AVEC ENFANTS -->
+            <div class="nav-item mb-1">
+                <div class="d-flex justify-content-between align-items-center">
+
+                    
+                    
+                    <a class="nav-link flex-grow-1 text-dark"
+                        href="r/statistique-inferentielle/" style="padding-left: 10px;">
+                        Statistique Inférentielle
+                    </a>
+
+                    <button
+                        class="btn btn-link p-2 text-decoration-none shadow-none collapse-trigger collapsed"
+                        data-bs-toggle="collapse" data-bs-target="#collapse-1965"
+                        aria-expanded="false">
+                        <i class="fas fa-chevron-right chevron-icon"></i>
+                    </button>
+                </div>
+
+                <div class="collapse " id="collapse-1965">
+                    <nav class="nav flex-column ms-2 mt-1">
+
+                        
+                        
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="r/statistique-inferentielle/estimation/"
+                style="padding-left: 30px; font-size: 0.9rem;">
+                Estimation
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="r/statistique-inferentielle/intervalles-de-confiance/"
+                style="padding-left: 30px; font-size: 0.9rem;">
+                Intervalle de confiance
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="r/statistique-inferentielle/tests-d-hypotheses/"
+                style="padding-left: 30px; font-size: 0.9rem;">
+                Test d'hypothèses
+            </a>
+            
+            
+            
+                        
+                        
+
+                    </nav>
+                </div>
+            </div>
+
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="r/ressources/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Ressources
+            </a>
+            
+            
+            
+                        
+                        
+
+                    </nav>
+                </div>
+            </div>
+
+            
+            
+            
+                    
+                    
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="ressources/"
+                style="padding-left: 0px; font-size: 1.0rem;">
+                Ressources
+            </a>
+            
+            
+            
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Bloc Abonnement -->
+        <div class="p-4 bg-primary text-white rounded shadow text-center">
+            <p class="small mb-3">Abonnez-vous à la newsletter !</p>
+            <a href="#tally-open=mJzBvX&tally-layout=modal&tally-emoji-text=👋&tally-emoji-animation=wave"
+                class="btn btn-outline-light btn-sm text-uppercase w-100">
+                S'abonner
+            </a>
+        </div>
+
+    </div>
+</aside>
+
+            <!-- Contenu Principal -->
+            <main class="col-lg-9 col-md-12">
+                <article class="markdown-content bg-white p-4 p-md-5 border rounded shadow-sm">                        
+                    
+
+                    
+                    <div class="featured-image mb-5">
+                        <img src="https://algojungle.github.io/algojungle-assets/images/04-analytics/covers/analytics.png" class="img-fluid rounded shadow-sm w-100" alt="Introduction générale à l'analyse de données">
+                    </div>
+                    
+
+                    <section class="" id="blog">
+
+                        
+
+                        <p>Afin de bien planter le décor, je vous propose de partir en immersion avec ces deux vidéos de Yann LeCun, le père des réseaux de neuronnes convolutionnels. Il est considéré comme l'un des pères de l'intelligence artificielle.</p>
+<h2 id="grande-entrevue-avec-yann-le-cun">Grande entrevue avec Yann Le Cun<a class="headerlink" href="#grande-entrevue-avec-yann-le-cun" title="Permanent link">#</a></h2>
+<p>Professeur à l’Université de New York, Yann LeCun est aujourd’hui reconnu comme étant le spécialiste mondial de l’intelligence artificielle et a tout récemment rejoint Facebook pour travailler sur le nouveau programme FAIR (Facebook Artificial Intelligence Research) dont un des bureaux se trouve à Paris. Cette session vous initiera à ce qui sera au cœur de l'intelligence artificielle de demain et de la R&amp;D de Facebook.</p>
+<iframe width="100%" height="400" src="https://www.youtube.com/embed/lJOx_x5DXuo" title="Enseigner les algorithmes en mode « débranché » pour mieux les comprendre - Gérard Berry" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<h2 id="deep-learning-yann-lecun-a-lusi">Deep learning - Yann LeCun, à l'USI<a class="headerlink" href="#deep-learning-yann-lecun-a-lusi" title="Permanent link">#</a></h2>
+<p>Professeur à l’Université de New York, Yann LeCun est aujourd’hui reconnu comme étant le spécialiste mondial de l’intelligence artificielle et a tout récemment rejoint Facebook pour travailler sur le nouveau programme FAIR (Facebook Artificial Intelligence Research) dont un des bureaux se trouve à Paris. Cette session vous initiera à ce qui sera au cœur de l'intelligence artificielle de demain et de la R&amp;D de Facebook.</p>
+<iframe width="100%" height="400" src="https://www.youtube.com/embed/RgUcQceqC_Y" title="Enseigner les algorithmes en mode « débranché » pour mieux les comprendre - Gérard Berry" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<h2 id="definition">Définition<a class="headerlink" href="#definition" title="Permanent link">#</a></h2>
+<p>‘‘Data analysis is a process of inspecting, cleansing, transforming, and modelling data with the goal of discovering useful information, informing conclusions, and supporting decision-making.’’<br>
+Source: <a href="https://en.wikipedia.org/wiki/Data_analysis">Wikipedia</a></p>
+<p>Cette défintion en anglais résume assez bien ce qu'est l'analyse de données, il s'agit d'un processus. En français, ça donne ceci <br>
+<em>‘‘L’analyse des données est un processus d’inspection, de nettoyage, de transformation et de modélisation des données dans le but de découvrir des informations utiles, d’éclairer les conclusions et d’appuyer la prise de décision.’’</em></p>
+<p><img alt="" src="https://upload.wikimedia.org/wikipedia/commons/e/ee/Relationship_of_data%2C_information_and_intelligence.png" /></p>
+<h2 id="valorisation-des-donnees">Valorisation des données<a class="headerlink" href="#valorisation-des-donnees" title="Permanent link">#</a></h2>
+<p>Les entreprises stockent de grandes quantités de données relatives à leur business. Ces données bien exploitées pourraient aider les entreprises à mieux comprendre leur business et à prendre les meilleures décisions afin d'améliorer leurs résultats.</p>
+<h2 id="plusieurs-niveaux-danalyse">Plusieurs niveaux d'analyse<a class="headerlink" href="#plusieurs-niveaux-danalyse" title="Permanent link">#</a></h2>
+<p>On distingue plusieurs types ou niveaux d'analyse de données, l'analyse descriptive, l'analyse diagnostique, l'analyse prédictive et l'analyse prédictive.</p>
+<p><img alt="" src="https://learn.microsoft.com/fr-fr/training/wwl-data-ai/introduction-azure-synapse-analytics/media/types-analytics.png" /></p>
+<h2 id="1-analyse-descriptive">1. Analyse descriptive<a class="headerlink" href="#1-analyse-descriptive" title="Permanent link">#</a></h2>
+<p>Permet de répondre à la première question <strong>Qu'est-ce qu'il s'est passé ?</strong>. C'est le principal objet de la Business Intelligence (informatique décisionnelle), rendre compte de ce qu'il s'est passé. C'est la forme d'analyse la plus répandue.</p>
+<h2 id="2-analyse-diagnostique">2. Analyse diagnostique<a class="headerlink" href="#2-analyse-diagnostique" title="Permanent link">#</a></h2>
+<p>Permet de répondre à la dexuième question <strong>Pourquoi ou comment est-ce que c'est arrivé ?</strong>. Pourquoi le chiffre d'affaires a baissé dans une région X ?</p>
+<h2 id="3-analyse-predictive">3. Analyse prédictive<a class="headerlink" href="#3-analyse-predictive" title="Permanent link">#</a></h2>
+<p>Permet de répondre à la troisième question <strong>Qu'est-ce qu'il pourra se passer ?</strong>.</p>
+<p>Il s'agit de prédire ou prévoir à partir des données historiques. Ce type d'analyse fait appel aux techniques de machine learning (apprentissage automatique).</p>
+<h2 id="4-analyse-prescriptive">4. Analyse prescriptive<a class="headerlink" href="#4-analyse-prescriptive" title="Permanent link">#</a></h2>
+<p>Permet de répondre à la troisième question <strong>Qu'est-ce qu'il se passerait si ?</strong>. L'objectif est d'identifier les actions à mener pour atteindre un objectif donné.</p>
+<p><em>Vous entendrez parler d'un autre type d'analyse, </em><em>l'analyse cognitive</em><em> qui utilise l'intteligence artificielle à des fins d'analyse, analyser les commentaires sur les réseaux soicaux par exemple.</em></p>
+<h2 id="les-metiers">Les métiers<a class="headerlink" href="#les-metiers" title="Permanent link">#</a></h2>
+<p>Les métiers de l'analyse de données sont nombreux, plusieurs profils interviennet dans le processus. Si l'analyste de données ou le Data Analyst est le spécialiste de l'analyse de données, il ne travaille pas seul. Suivant le niveau d'analyse, il existe des variantes.</p>
+<!-- ### Développeur ETL
+Le développeur ETL joue un rôle primordial, il est chargé d'intégration des données. Il récupère les données des différentes sources, les transforme puis les injecte dans la Data Warehouse et les différents Data Mart. Il met les données à la disposition de l'équipe analytique.
+
+### Business Analyst
+Le Business Analyst supporte les décideurs en fournissant des informations utile. Il est en première ligne dans l'aide à la décision.
+
+### Analyste Ad Hoc
+L'analyste Ad Hoc effectue des analyses pour des besoins précis (particuliers). Ad Hoc vient en opposition au récurrent (périodique).
+
+### Développeur BI
+Un développeur BI est un Business Analyst spécialisé dans un outil, Tableau, Power BI.
+
+### Chargé de Reproting
+Le Chargé de Reproting suit les différents KPIs (Indicateur Clé de Performance) de l'entreprise (analyse descriptive). Il alerte en cas de variation inhabituelle. -->
+
+<table>
+<thead>
+<tr>
+<th>Poste</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Développeur ETL</td>
+<td>Le développeur ETL joue un rôle primordial, il est chargé d'intégration des données. Il récupère les données des différentes sources, les transforme puis les injecte dans la Data Warehouse et les différents Data Mart. Il met les données à la disposition de l'équipe analytique.</td>
+</tr>
+<tr>
+<td>Business Analyst</td>
+<td>Le Business Analyst supporte les décideurs en fournissant des informations utile. Il est en première ligne dans l'aide à la décision.</td>
+</tr>
+<tr>
+<td>Analyste Ad Hoc</td>
+<td>L'analyste Ad Hoc effectue des analyses pour des besoins précis (particuliers). Ad Hoc vient en opposition au récurrent (périodique).</td>
+</tr>
+<tr>
+<td>Développeur BI</td>
+<td>Un développeur BI est un Business Analyst spécialisé dans un outil, Tableau, Power BI.</td>
+</tr>
+<tr>
+<td>Chargé de Reproting</td>
+<td>Le Chargé de Reproting suit les différents KPIs (Indicateur Clé de Performance) de l'entreprise (analyse descriptive). Il alerte en cas de variation inhabituelle.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="information-technology-specialist-data-analytics">Information Technology Specialist Data Analytics<a class="headerlink" href="#information-technology-specialist-data-analytics" title="Permanent link">#</a></h2>
+<p>La cetification Information Technology Specialist Data Analytics est une certification qui permet aux anlystes de données de démontrer leur connaissance des fondements de l'analyse de données.</p>
+<p><img alt="" src="https://repository-images.githubusercontent.com/467334213/d27adb4b-72b7-4565-876e-baaad18d1091" /></p>
+<ul>
+<li>Data Basics</li>
+<li>Data Manipulation</li>
+<li>Data Analysis</li>
+<li>Data Visualization and Communication</li>
+<li>Responsible Analytics Pratices</li>
+</ul>
+<hr />
+<p><em>Vous entendrez parler d'un autre type d'analyse, </em><em>l'analyse cognitive</em><em> qui utilise l'intteligence artificielle à des fins d'analyse, analyser les commentaires sur les réseaux soicaux par exemple.</em></p>
+
+                    </section>
+
+                </article>
+
+                <!-- Navigation Précédent / Suivant -->
+                <nav class="row mt-5 pt-4 border-top">
+                    <div class="col-6">
+                        
+                        <a href="../python/ressources/" class="text-decoration-none">
+                            <span class="d-block small text-muted text-uppercase mb-1"><i class="fas fa-arrow-left me-1"></i> Précédent</span>
+                            <span class="fw-bold text-primary">Ressources</span>
+                        </a>
+                        
+                    </div>
+                    <div class="col-6 text-end">
+                        
+                        <a href="data-monetization/" class="text-decoration-none">
+                            <span class="d-block small text-muted text-uppercase mb-1">Suivant <i class="fas fa-arrow-right ms-1"></i></span>
+                            <span class="fw-bold text-primary">Data Monetization</span>
+                        </a>
+                        
+                    </div>
+                </nav>
+
+                <section class="mt-5 border-top pt-4">
+                    
+                    <div class="share-section mb-5">
+                        <h2 class="h4 mb-3">Partagez sur les réseaux sociaux</h2>
+                        <!-- ShareThis BEGIN -->
+                        <div class="sharethis-inline-share-buttons"></div>
+                        <!-- ShareThis END -->
+                    </div>
+
+                    
+                    
+                    <div class="comments-section">
+                        <h2 id="__comments" class="h4 mb-4">Commentaires</h2>
+                        
+                        
+                        <script src="https://giscus.app/client.js"
+                                data-repo="joekakone/Departement-De-Maths"
+                                data-repo-id="MDEwOlJlcG9zaXRvcnkzMzY4MjEwNTY="
+                                data-category="General"
+                                data-category-id="DIC_kwDOFBN7QM4CORj9"
+                                data-mapping="pathname"
+                                data-reactions-enabled="1"
+                                data-emit-metadata="0"
+                                data-input-position="bottom"
+                                
+                                data-theme="preferred_color_scheme"
+                                data-lang="fr"
+                                crossorigin="anonymous"
+                                async>
+                        </script>
+                    </div>
+                    
+                </section>
+            </main>
+
+        </div>
+    </div>
+
+</div>
+
+
+
+
+  <!-- Tags -->
+
+<!-- CTA FINAL -->
+<section class="py-5 bg-primary text-white text-center">
+<div class="container py-4">
+    <h3 class="text-uppercase mb-4">Inscrivez-vous à une formation complète</h3>
+    <a href="/#formations" class="btn btn-outline-light btn-lg text-uppercase px-5">Voir le catalogue</a>
+</div>
+</section>
+
+<!-- Footer-->
+<footer class="pt-0">
+    <!-- Bande de Navigation Précédent / Suivant (Style Bootstrap Dark) -->
+    
+    
+    <div class="container text-center py-5">
+        <div class="row px-4">
+            <div class="col-lg-7 mx-auto">
+                <h2 class="text-uppercase mb-0">Joseph Konka </h2>
+                <h6 class="text-primary text-uppercase mb-0 letter-spacing-3">Senior Data Analyst | Data Scientist</h6>
+                <p class="text-muted my-4">Project Management - Data Engineering - Data Analytics - Python Programming</p>
+                <ul class="list-inline mb-0">
+                    <li class="list-inline-item"><a class="social-link" href="https://wa.me/+22891518923" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
+                    <li class="list-inline-item"><a class="social-link" href="https://github.com/joekakone" target="_blank"><i class="fab fa-github"></i></a></li>
+                    <li class="list-inline-item"><a class="social-link" href="https://www.linkedin.com/in/joseph-koami-konka" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+                    <li class="list-inline-item"><a class="social-link" href="https://web.facebook.com/joekakonepage" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                    <li class="list-inline-item"><a class="social-link" href="https://twitter.com/joekakone" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                    <li class="list-inline-item"><a class="social-link" href="https://www.youtube.com/@algojungle" target="_blank"><i class="fab fa-youtube"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="copyrights px-4">
+        <div class="container py-4 border-top text-center">
+        <p class="mb-0 text-muted py-2">&copy; All rights reserved. Template designed by <a
+            href="https://bootstrapious.com/p/bootstrap-resume">Bootstrapious</a>. </p>
+        </div>
+    </div>
+</footer>
+  
+
+  <!-- JS -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script> -->
+  <script src="../assets/javascripts/custom.js"></script>
+
+  
+  <!-- JavaScript files-->
+  <script src="https://joekakone.github.io/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="https://joekakone.github.io/static/js/front.js"></script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YPL3847T5N"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-YPL3847T5N');
+  </script>
+
+  <script type='text/javascript'>
+    var divElement = document.getElementById('viz1677099741796'); var vizElement = divElement.getElementsByTagName('object')[0]; if (divElement.offsetWidth > 800) { vizElement.style.width = '1100px'; vizElement.style.height = '627px'; } else if (divElement.offsetWidth > 500) { vizElement.style.width = '1100px'; vizElement.style.height = '627px'; } else { vizElement.style.width = '100%'; vizElement.style.height = '1327px'; } var scriptElement = document.createElement('script'); scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js'; vizElement.parentNode.insertBefore(scriptElement, vizElement);                
+  </script>
+
+  <!-- Google Ads -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2980760029476176"
+      crossorigin="anonymous"></script>
+
+  <!-- ShareThis -->
+  <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=649bd6c6a6672f0012d186bd&product=sop' async='async'></script>
+
+  <!-- Tally -->
+  <script async src="https://tally.so/widgets/embed.js"></script>
+
+  <!-- Facebook -->
+  <div id="fb-root"></div>
+  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v20.0&appId=564181564271850"></script>
+
+  <!-- Messenger Plugin de discussion Code -->
+  <div id="fb-root"></div>
+
+  <!-- Your Plugin de discussion code -->
+  <div id="fb-customer-chat" class="fb-customerchat">
+  </div>
+
+  <script>
+    var chatbox = document.getElementById('fb-customer-chat');
+    chatbox.setAttribute("page_id", "2130664133866857");
+    chatbox.setAttribute("attribution", "biz_inbox");
+
+    window.fbAsyncInit = function () {
+      FB.init({
+        xfbml: true,
+        version: 'v12.0'
+      });
+    };
+
+    (function (d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/fr_FR/sdk/xfbml.customerchat.js';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
+
+  <!-- Contact Form Utils -->
+  <script>
+    function buildMailtoUrl(event) {
+      event.preventDefault(); // Prevent form submission
+
+      var emailInputFirstName = document.getElementById('InputFirstName').value;
+      var emailInputLastName = document.getElementById('InputLastName').value;
+      var emailInputEmail = document.getElementById('InputEmail').value;
+      var emailInputPhone = document.getElementById('InputPhone').value;
+      var emailInputSubject = document.getElementById('InputSubject').value;
+      var emailInputMessage = document.getElementById('InputMessage').value;
+
+      var emailContent = `${emailInputMessage} \n\nFull Name : ${emailInputFirstName} ${emailInputLastName}\nPhone Number : ${emailInputPhone}\nEmail : ${emailInputEmail}`;
+
+      var subject = encodeURIComponent(emailInputSubject);
+      var body = encodeURIComponent(emailContent);
+
+      var mailtoLink = 'mailto:konka.datanalytics@gmail.com' + '?subject=' + subject + '&body=' + body;
+
+      window.location.href = mailtoLink;
+    }
+  </script>
+
+  <!-- Google Ads -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2980760029476176"
+    crossorigin="anonymous"></script>
+
+
+  <!-- FontAwesome CSS - loading as last, so it doesn't block rendering-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+</body>
+</html>

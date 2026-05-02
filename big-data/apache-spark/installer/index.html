@@ -1,0 +1,2272 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+
+  <!-- Meta tags -->
+  
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <!-- Page description -->
+    
+      <meta name="description" content="Spark est une plateforme open-source de traitement de données volumineuses. Au fil des années, Spark s'est imposé comme l'outil de référence pour l'ingénierie de données. Dans ce guide ultime, je vous présente PySpark, l'API Python de Spark." />
+    
+
+    <!-- Page author -->
+    
+      <meta name="author" content="Joseph Konka" />
+    
+
+    <!-- Canonical -->
+    
+      <link rel="canonical" href="https://josephkonkathedataguy.com/learning/big-data/apache-spark/installer/" />
+    
+
+    <!-- Previous page -->
+    
+      <link rel="prev" href="../" />
+    
+
+    <!-- Next page -->
+    
+      <link rel="next" href="../01-get-started/" />
+    
+
+    <!-- Favicon -->
+    <link rel="icon" href="https://algojungle.github.io/algojungle-assets/assets/favicon.png" />
+
+    <!-- Generator banner -->
+    <meta name="generator" content="mkdocs-1.6.1, $md-name$-$md-version$" />
+  
+
+  <title>
+    Installer PySpark | Algo Jungle
+  </title>
+
+  <!-- Google Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,800&display=swap">
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+  <!-- Theme CSS -->
+  <link rel="stylesheet" href="https://joekakone.github.io/static/css/style.blue.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../../../assets/stylesheets/custom.css">
+  
+  <style>
+    body {
+      font-family: 'Work Sans', sans-serif;
+      background-color: #fcfcfc;
+    }
+    /* Style par défaut pour le contenu Markdown */
+    .markdown-content img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+  </style>
+  
+</head>
+
+<body>
+
+  <!-- navbar-->
+<header class="header">
+  <nav class="navbar navbar-light navbar-expand-lg fixed-top" id="navbar">
+    <div class="container"><a class="navbar-brand" href="/learning"><img
+          src="https://algojungle.github.io/algojungle-assets/assets/favicon.png" alt="" height="36.14"></a>
+      <button class="navbar-toggler navbar-toggler-end" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation"><i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        
+  <ul class="navbar-nav ms-auto">
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    <li class="nav-item">
+      
+      <a href="../../.." class="nav-link link-scroll">
+        
+  
+
+  <!-- Navigation link icon -->
+  
+    
+  
+
+  <!-- Navigation link title -->
+  Accueil
+
+      </a>
+      
+    </li>
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../../../informatique/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  Informatique
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../../../algorithmique/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  Algorithmique
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../../../programmation/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  Programmation
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../../../python/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  Python
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../../../analytics/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  Analytics
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../../../analytics/sql/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  SQL
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../../../analytics/powerbi/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  Power BI
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+    
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../../" class="nav-link link-scroll active">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  Big Data
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../../../machine-learning/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  Machine Learning
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../../../machine-learning/tensorflow/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  TensorFlow
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../../../mlops/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  MLOps
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../../../blog/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  Blog
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+  </ul>
+
+      </div>
+
+    </div>
+  </nav>
+</header>
+
+  
+
+  <!-- Bloc principal : Sera remplacé par home.html pour la page d'accueil -->
+  
+<div class="algo-jungle-article">
+
+    <!-- Header de l'Article -->
+    
+    <section class="article-header bg-light border-bottom">
+        <div class="container py-5 text-center">
+            
+            <!-- Titre avec marge haute pour le descendre -->
+            <div class="pt-5 mt-5">
+                
+                    <h1 class="text-uppercase fw-bold mb-4 display-5" style="color: #333;">Prise en main de PySpark - Le guide ultime</h1>
+                
+            </div>
+
+            <!-- Infos Auteur -->
+            
+
+            <!-- Tags -->
+            
+
+            <!-- Description / Overview centrée et justifiée -->
+            
+            <div class="row justify-content-center mt-5">
+                <div class="col-lg-10">
+                    <p class="lead text-muted cust-justify mb-0" style="line-height: 1.6;">
+                        Spark est une plateforme open-source de traitement de données volumineuses. Au fil des années, Spark s'est imposé comme l'outil de référence pour l'ingénierie de données. Dans ce guide ultime, je vous présente PySpark, l'API Python de Spark.
+                    </p>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+    
+
+    <!-- Structure Corps de page (Sidebar + Contenu) -->
+    <div class="container py-5">
+        <div class="row gx-lg-5">
+            
+            <!-- Sidebar Navigation (Sous-sections du module actif) -->
+            <!-- <aside class="col-lg-3 d-none d-lg-block">
+                <div class="sticky-sidebar-container">
+                </div>
+            </aside> -->
+            <!-- Sidebar Navigation (droite) -->
+
+<aside class="col-lg-3 d-none d-lg-block">
+    <div class="sticky-sidebar-container">
+        <div class="p-4 bg-white border rounded shadow-sm mb-4">
+
+            
+
+            <!-- Initialisation navigation -->
+            <div class="sidebar-scroll-wrapper">
+                <div class="nav flex-column sidebar-nav" id="sidebarAccordion">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../"
+                style="padding-left: 0px; font-size: 1.0rem;">
+                Les fondamentaux du Big Data
+            </a>
+            
+            
+            
+                    
+                    
+            
+            
+
+            
+            <!-- SECTION AVEC ENFANTS -->
+            <div class="nav-item mb-1">
+                <div class="d-flex justify-content-between align-items-center">
+
+                    
+                    
+                    <a class="nav-link flex-grow-1 text-dark"
+                        href="../../analysis-services/" style="padding-left: 0px;">
+                        Analysis Services
+                    </a>
+
+                    <button
+                        class="btn btn-link p-2 text-decoration-none shadow-none collapse-trigger collapsed"
+                        data-bs-toggle="collapse" data-bs-target="#collapse-7529"
+                        aria-expanded="false">
+                        <i class="fas fa-chevron-right chevron-icon"></i>
+                    </button>
+                </div>
+
+                <div class="collapse " id="collapse-7529">
+                    <nav class="nav flex-column ms-2 mt-1">
+
+                        
+                        
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../analysis-services/installer/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Installer Analysis Services
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../analysis-services/preparer-les-donnees/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Préparer les données
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../analysis-services/creer-un-cube-tabulaire/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Créer un cube tabulaire
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../analysis-services/creer-un-cube-multi-dimensionnel/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Créer un cube multi-dimensionnel
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../analysis-services/actualiser-un-cube/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Actualiser un cube
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../analysis-services/exploiter-un-cube-dans-excel/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Requêter un cube dans Excel
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../analysis-services/ressources/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Ressources
+            </a>
+            
+            
+            
+                        
+                        
+
+                    </nav>
+                </div>
+            </div>
+
+            
+            
+            
+                    
+                    
+            
+            
+
+            
+            <!-- SECTION AVEC ENFANTS -->
+            <div class="nav-item mb-1">
+                <div class="d-flex justify-content-between align-items-center">
+
+                    
+                    
+                    <a class="nav-link flex-grow-1 text-dark"
+                        href="../../mongo-db/" style="padding-left: 0px;">
+                        MongoDB
+                    </a>
+
+                    <button
+                        class="btn btn-link p-2 text-decoration-none shadow-none collapse-trigger collapsed"
+                        data-bs-toggle="collapse" data-bs-target="#collapse-6208"
+                        aria-expanded="false">
+                        <i class="fas fa-chevron-right chevron-icon"></i>
+                    </button>
+                </div>
+
+                <div class="collapse " id="collapse-6208">
+                    <nav class="nav flex-column ms-2 mt-1">
+
+                        
+                        
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../mongo-db/installer/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Installer Mongo DB
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../mongo-db/interagir-avec-mongo-db/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Interagir avec Mongo DB
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../mongo-db/applications/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Applications
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../mongo-db/ressources/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Ressources
+            </a>
+            
+            
+            
+                        
+                        
+
+                    </nav>
+                </div>
+            </div>
+
+            
+            
+            
+                    
+                    
+            
+            
+
+            
+            <!-- SECTION AVEC ENFANTS -->
+            <div class="nav-item mb-1">
+                <div class="d-flex justify-content-between align-items-center">
+
+                    
+                    
+                    <a class="nav-link flex-grow-1 text-dark"
+                        href="../../neo4j/" style="padding-left: 0px;">
+                        Neo4j
+                    </a>
+
+                    <button
+                        class="btn btn-link p-2 text-decoration-none shadow-none collapse-trigger collapsed"
+                        data-bs-toggle="collapse" data-bs-target="#collapse-2026"
+                        aria-expanded="false">
+                        <i class="fas fa-chevron-right chevron-icon"></i>
+                    </button>
+                </div>
+
+                <div class="collapse " id="collapse-2026">
+                    <nav class="nav flex-column ms-2 mt-1">
+
+                        
+                        
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../neo4j/installer/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Installer Neo4j
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../neo4j/creer-des-noeuds/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Créer des nœuds
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../neo4j/applications/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Applications
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../neo4j/ressources/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Ressources
+            </a>
+            
+            
+            
+                        
+                        
+
+                    </nav>
+                </div>
+            </div>
+
+            
+            
+            
+                    
+                    
+            
+            
+
+            
+            <!-- SECTION AVEC ENFANTS -->
+            <div class="nav-item mb-1">
+                <div class="d-flex justify-content-between align-items-center">
+
+                    
+                    
+                    <a class="nav-link flex-grow-1 active-parent fw-bold"
+                        href="../" style="padding-left: 0px;">
+                        Apache Spark
+                    </a>
+
+                    <button
+                        class="btn btn-link p-2 text-decoration-none shadow-none collapse-trigger "
+                        data-bs-toggle="collapse" data-bs-target="#collapse-4674"
+                        aria-expanded="true">
+                        <i class="fas fa-chevron-right chevron-icon"></i>
+                    </button>
+                </div>
+
+                <div class="collapse show" id="collapse-4674">
+                    <nav class="nav flex-column ms-2 mt-1">
+
+                        
+                        
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 fw-bold text-primary active-child"
+                href="./"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Installer PySpark
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../01-get-started/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Démarrer avec PySpark
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../02-import-export/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Import & Export
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../03-work-with-postgres/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Base de données
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../applications/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Applications
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../ressources/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Ressources
+            </a>
+            
+            
+            
+                        
+                        
+
+                    </nav>
+                </div>
+            </div>
+
+            
+            
+            
+                    
+                    
+            
+            
+
+            
+            <!-- SECTION AVEC ENFANTS -->
+            <div class="nav-item mb-1">
+                <div class="d-flex justify-content-between align-items-center">
+
+                    
+                    
+                    <a class="nav-link flex-grow-1 text-dark"
+                        href="../../apache-airflow/" style="padding-left: 0px;">
+                        Apache Airflow
+                    </a>
+
+                    <button
+                        class="btn btn-link p-2 text-decoration-none shadow-none collapse-trigger collapsed"
+                        data-bs-toggle="collapse" data-bs-target="#collapse-611"
+                        aria-expanded="false">
+                        <i class="fas fa-chevron-right chevron-icon"></i>
+                    </button>
+                </div>
+
+                <div class="collapse " id="collapse-611">
+                    <nav class="nav flex-column ms-2 mt-1">
+
+                        
+                        
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../apache-airflow/installer/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Installer Airflow
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../apache-airflow/interface/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Interface Airflow
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../apache-airflow/get-started/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Créer un DAG
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../apache-airflow/schedule-dags/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Planifier un DAG
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../apache-airflow/run-dags/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Exécuter un DAG
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../apache-airflow/define-dependencies/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Définir des dépendances
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../apache-airflow/airflow-cli-commands/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Commandes Airflow CLI
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../apache-airflow/config-mailing/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Configurer l'envoi de mail
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../apache-airflow/creer-une-connexion-de-source-de-donnees/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Créer une connexion
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../apache-airflow/applications/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Applications
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../apache-airflow/ressources/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Ressources
+            </a>
+            
+            
+            
+                        
+                        
+
+                    </nav>
+                </div>
+            </div>
+
+            
+            
+            
+                    
+                    
+            
+            
+
+            
+            <!-- SECTION AVEC ENFANTS -->
+            <div class="nav-item mb-1">
+                <div class="d-flex justify-content-between align-items-center">
+
+                    
+                    
+                    <a class="nav-link flex-grow-1 text-dark"
+                        href="../../talend/" style="padding-left: 0px;">
+                        Talend (Data Integration)
+                    </a>
+
+                    <button
+                        class="btn btn-link p-2 text-decoration-none shadow-none collapse-trigger collapsed"
+                        data-bs-toggle="collapse" data-bs-target="#collapse-1797"
+                        aria-expanded="false">
+                        <i class="fas fa-chevron-right chevron-icon"></i>
+                    </button>
+                </div>
+
+                <div class="collapse " id="collapse-1797">
+                    <nav class="nav flex-column ms-2 mt-1">
+
+                        
+                        
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../talend/installer/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Installer Talend
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../talend/decouvrir-interface/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Découvrir l'interface
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../talend/creer-une-connexion-de-base-de-donnees/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Créer une connexion de BD
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../talend/creer-un-job/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Créer un job
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../talend/afficher-des-messages/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Afficher des messages
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../talend/fonctions-predefinies/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Fonctions prédéfinies
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../talend/manipuler-les-dates/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Manipuler les dates
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../talend/exporter-un-job/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Exporter un job
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../talend/applications/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Applications
+            </a>
+            
+            
+            
+                        
+                        
+                        
+                        
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../talend/ressources/"
+                style="padding-left: 15px; font-size: 0.95rem;">
+                Ressources
+            </a>
+            
+            
+            
+                        
+                        
+
+                    </nav>
+                </div>
+            </div>
+
+            
+            
+            
+                    
+                    
+            
+            
+
+            
+            <!-- LIEN SIMPLE -->
+            <a class="nav-link py-1 text-muted"
+                href="../../ressources/"
+                style="padding-left: 0px; font-size: 1.0rem;">
+                Ressources
+            </a>
+            
+            
+            
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Bloc Abonnement -->
+        <div class="p-4 bg-primary text-white rounded shadow text-center">
+            <p class="small mb-3">Abonnez-vous à la newsletter !</p>
+            <a href="#tally-open=mJzBvX&tally-layout=modal&tally-emoji-text=👋&tally-emoji-animation=wave"
+                class="btn btn-outline-light btn-sm text-uppercase w-100">
+                S'abonner
+            </a>
+        </div>
+
+    </div>
+</aside>
+
+            <!-- Contenu Principal -->
+            <main class="col-lg-9 col-md-12">
+                <article class="markdown-content bg-white p-4 p-md-5 border rounded shadow-sm">                        
+                    
+
+                    
+                    <div class="featured-image mb-5">
+                        <img src="https://algojungle.github.io/algojungle-assets/images/07-big-data/apache-spark/covers/python-data-stack-pyspark.png" class="img-fluid rounded shadow-sm w-100" alt="Installer PySpark">
+                    </div>
+                    
+
+                    <section class="" id="blog">
+
+                        
+
+                        <h2 id="docker-compose">Docker Compose<a class="headerlink" href="#docker-compose" title="Permanent link">#</a></h2>
+<p><a href="https://hub.docker.com/r/bitnami/spark">https://hub.docker.com/r/bitnami/spark</a></p>
+<p>apache-spark</p>
+<p><a href="https://github.com/bitnami/containers/blob/main/bitnami/spark/docker-compose.yml">https://github.com/bitnami/containers/blob/main/bitnami/spark/docker-compose.yml</a></p>
+<h2 id="installer-java">Installer Java<a class="headerlink" href="#installer-java" title="Permanent link">#</a></h2>
+<p>Apache Spark étant dévelopée en Java, nous devons installer Java. Si vous l'avez déjà installé alors vous pouvez passer cette étape, sinon suivez <a href="https://algojungle.github.io/algojungle-assets/analytics/talend/installer/#installer-java">ce tutoriel</a> pour effectuer l'installation.</p>
+<p><strong>Pour Linux</strong><br>
+Installer Java<br>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>update
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>default-jdk
+</code></pre></div></p>
+<p>Définir la variable d'environnement<br>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">JAVA_HOME</span><span class="o">=</span>/usr/lib/jvm/java-1.11.0-openjdk-amd64
+</code></pre></div></p>
+<h2 id="installer-apache-spark">Installer Apache Spark<a class="headerlink" href="#installer-apache-spark" title="Permanent link">#</a></h2>
+<p>Installer Java<br>
+Rendez-vous à la page de télechargement <a href="https://spark.apache.org/downloads.html">Download Apache Spark™</a><br>
+<img alt="" src="https://algojungle.github.io/algojungle-assets/images/07-big-data/apache-spark/install/downalod-spark-01.png" />
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>wget<span class="w"> </span>https://dlcdn.apache.org/spark/spark-3.5.1/spark-3.5.1-bin-hadoop3.tgz
+</code></pre></div></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>tar<span class="w"> </span>xvf<span class="w"> </span>spark-3.5.1-bin-hadoop3.tgz
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>sudo<span class="w"> </span>mv<span class="w"> </span>spark-3.5.1-bin-hadoop3/<span class="w"> </span>/opt/spark
+</code></pre></div>
+<p>Définir la variable d'environnement<br>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">JAVA_HOME</span><span class="o">=</span>/usr/lib/jvm/java-1.11.0-openjdk-amd64
+</code></pre></div></p>
+<!--
+Rendez-vous à la page de télechargement [Download Apache Spark™](https://spark.apache.org/downloads.html)<br>
+![](https://algojungle.github.io/algojungle-assets/images/07-big-data/apache-spark/install/downalod-spark-01.png)
+
+Vous serez redirigé vers cette page, cliquez sur le lien pour lancer le téléchargement<br>
+![](https://algojungle.github.io/algojungle-assets/images/07-big-data/apache-spark/install/downalod-spark-02.png)
+
+Une fois le téléchargement terminé, rendez-vous dans le dossier de téléchargement<br>
+![](https://algojungle.github.io/algojungle-assets/images/07-big-data/apache-spark/install/install-spark-01.png)
+
+Faites clique-droit sur l'archive puis choisissez l'option **Extraire**<br>
+![](https://algojungle.github.io/algojungle-assets/images/07-big-data/apache-spark/install/install-spark-02.png)
+
+Je vous propose de déplacer le dossier `spark-3.5.0-bin-hadoop3` dans un autre dossier. Moi je le mets dans mon dossier personnel `C:\Users\Administrateur\spark-3.5.0-bin-hadoop3`.<br>
+![](https://algojungle.github.io/algojungle-assets/images/07-big-data/apache-spark/install/install-spark-03.png)
+
+## Configurer les variables
+À présent nous allons créer certaines variables d'environnement. Dans la barre de recherche, tapez **Variables d'environnement**<br>
+![](https://algojungle.github.io/algojungle-assets/images/07-big-data/apache-spark/install/define-env-variables-01.png)
+
+Sélectionnez **Variables d'environnement**<br>
+![](https://algojungle.github.io/algojungle-assets/images/07-big-data/apache-spark/install/define-env-variables-02.png)
+
+Sélecionnez la variable **Path** et cliquez sur le bouton **Modifier**<br>
+![](https://algojungle.github.io/algojungle-assets/images/07-big-data/apache-spark/install/define-env-variables-03.png)
+
+Cliquez ensuite sur le bouton **Parcourir** à gauche<br>
+![](https://algojungle.github.io/algojungle-assets/images/07-big-data/apache-spark/install/define-env-variables-04.png)
+
+Allez au dossier de Spark et sélection le sous-dossier `bin` puis cliquez sur le bouton **OK**<br>
+![](https://algojungle.github.io/algojungle-assets/images/07-big-data/apache-spark/install/define-env-variables-05.png)
+
+Parfait ! La nouvelle variable est ajoutée. Cliquez sur le bouton **OK** pour valider<br>
+![](https://algojungle.github.io/algojungle-assets/images/07-big-data/apache-spark/install/define-env-variables-06.png)
+
+Dans la section **Variable systèmes**, cliquez sur le bouton **Nouvelle**<br>
+![](https://algojungle.github.io/algojungle-assets/images/07-big-data/apache-spark/install/define-env-variables-07.png)
+
+Entrez `SPARK_HOME` dans le champ **Variable systèmes**, cliquez sur le bouton **Nouvelle**<br>
+![](https://algojungle.github.io/algojungle-assets/images/07-big-data/apache-spark/install/define-env-variables-08.png)
+
+Dans la section **Variable systèmes**, cliquez sur le bouton **Nouvelle**<br>
+![](https://algojungle.github.io/algojungle-assets/images/07-big-data/apache-spark/install/define-env-variables-09.png)
+
+Dans la section **Variable systèmes**, cliquez sur le bouton **Nouvelle**<br>
+![](https://algojungle.github.io/algojungle-assets/images/07-big-data/apache-spark/install/define-env-variables-10.png)
+
+Dans la section **Variable systèmes**, cliquez sur le bouton **Nouvelle**<br>
+![](https://algojungle.github.io/algojungle-assets/images/07-big-data/apache-spark/install/define-env-variables-11.png)
+
+Dans la section **Variable systèmes**, cliquez sur le bouton **Nouvelle**<br>
+![](https://algojungle.github.io/algojungle-assets/images/07-big-data/apache-spark/install/define-env-variables-12.png)
+
+Cliquez sur le bouton **OK**<br>
+![](https://algojungle.github.io/algojungle-assets/images/07-big-data/apache-spark/install/define-env-variables-13.png)
+
+Cliquez une dernière dernière fois sur le bouton **OK**<br>
+![](https://algojungle.github.io/algojungle-assets/images/07-big-data/apache-spark/install/define-env-variables-14.png)
+
+## Installer Winutils.exe
+Rendez-vous sur le repo [](https://github.com/steveloughran/winutils/blob/master/hadoop-3.0.0/bin/winutils.exe)<br>
+![](https://algojungle.github.io/algojungle-assets/images/07-big-data/apache-spark/install/install-winutils-01.png)
+
+Dans le dossier racine du disque `C:`, créez le dossier `C:\winutils`<br>
+![](https://algojungle.github.io/algojungle-assets/images/07-big-data/apache-spark/install/install-winutils-02.png)
+
+Créez le dossier `C:\winutils\bin` puis déplacez le fichier `winutils.exe` à l'intérieur<br>
+![](https://algojungle.github.io/algojungle-assets/images/07-big-data/apache-spark/install/install-winutils-03.png)
+
+Retournez dans la fenêtre des variables d'environnement<br>
+![](https://algojungle.github.io/algojungle-assets/images/07-big-data/apache-spark/install/install-winutils-04.png)
+
+<br>
+![](https://algojungle.github.io/algojungle-assets/images/07-big-data/apache-spark/install/install-winutils-05.png)
+
+<br>
+![](https://algojungle.github.io/algojungle-assets/images/07-big-data/apache-spark/install/install-winutils-06.png)
+
+<br>
+![](https://algojungle.github.io/algojungle-assets/images/07-big-data/apache-spark/install/install-winutils-07.png)
+
+<br>
+![](https://algojungle.github.io/algojungle-assets/images/07-big-data/apache-spark/install/install-winutils-08.png)
+
+<br>
+![](https://algojungle.github.io/algojungle-assets/images/07-big-data/apache-spark/install/install-winutils-09.png)
+
+<br>
+![](https://algojungle.github.io/algojungle-assets/images/07-big-data/apache-spark/install/install-winutils-10.png)
+
+<br>
+![](https://algojungle.github.io/algojungle-assets/images/07-big-data/apache-spark/install/install-winutils-11.png)
+ -->
+
+<h2 id="demarrer-spark">Démarrer Spark<a class="headerlink" href="#demarrer-spark" title="Permanent link">#</a></h2>
+<p>Ouvrez le terminal et lancez la commande suivante <code>pyspark</code><br>
+<img alt="" src="https://algojungle.github.io/algojungle-assets/images/07-big-data/apache-spark/install/start-spark-01.png" /></p>
+<p>Ouvrez le navigateur et rendez-vous à cette adresse <a href="http://host.docker.internal:4040">http://host.docker.internal:4040</a><br>
+<img alt="" src="https://algojungle.github.io/algojungle-assets/images/07-big-data/apache-spark/install/start-spark-02.png" /></p>
+<p>Parfait ! Le moteur Spark est opérationnel sur votre machine, il ne nous reste plus qu'à installer le package PySpark pour</p>
+<p>apt-get update &amp;&amp; apt-get install -y iputils-ping</p>
+<p>echo $PYSPARK_PYTHON &amp;&amp; echo $PYSPARK_DRIVER_PYTHON</p>
+<div class="highlight"><span class="filename">Application Spark</span><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">pyspark.sql</span><span class="w"> </span><span class="kn">import</span> <span class="n">SparkSession</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="n">spark</span> <span class="o">=</span> <span class="n">SparkSession</span><span class="o">.</span><span class="n">builder</span> \
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>    <span class="o">.</span><span class="n">appName</span><span class="p">(</span><span class="s2">&quot;MonPremiereApplicationSpark&quot;</span><span class="p">)</span> \
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>    <span class="o">.</span><span class="n">getOrCreate</span><span class="p">()</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="n">data</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;Bob&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;Charlie&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)]</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="n">df</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">createDataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;Name&quot;</span><span class="p">,</span> <span class="s2">&quot;ID&quot;</span><span class="p">])</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="n">df</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="n">spark</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>spark-master<span class="w"> </span>python<span class="w"> </span>--version
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>jupyterhub<span class="w"> </span>python<span class="w"> </span>--version
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>docker<span class="w"> </span>cp<span class="w"> </span>first_spark_app.py<span class="w"> </span>spark-master:/opt/bitnami/spark/
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>docker<span class="w"> </span>cp<span class="w"> </span>first_spark_app.py<span class="w"> </span>jupyterhub:/srv/jupyterhub/
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w">  </span>--user<span class="w"> </span>root<span class="w"> </span>spark-master<span class="w"> </span>bash
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w">  </span>--user<span class="w"> </span>root<span class="w"> </span>jupyterhub<span class="w"> </span>bash
+</code></pre></div>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>spark-submit<span class="w"> </span>--master<span class="w"> </span>spark://spark-master:7077<span class="w"> </span>/opt/bitnami/spark/first_spark_app.py
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>spark-submit<span class="w"> </span>--master<span class="w"> </span>spark://spark-master:7077<span class="w"> </span>/srv/jupyterhub/first_spark_app.py
+</code></pre></div>
+<div class="highlight"><span class="filename">Ouput</span><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>root@spark-master:/opt/bitnami/spark# spark-submit --master spark://spark-master:7077 /opt/bitnami/spark/first_spark_app.py 
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>25/07/05 18:28:41 INFO SparkContext: Running Spark version 3.5.6
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>25/07/05 18:28:41 INFO SparkContext: OS info Linux, 5.14.0-162.23.1.el9_1.x86_64, amd64
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>25/07/05 18:28:41 INFO SparkContext: Java version 17.0.15
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>25/07/05 18:28:41 INFO ResourceUtils: ==============================================================
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>25/07/05 18:28:41 INFO ResourceUtils: No custom resources configured for spark.driver.
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>25/07/05 18:28:41 INFO ResourceUtils: ==============================================================
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>25/07/05 18:28:41 INFO SparkContext: Submitted application: MonPremiereApplicationSpark
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>25/07/05 18:28:41 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(memory -&gt; name: memory, amount: 1024, script: , vendor: , offHeap -&gt; name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -&gt; name: cpus, amount: 1.0)
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>25/07/05 18:28:41 INFO ResourceProfile: Limiting resource is cpu
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>25/07/05 18:28:41 INFO ResourceProfileManager: Added ResourceProfile id: 0
+<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>25/07/05 18:28:41 INFO SecurityManager: Changing view acls to: root,spark
+<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>25/07/05 18:28:41 INFO SecurityManager: Changing modify acls to: root,spark
+<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a>25/07/05 18:28:41 INFO SecurityManager: Changing view acls groups to: 
+<a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a>25/07/05 18:28:41 INFO SecurityManager: Changing modify acls groups to: 
+<a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a>25/07/05 18:28:41 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: root, spark; groups with view permissions: EMPTY; users with modify permissions: root, spark; groups with modify permissions: EMPTY
+<a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a>25/07/05 18:28:41 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+<a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a>25/07/05 18:28:42 INFO Utils: Successfully started service &#39;sparkDriver&#39; on port 33497.
+<a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a>25/07/05 18:28:42 INFO SparkEnv: Registering MapOutputTracker
+<a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a>25/07/05 18:28:42 INFO SparkEnv: Registering BlockManagerMaster
+<a id="__codelineno-10-21" name="__codelineno-10-21" href="#__codelineno-10-21"></a>25/07/05 18:28:42 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+<a id="__codelineno-10-22" name="__codelineno-10-22" href="#__codelineno-10-22"></a>25/07/05 18:28:42 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+<a id="__codelineno-10-23" name="__codelineno-10-23" href="#__codelineno-10-23"></a>25/07/05 18:28:42 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+<a id="__codelineno-10-24" name="__codelineno-10-24" href="#__codelineno-10-24"></a>25/07/05 18:28:42 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-2a51a9e2-490f-414b-9a6a-78a659310f3d
+<a id="__codelineno-10-25" name="__codelineno-10-25" href="#__codelineno-10-25"></a>25/07/05 18:28:42 INFO MemoryStore: MemoryStore started with capacity 434.4 MiB
+<a id="__codelineno-10-26" name="__codelineno-10-26" href="#__codelineno-10-26"></a>25/07/05 18:28:42 INFO SparkEnv: Registering OutputCommitCoordinator
+<a id="__codelineno-10-27" name="__codelineno-10-27" href="#__codelineno-10-27"></a>25/07/05 18:28:42 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+<a id="__codelineno-10-28" name="__codelineno-10-28" href="#__codelineno-10-28"></a>25/07/05 18:28:42 INFO Utils: Successfully started service &#39;SparkUI&#39; on port 4040.
+<a id="__codelineno-10-29" name="__codelineno-10-29" href="#__codelineno-10-29"></a>25/07/05 18:28:42 INFO StandaloneAppClient$ClientEndpoint: Connecting to master spark://spark-master:7077...
+<a id="__codelineno-10-30" name="__codelineno-10-30" href="#__codelineno-10-30"></a>25/07/05 18:28:42 INFO TransportClientFactory: Successfully created connection to spark-master/172.24.0.2:7077 after 42 ms (0 ms spent in bootstraps)
+<a id="__codelineno-10-31" name="__codelineno-10-31" href="#__codelineno-10-31"></a>25/07/05 18:28:42 INFO StandaloneSchedulerBackend: Connected to Spark cluster with app ID app-20250705182842-0001
+<a id="__codelineno-10-32" name="__codelineno-10-32" href="#__codelineno-10-32"></a>25/07/05 18:28:43 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20250705182842-0001/0 on worker-20250705181958-172.24.0.4-41281 (172.24.0.4:41281) with 1 core(s)
+<a id="__codelineno-10-33" name="__codelineno-10-33" href="#__codelineno-10-33"></a>25/07/05 18:28:43 INFO Utils: Successfully started service &#39;org.apache.spark.network.netty.NettyBlockTransferService&#39; on port 45779.
+<a id="__codelineno-10-34" name="__codelineno-10-34" href="#__codelineno-10-34"></a>25/07/05 18:28:43 INFO NettyBlockTransferService: Server created on spark-master:45779
+<a id="__codelineno-10-35" name="__codelineno-10-35" href="#__codelineno-10-35"></a>25/07/05 18:28:43 INFO StandaloneSchedulerBackend: Granted executor ID app-20250705182842-0001/0 on hostPort 172.24.0.4:41281 with 1 core(s), 1024.0 MiB RAM
+<a id="__codelineno-10-36" name="__codelineno-10-36" href="#__codelineno-10-36"></a>25/07/05 18:28:43 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20250705182842-0001/1 on worker-20250705181958-172.24.0.3-37221 (172.24.0.3:37221) with 1 core(s)
+<a id="__codelineno-10-37" name="__codelineno-10-37" href="#__codelineno-10-37"></a>25/07/05 18:28:43 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+<a id="__codelineno-10-38" name="__codelineno-10-38" href="#__codelineno-10-38"></a>25/07/05 18:28:43 INFO StandaloneSchedulerBackend: Granted executor ID app-20250705182842-0001/1 on hostPort 172.24.0.3:37221 with 1 core(s), 1024.0 MiB RAM
+<a id="__codelineno-10-39" name="__codelineno-10-39" href="#__codelineno-10-39"></a>25/07/05 18:28:43 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, spark-master, 45779, None)
+<a id="__codelineno-10-40" name="__codelineno-10-40" href="#__codelineno-10-40"></a>25/07/05 18:28:43 INFO BlockManagerMasterEndpoint: Registering block manager spark-master:45779 with 434.4 MiB RAM, BlockManagerId(driver, spark-master, 45779, None)
+<a id="__codelineno-10-41" name="__codelineno-10-41" href="#__codelineno-10-41"></a>25/07/05 18:28:43 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, spark-master, 45779, None)
+<a id="__codelineno-10-42" name="__codelineno-10-42" href="#__codelineno-10-42"></a>25/07/05 18:28:43 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, spark-master, 45779, None)
+<a id="__codelineno-10-43" name="__codelineno-10-43" href="#__codelineno-10-43"></a>25/07/05 18:28:43 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20250705182842-0001/0 is now RUNNING
+<a id="__codelineno-10-44" name="__codelineno-10-44" href="#__codelineno-10-44"></a>25/07/05 18:28:43 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20250705182842-0001/1 is now RUNNING
+<a id="__codelineno-10-45" name="__codelineno-10-45" href="#__codelineno-10-45"></a>25/07/05 18:28:43 INFO StandaloneSchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 0.0
+<a id="__codelineno-10-46" name="__codelineno-10-46" href="#__codelineno-10-46"></a>25/07/05 18:28:43 INFO SharedState: Setting hive.metastore.warehouse.dir (&#39;null&#39;) to the value of spark.sql.warehouse.dir.
+<a id="__codelineno-10-47" name="__codelineno-10-47" href="#__codelineno-10-47"></a>25/07/05 18:28:43 INFO SharedState: Warehouse path is &#39;file:/opt/bitnami/spark/spark-warehouse&#39;.
+<a id="__codelineno-10-48" name="__codelineno-10-48" href="#__codelineno-10-48"></a>25/07/05 18:28:45 INFO StandaloneSchedulerBackend$StandaloneDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (172.24.0.4:44160) with ID 0,  ResourceProfileId 0
+<a id="__codelineno-10-49" name="__codelineno-10-49" href="#__codelineno-10-49"></a>25/07/05 18:28:46 INFO StandaloneSchedulerBackend$StandaloneDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (172.24.0.3:50730) with ID 1,  ResourceProfileId 0
+<a id="__codelineno-10-50" name="__codelineno-10-50" href="#__codelineno-10-50"></a>25/07/05 18:28:46 INFO BlockManagerMasterEndpoint: Registering block manager 172.24.0.4:35683 with 434.4 MiB RAM, BlockManagerId(0, 172.24.0.4, 35683, None)
+<a id="__codelineno-10-51" name="__codelineno-10-51" href="#__codelineno-10-51"></a>25/07/05 18:28:46 INFO BlockManagerMasterEndpoint: Registering block manager 172.24.0.3:43267 with 434.4 MiB RAM, BlockManagerId(1, 172.24.0.3, 43267, None)
+<a id="__codelineno-10-52" name="__codelineno-10-52" href="#__codelineno-10-52"></a>25/07/05 18:28:46 INFO CodeGenerator: Code generated in 198.646755 ms
+<a id="__codelineno-10-53" name="__codelineno-10-53" href="#__codelineno-10-53"></a>25/07/05 18:28:46 INFO SparkContext: Starting job: showString at &lt;unknown&gt;:0
+<a id="__codelineno-10-54" name="__codelineno-10-54" href="#__codelineno-10-54"></a>25/07/05 18:28:46 INFO DAGScheduler: Got job 0 (showString at &lt;unknown&gt;:0) with 1 output partitions
+<a id="__codelineno-10-55" name="__codelineno-10-55" href="#__codelineno-10-55"></a>25/07/05 18:28:46 INFO DAGScheduler: Final stage: ResultStage 0 (showString at &lt;unknown&gt;:0)
+<a id="__codelineno-10-56" name="__codelineno-10-56" href="#__codelineno-10-56"></a>25/07/05 18:28:46 INFO DAGScheduler: Parents of final stage: List()
+<a id="__codelineno-10-57" name="__codelineno-10-57" href="#__codelineno-10-57"></a>25/07/05 18:28:46 INFO DAGScheduler: Missing parents: List()
+<a id="__codelineno-10-58" name="__codelineno-10-58" href="#__codelineno-10-58"></a>25/07/05 18:28:46 INFO DAGScheduler: Submitting ResultStage 0 (MapPartitionsRDD[6] at showString at &lt;unknown&gt;:0), which has no missing parents
+<a id="__codelineno-10-59" name="__codelineno-10-59" href="#__codelineno-10-59"></a>25/07/05 18:28:46 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 12.6 KiB, free 434.4 MiB)
+<a id="__codelineno-10-60" name="__codelineno-10-60" href="#__codelineno-10-60"></a>25/07/05 18:28:46 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 6.6 KiB, free 434.4 MiB)
+<a id="__codelineno-10-61" name="__codelineno-10-61" href="#__codelineno-10-61"></a>25/07/05 18:28:46 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on spark-master:45779 (size: 6.6 KiB, free: 434.4 MiB)
+<a id="__codelineno-10-62" name="__codelineno-10-62" href="#__codelineno-10-62"></a>25/07/05 18:28:46 INFO SparkContext: Created broadcast 0 from broadcast at DAGScheduler.scala:1611
+<a id="__codelineno-10-63" name="__codelineno-10-63" href="#__codelineno-10-63"></a>25/07/05 18:28:46 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 0 (MapPartitionsRDD[6] at showString at &lt;unknown&gt;:0) (first 15 tasks are for partitions Vector(0))
+<a id="__codelineno-10-64" name="__codelineno-10-64" href="#__codelineno-10-64"></a>25/07/05 18:28:46 INFO TaskSchedulerImpl: Adding task set 0.0 with 1 tasks resource profile 0
+<a id="__codelineno-10-65" name="__codelineno-10-65" href="#__codelineno-10-65"></a>25/07/05 18:28:46 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0) (172.24.0.3, executor 1, partition 0, PROCESS_LOCAL, 9020 bytes) 
+<a id="__codelineno-10-66" name="__codelineno-10-66" href="#__codelineno-10-66"></a>25/07/05 18:28:47 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on 172.24.0.3:43267 (size: 6.6 KiB, free: 434.4 MiB)
+<a id="__codelineno-10-67" name="__codelineno-10-67" href="#__codelineno-10-67"></a>25/07/05 18:28:49 INFO TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 2984 ms on 172.24.0.3 (executor 1) (1/1)
+<a id="__codelineno-10-68" name="__codelineno-10-68" href="#__codelineno-10-68"></a>25/07/05 18:28:49 INFO TaskSchedulerImpl: Removed TaskSet 0.0, whose tasks have all completed, from pool 
+<a id="__codelineno-10-69" name="__codelineno-10-69" href="#__codelineno-10-69"></a>25/07/05 18:28:49 INFO PythonAccumulatorV2: Connected to AccumulatorServer at host: 127.0.0.1 port: 51505
+<a id="__codelineno-10-70" name="__codelineno-10-70" href="#__codelineno-10-70"></a>25/07/05 18:28:49 INFO DAGScheduler: ResultStage 0 (showString at &lt;unknown&gt;:0) finished in 3.169 s
+<a id="__codelineno-10-71" name="__codelineno-10-71" href="#__codelineno-10-71"></a>25/07/05 18:28:49 INFO DAGScheduler: Job 0 is finished. Cancelling potential speculative or zombie tasks for this job
+<a id="__codelineno-10-72" name="__codelineno-10-72" href="#__codelineno-10-72"></a>25/07/05 18:28:49 INFO TaskSchedulerImpl: Killing all running tasks in stage 0: Stage finished
+<a id="__codelineno-10-73" name="__codelineno-10-73" href="#__codelineno-10-73"></a>25/07/05 18:28:49 INFO DAGScheduler: Job 0 finished: showString at &lt;unknown&gt;:0, took 3.206109 s
+<a id="__codelineno-10-74" name="__codelineno-10-74" href="#__codelineno-10-74"></a>25/07/05 18:28:49 INFO SparkContext: Starting job: showString at &lt;unknown&gt;:0
+<a id="__codelineno-10-75" name="__codelineno-10-75" href="#__codelineno-10-75"></a>25/07/05 18:28:49 INFO DAGScheduler: Got job 1 (showString at &lt;unknown&gt;:0) with 1 output partitions
+<a id="__codelineno-10-76" name="__codelineno-10-76" href="#__codelineno-10-76"></a>25/07/05 18:28:49 INFO DAGScheduler: Final stage: ResultStage 1 (showString at &lt;unknown&gt;:0)
+<a id="__codelineno-10-77" name="__codelineno-10-77" href="#__codelineno-10-77"></a>25/07/05 18:28:49 INFO DAGScheduler: Parents of final stage: List()
+<a id="__codelineno-10-78" name="__codelineno-10-78" href="#__codelineno-10-78"></a>25/07/05 18:28:49 INFO DAGScheduler: Missing parents: List()
+<a id="__codelineno-10-79" name="__codelineno-10-79" href="#__codelineno-10-79"></a>25/07/05 18:28:49 INFO DAGScheduler: Submitting ResultStage 1 (MapPartitionsRDD[6] at showString at &lt;unknown&gt;:0), which has no missing parents
+<a id="__codelineno-10-80" name="__codelineno-10-80" href="#__codelineno-10-80"></a>25/07/05 18:28:49 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 12.6 KiB, free 434.4 MiB)
+<a id="__codelineno-10-81" name="__codelineno-10-81" href="#__codelineno-10-81"></a>25/07/05 18:28:49 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 6.6 KiB, free 434.4 MiB)
+<a id="__codelineno-10-82" name="__codelineno-10-82" href="#__codelineno-10-82"></a>25/07/05 18:28:49 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on spark-master:45779 (size: 6.6 KiB, free: 434.4 MiB)
+<a id="__codelineno-10-83" name="__codelineno-10-83" href="#__codelineno-10-83"></a>25/07/05 18:28:49 INFO SparkContext: Created broadcast 1 from broadcast at DAGScheduler.scala:1611
+<a id="__codelineno-10-84" name="__codelineno-10-84" href="#__codelineno-10-84"></a>25/07/05 18:28:49 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 1 (MapPartitionsRDD[6] at showString at &lt;unknown&gt;:0) (first 15 tasks are for partitions Vector(1))
+<a id="__codelineno-10-85" name="__codelineno-10-85" href="#__codelineno-10-85"></a>25/07/05 18:28:49 INFO TaskSchedulerImpl: Adding task set 1.0 with 1 tasks resource profile 0
+<a id="__codelineno-10-86" name="__codelineno-10-86" href="#__codelineno-10-86"></a>25/07/05 18:28:49 INFO TaskSetManager: Starting task 0.0 in stage 1.0 (TID 1) (172.24.0.4, executor 0, partition 1, PROCESS_LOCAL, 9057 bytes) 
+<a id="__codelineno-10-87" name="__codelineno-10-87" href="#__codelineno-10-87"></a>25/07/05 18:28:49 INFO BlockManagerInfo: Removed broadcast_0_piece0 on spark-master:45779 in memory (size: 6.6 KiB, free: 434.4 MiB)
+<a id="__codelineno-10-88" name="__codelineno-10-88" href="#__codelineno-10-88"></a>25/07/05 18:28:49 INFO BlockManagerInfo: Removed broadcast_0_piece0 on 172.24.0.3:43267 in memory (size: 6.6 KiB, free: 434.4 MiB)
+<a id="__codelineno-10-89" name="__codelineno-10-89" href="#__codelineno-10-89"></a>25/07/05 18:28:49 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on 172.24.0.4:35683 (size: 6.6 KiB, free: 434.4 MiB)
+<a id="__codelineno-10-90" name="__codelineno-10-90" href="#__codelineno-10-90"></a>25/07/05 18:28:52 INFO TaskSetManager: Finished task 0.0 in stage 1.0 (TID 1) in 2570 ms on 172.24.0.4 (executor 0) (1/1)
+<a id="__codelineno-10-91" name="__codelineno-10-91" href="#__codelineno-10-91"></a>25/07/05 18:28:52 INFO TaskSchedulerImpl: Removed TaskSet 1.0, whose tasks have all completed, from pool 
+<a id="__codelineno-10-92" name="__codelineno-10-92" href="#__codelineno-10-92"></a>25/07/05 18:28:52 INFO DAGScheduler: ResultStage 1 (showString at &lt;unknown&gt;:0) finished in 2.585 s
+<a id="__codelineno-10-93" name="__codelineno-10-93" href="#__codelineno-10-93"></a>25/07/05 18:28:52 INFO DAGScheduler: Job 1 is finished. Cancelling potential speculative or zombie tasks for this job
+<a id="__codelineno-10-94" name="__codelineno-10-94" href="#__codelineno-10-94"></a>25/07/05 18:28:52 INFO TaskSchedulerImpl: Killing all running tasks in stage 1: Stage finished
+<a id="__codelineno-10-95" name="__codelineno-10-95" href="#__codelineno-10-95"></a>25/07/05 18:28:52 INFO DAGScheduler: Job 1 finished: showString at &lt;unknown&gt;:0, took 2.590749 s
+<a id="__codelineno-10-96" name="__codelineno-10-96" href="#__codelineno-10-96"></a>25/07/05 18:28:53 INFO BlockManagerInfo: Removed broadcast_1_piece0 on spark-master:45779 in memory (size: 6.6 KiB, free: 434.4 MiB)
+<a id="__codelineno-10-97" name="__codelineno-10-97" href="#__codelineno-10-97"></a>25/07/05 18:28:53 INFO BlockManagerInfo: Removed broadcast_1_piece0 on 172.24.0.4:35683 in memory (size: 6.6 KiB, free: 434.4 MiB)
+<a id="__codelineno-10-98" name="__codelineno-10-98" href="#__codelineno-10-98"></a>25/07/05 18:28:53 INFO CodeGenerator: Code generated in 19.74549 ms
+<a id="__codelineno-10-99" name="__codelineno-10-99" href="#__codelineno-10-99"></a>+-------+---+
+<a id="__codelineno-10-100" name="__codelineno-10-100" href="#__codelineno-10-100"></a>|   Name| ID|
+<a id="__codelineno-10-101" name="__codelineno-10-101" href="#__codelineno-10-101"></a>+-------+---+
+<a id="__codelineno-10-102" name="__codelineno-10-102" href="#__codelineno-10-102"></a>|  Alice|  1|
+<a id="__codelineno-10-103" name="__codelineno-10-103" href="#__codelineno-10-103"></a>|    Bob|  2|
+<a id="__codelineno-10-104" name="__codelineno-10-104" href="#__codelineno-10-104"></a>|Charlie|  3|
+<a id="__codelineno-10-105" name="__codelineno-10-105" href="#__codelineno-10-105"></a>+-------+---+
+<a id="__codelineno-10-106" name="__codelineno-10-106" href="#__codelineno-10-106"></a>
+<a id="__codelineno-10-107" name="__codelineno-10-107" href="#__codelineno-10-107"></a>25/07/05 18:28:53 INFO SparkContext: SparkContext is stopping with exitCode 0.
+<a id="__codelineno-10-108" name="__codelineno-10-108" href="#__codelineno-10-108"></a>25/07/05 18:28:53 INFO SparkUI: Stopped Spark web UI at http://spark-master:4040
+<a id="__codelineno-10-109" name="__codelineno-10-109" href="#__codelineno-10-109"></a>25/07/05 18:28:53 INFO StandaloneSchedulerBackend: Shutting down all executors
+<a id="__codelineno-10-110" name="__codelineno-10-110" href="#__codelineno-10-110"></a>25/07/05 18:28:53 INFO StandaloneSchedulerBackend$StandaloneDriverEndpoint: Asking each executor to shut down
+<a id="__codelineno-10-111" name="__codelineno-10-111" href="#__codelineno-10-111"></a>25/07/05 18:28:53 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+<a id="__codelineno-10-112" name="__codelineno-10-112" href="#__codelineno-10-112"></a>25/07/05 18:28:53 INFO MemoryStore: MemoryStore cleared
+<a id="__codelineno-10-113" name="__codelineno-10-113" href="#__codelineno-10-113"></a>25/07/05 18:28:53 INFO BlockManager: BlockManager stopped
+<a id="__codelineno-10-114" name="__codelineno-10-114" href="#__codelineno-10-114"></a>25/07/05 18:28:53 INFO BlockManagerMaster: BlockManagerMaster stopped
+<a id="__codelineno-10-115" name="__codelineno-10-115" href="#__codelineno-10-115"></a>25/07/05 18:28:53 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+<a id="__codelineno-10-116" name="__codelineno-10-116" href="#__codelineno-10-116"></a>25/07/05 18:28:53 INFO SparkContext: Successfully stopped SparkContext
+<a id="__codelineno-10-117" name="__codelineno-10-117" href="#__codelineno-10-117"></a>25/07/05 18:28:54 INFO ShutdownHookManager: Shutdown hook called
+<a id="__codelineno-10-118" name="__codelineno-10-118" href="#__codelineno-10-118"></a>25/07/05 18:28:54 INFO ShutdownHookManager: Deleting directory /tmp/spark-76cf0c77-65c9-4cf0-b76a-1d7036d239a5
+<a id="__codelineno-10-119" name="__codelineno-10-119" href="#__codelineno-10-119"></a>25/07/05 18:28:54 INFO ShutdownHookManager: Deleting directory /tmp/spark-bb9d8cb2-7ceb-459c-912f-62a1f65d2c46
+<a id="__codelineno-10-120" name="__codelineno-10-120" href="#__codelineno-10-120"></a>25/07/05 18:28:54 INFO ShutdownHookManager: Deleting directory /tmp/spark-76cf0c77-65c9-4cf0-b76a-1d7036d239a5/pyspark-e85ad4aa-5506-443c-b340-91896717d234
+</code></pre></div></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>root@jupyterhub:/srv/jupyterhub# spark-submit --master spark://spark-master:7077 /srv/jupyterhub/first_spark_app.py
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>25/07/06 19:40:14 INFO SparkContext: Running Spark version 3.5.6
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>25/07/06 19:40:14 INFO SparkContext: OS info Linux, 5.14.0-162.23.1.el9_1.x86_64, amd64
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>25/07/06 19:40:14 INFO SparkContext: Java version 17.0.15
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>25/07/06 19:40:14 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>25/07/06 19:40:14 INFO ResourceUtils: ==============================================================
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>25/07/06 19:40:14 INFO ResourceUtils: No custom resources configured for spark.driver.
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>25/07/06 19:40:14 INFO ResourceUtils: ==============================================================
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>25/07/06 19:40:14 INFO SparkContext: Submitted application: DebugJupyterSpark
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>25/07/06 19:40:14 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(memory -&gt; name: memory, amount: 1024, script: , vendor: , offHeap -&gt; name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -&gt; name: cpus, amount: 1.0)
+<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>25/07/06 19:40:14 INFO ResourceProfile: Limiting resource is cpu
+<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a>25/07/06 19:40:14 INFO ResourceProfileManager: Added ResourceProfile id: 0
+<a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a>25/07/06 19:40:14 INFO SecurityManager: Changing view acls to: root
+<a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a>25/07/06 19:40:14 INFO SecurityManager: Changing modify acls to: root
+<a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a>25/07/06 19:40:14 INFO SecurityManager: Changing view acls groups to: 
+<a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a>25/07/06 19:40:14 INFO SecurityManager: Changing modify acls groups to: 
+<a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a>25/07/06 19:40:14 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: root; groups with view permissions: EMPTY; users with modify permissions: root; groups with modify permissions: EMPTY
+<a id="__codelineno-11-18" name="__codelineno-11-18" href="#__codelineno-11-18"></a>25/07/06 19:40:14 INFO Utils: Successfully started service &#39;sparkDriver&#39; on port 40400.
+<a id="__codelineno-11-19" name="__codelineno-11-19" href="#__codelineno-11-19"></a>25/07/06 19:40:14 INFO SparkEnv: Registering MapOutputTracker
+<a id="__codelineno-11-20" name="__codelineno-11-20" href="#__codelineno-11-20"></a>25/07/06 19:40:14 INFO SparkEnv: Registering BlockManagerMaster
+<a id="__codelineno-11-21" name="__codelineno-11-21" href="#__codelineno-11-21"></a>25/07/06 19:40:14 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+<a id="__codelineno-11-22" name="__codelineno-11-22" href="#__codelineno-11-22"></a>25/07/06 19:40:14 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+<a id="__codelineno-11-23" name="__codelineno-11-23" href="#__codelineno-11-23"></a>25/07/06 19:40:14 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+<a id="__codelineno-11-24" name="__codelineno-11-24" href="#__codelineno-11-24"></a>25/07/06 19:40:14 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-deb82f12-ad25-4c70-95fa-22550602b348
+<a id="__codelineno-11-25" name="__codelineno-11-25" href="#__codelineno-11-25"></a>25/07/06 19:40:14 INFO MemoryStore: MemoryStore started with capacity 434.4 MiB
+<a id="__codelineno-11-26" name="__codelineno-11-26" href="#__codelineno-11-26"></a>25/07/06 19:40:14 INFO SparkEnv: Registering OutputCommitCoordinator
+<a id="__codelineno-11-27" name="__codelineno-11-27" href="#__codelineno-11-27"></a>25/07/06 19:40:15 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+<a id="__codelineno-11-28" name="__codelineno-11-28" href="#__codelineno-11-28"></a>25/07/06 19:40:15 INFO Utils: Successfully started service &#39;SparkUI&#39; on port 4040.
+<a id="__codelineno-11-29" name="__codelineno-11-29" href="#__codelineno-11-29"></a>25/07/06 19:40:15 INFO StandaloneAppClient$ClientEndpoint: Connecting to master spark://spark-master:7077...
+<a id="__codelineno-11-30" name="__codelineno-11-30" href="#__codelineno-11-30"></a>25/07/06 19:40:15 INFO TransportClientFactory: Successfully created connection to spark-master/172.25.0.2:7077 after 32 ms (0 ms spent in bootstraps)
+<a id="__codelineno-11-31" name="__codelineno-11-31" href="#__codelineno-11-31"></a>25/07/06 19:40:15 INFO StandaloneSchedulerBackend: Connected to Spark cluster with app ID app-20250706194015-0000
+<a id="__codelineno-11-32" name="__codelineno-11-32" href="#__codelineno-11-32"></a>25/07/06 19:40:15 INFO Utils: Successfully started service &#39;org.apache.spark.network.netty.NettyBlockTransferService&#39; on port 40401.
+<a id="__codelineno-11-33" name="__codelineno-11-33" href="#__codelineno-11-33"></a>25/07/06 19:40:15 INFO NettyBlockTransferService: Server created on jupyterhub 0.0.0.0:40401
+<a id="__codelineno-11-34" name="__codelineno-11-34" href="#__codelineno-11-34"></a>25/07/06 19:40:15 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+<a id="__codelineno-11-35" name="__codelineno-11-35" href="#__codelineno-11-35"></a>25/07/06 19:40:15 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, jupyterhub, 40401, None)
+<a id="__codelineno-11-36" name="__codelineno-11-36" href="#__codelineno-11-36"></a>25/07/06 19:40:15 INFO BlockManagerMasterEndpoint: Registering block manager jupyterhub:40401 with 434.4 MiB RAM, BlockManagerId(driver, jupyterhub, 40401, None)
+<a id="__codelineno-11-37" name="__codelineno-11-37" href="#__codelineno-11-37"></a>25/07/06 19:40:15 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, jupyterhub, 40401, None)
+<a id="__codelineno-11-38" name="__codelineno-11-38" href="#__codelineno-11-38"></a>25/07/06 19:40:15 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, jupyterhub, 40401, None)
+<a id="__codelineno-11-39" name="__codelineno-11-39" href="#__codelineno-11-39"></a>25/07/06 19:40:15 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20250706194015-0000/0 on worker-20250706193932-172.25.0.4-42009 (172.25.0.4:42009) with 1 core(s)
+<a id="__codelineno-11-40" name="__codelineno-11-40" href="#__codelineno-11-40"></a>25/07/06 19:40:15 INFO StandaloneSchedulerBackend: Granted executor ID app-20250706194015-0000/0 on hostPort 172.25.0.4:42009 with 1 core(s), 1024.0 MiB RAM
+<a id="__codelineno-11-41" name="__codelineno-11-41" href="#__codelineno-11-41"></a>25/07/06 19:40:15 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20250706194015-0000/1 on worker-20250706193931-172.25.0.3-39455 (172.25.0.3:39455) with 1 core(s)
+<a id="__codelineno-11-42" name="__codelineno-11-42" href="#__codelineno-11-42"></a>25/07/06 19:40:15 INFO StandaloneSchedulerBackend: Granted executor ID app-20250706194015-0000/1 on hostPort 172.25.0.3:39455 with 1 core(s), 1024.0 MiB RAM
+<a id="__codelineno-11-43" name="__codelineno-11-43" href="#__codelineno-11-43"></a>25/07/06 19:40:15 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20250706194015-0000/0 is now RUNNING
+<a id="__codelineno-11-44" name="__codelineno-11-44" href="#__codelineno-11-44"></a>25/07/06 19:40:15 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20250706194015-0000/1 is now RUNNING
+<a id="__codelineno-11-45" name="__codelineno-11-45" href="#__codelineno-11-45"></a>25/07/06 19:40:15 INFO StandaloneSchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 0.0
+<a id="__codelineno-11-46" name="__codelineno-11-46" href="#__codelineno-11-46"></a>25/07/06 19:40:16 INFO SharedState: Setting hive.metastore.warehouse.dir (&#39;null&#39;) to the value of spark.sql.warehouse.dir.
+<a id="__codelineno-11-47" name="__codelineno-11-47" href="#__codelineno-11-47"></a>25/07/06 19:40:16 INFO SharedState: Warehouse path is &#39;file:/srv/jupyterhub/spark-warehouse&#39;.
+<a id="__codelineno-11-48" name="__codelineno-11-48" href="#__codelineno-11-48"></a>25/07/06 19:40:18 INFO StandaloneSchedulerBackend$StandaloneDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (172.25.0.4:49356) with ID 0,  ResourceProfileId 0
+<a id="__codelineno-11-49" name="__codelineno-11-49" href="#__codelineno-11-49"></a>25/07/06 19:40:18 INFO StandaloneSchedulerBackend$StandaloneDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (172.25.0.3:51278) with ID 1,  ResourceProfileId 0
+<a id="__codelineno-11-50" name="__codelineno-11-50" href="#__codelineno-11-50"></a>25/07/06 19:40:18 INFO BlockManagerMasterEndpoint: Registering block manager 172.25.0.4:40401 with 434.4 MiB RAM, BlockManagerId(0, 172.25.0.4, 40401, None)
+<a id="__codelineno-11-51" name="__codelineno-11-51" href="#__codelineno-11-51"></a>25/07/06 19:40:18 INFO BlockManagerMasterEndpoint: Registering block manager 172.25.0.3:40401 with 434.4 MiB RAM, BlockManagerId(1, 172.25.0.3, 40401, None)
+<a id="__codelineno-11-52" name="__codelineno-11-52" href="#__codelineno-11-52"></a>25/07/06 19:40:18 INFO CodeGenerator: Code generated in 230.527172 ms
+<a id="__codelineno-11-53" name="__codelineno-11-53" href="#__codelineno-11-53"></a>25/07/06 19:40:19 INFO SparkContext: Starting job: showString at NativeMethodAccessorImpl.java:0
+<a id="__codelineno-11-54" name="__codelineno-11-54" href="#__codelineno-11-54"></a>25/07/06 19:40:19 INFO DAGScheduler: Got job 0 (showString at NativeMethodAccessorImpl.java:0) with 1 output partitions
+<a id="__codelineno-11-55" name="__codelineno-11-55" href="#__codelineno-11-55"></a>25/07/06 19:40:19 INFO DAGScheduler: Final stage: ResultStage 0 (showString at NativeMethodAccessorImpl.java:0)
+<a id="__codelineno-11-56" name="__codelineno-11-56" href="#__codelineno-11-56"></a>25/07/06 19:40:19 INFO DAGScheduler: Parents of final stage: List()
+<a id="__codelineno-11-57" name="__codelineno-11-57" href="#__codelineno-11-57"></a>25/07/06 19:40:19 INFO DAGScheduler: Missing parents: List()
+<a id="__codelineno-11-58" name="__codelineno-11-58" href="#__codelineno-11-58"></a>25/07/06 19:40:19 INFO DAGScheduler: Submitting ResultStage 0 (MapPartitionsRDD[6] at showString at NativeMethodAccessorImpl.java:0), which has no missing parents
+<a id="__codelineno-11-59" name="__codelineno-11-59" href="#__codelineno-11-59"></a>25/07/06 19:40:19 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 12.7 KiB, free 434.4 MiB)
+<a id="__codelineno-11-60" name="__codelineno-11-60" href="#__codelineno-11-60"></a>25/07/06 19:40:19 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 6.7 KiB, free 434.4 MiB)
+<a id="__codelineno-11-61" name="__codelineno-11-61" href="#__codelineno-11-61"></a>25/07/06 19:40:19 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on jupyterhub:40401 (size: 6.7 KiB, free: 434.4 MiB)
+<a id="__codelineno-11-62" name="__codelineno-11-62" href="#__codelineno-11-62"></a>25/07/06 19:40:19 INFO SparkContext: Created broadcast 0 from broadcast at DAGScheduler.scala:1611
+<a id="__codelineno-11-63" name="__codelineno-11-63" href="#__codelineno-11-63"></a>25/07/06 19:40:19 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 0 (MapPartitionsRDD[6] at showString at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0))
+<a id="__codelineno-11-64" name="__codelineno-11-64" href="#__codelineno-11-64"></a>25/07/06 19:40:19 INFO TaskSchedulerImpl: Adding task set 0.0 with 1 tasks resource profile 0
+<a id="__codelineno-11-65" name="__codelineno-11-65" href="#__codelineno-11-65"></a>25/07/06 19:40:19 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0) (172.25.0.4, executor 0, partition 0, PROCESS_LOCAL, 9020 bytes) 
+<a id="__codelineno-11-66" name="__codelineno-11-66" href="#__codelineno-11-66"></a>25/07/06 19:40:19 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on 172.25.0.4:40401 (size: 6.7 KiB, free: 434.4 MiB)
+<a id="__codelineno-11-67" name="__codelineno-11-67" href="#__codelineno-11-67"></a>25/07/06 19:40:21 INFO TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 2603 ms on 172.25.0.4 (executor 0) (1/1)
+<a id="__codelineno-11-68" name="__codelineno-11-68" href="#__codelineno-11-68"></a>25/07/06 19:40:21 INFO TaskSchedulerImpl: Removed TaskSet 0.0, whose tasks have all completed, from pool 
+<a id="__codelineno-11-69" name="__codelineno-11-69" href="#__codelineno-11-69"></a>25/07/06 19:40:21 INFO PythonAccumulatorV2: Connected to AccumulatorServer at host: 127.0.0.1 port: 40285
+<a id="__codelineno-11-70" name="__codelineno-11-70" href="#__codelineno-11-70"></a>25/07/06 19:40:21 INFO DAGScheduler: ResultStage 0 (showString at NativeMethodAccessorImpl.java:0) finished in 2.773 s
+<a id="__codelineno-11-71" name="__codelineno-11-71" href="#__codelineno-11-71"></a>25/07/06 19:40:21 INFO DAGScheduler: Job 0 is finished. Cancelling potential speculative or zombie tasks for this job
+<a id="__codelineno-11-72" name="__codelineno-11-72" href="#__codelineno-11-72"></a>25/07/06 19:40:21 INFO TaskSchedulerImpl: Killing all running tasks in stage 0: Stage finished
+<a id="__codelineno-11-73" name="__codelineno-11-73" href="#__codelineno-11-73"></a>25/07/06 19:40:21 INFO DAGScheduler: Job 0 finished: showString at NativeMethodAccessorImpl.java:0, took 2.822448 s
+<a id="__codelineno-11-74" name="__codelineno-11-74" href="#__codelineno-11-74"></a>25/07/06 19:40:21 INFO SparkContext: Starting job: showString at NativeMethodAccessorImpl.java:0
+<a id="__codelineno-11-75" name="__codelineno-11-75" href="#__codelineno-11-75"></a>25/07/06 19:40:21 INFO DAGScheduler: Got job 1 (showString at NativeMethodAccessorImpl.java:0) with 1 output partitions
+<a id="__codelineno-11-76" name="__codelineno-11-76" href="#__codelineno-11-76"></a>25/07/06 19:40:21 INFO DAGScheduler: Final stage: ResultStage 1 (showString at NativeMethodAccessorImpl.java:0)
+<a id="__codelineno-11-77" name="__codelineno-11-77" href="#__codelineno-11-77"></a>25/07/06 19:40:21 INFO DAGScheduler: Parents of final stage: List()
+<a id="__codelineno-11-78" name="__codelineno-11-78" href="#__codelineno-11-78"></a>25/07/06 19:40:21 INFO DAGScheduler: Missing parents: List()
+<a id="__codelineno-11-79" name="__codelineno-11-79" href="#__codelineno-11-79"></a>25/07/06 19:40:21 INFO DAGScheduler: Submitting ResultStage 1 (MapPartitionsRDD[6] at showString at NativeMethodAccessorImpl.java:0), which has no missing parents
+<a id="__codelineno-11-80" name="__codelineno-11-80" href="#__codelineno-11-80"></a>25/07/06 19:40:21 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 12.7 KiB, free 434.4 MiB)
+<a id="__codelineno-11-81" name="__codelineno-11-81" href="#__codelineno-11-81"></a>25/07/06 19:40:21 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 6.7 KiB, free 434.4 MiB)
+<a id="__codelineno-11-82" name="__codelineno-11-82" href="#__codelineno-11-82"></a>25/07/06 19:40:21 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on jupyterhub:40401 (size: 6.7 KiB, free: 434.4 MiB)
+<a id="__codelineno-11-83" name="__codelineno-11-83" href="#__codelineno-11-83"></a>25/07/06 19:40:21 INFO SparkContext: Created broadcast 1 from broadcast at DAGScheduler.scala:1611
+<a id="__codelineno-11-84" name="__codelineno-11-84" href="#__codelineno-11-84"></a>25/07/06 19:40:21 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 1 (MapPartitionsRDD[6] at showString at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(1))
+<a id="__codelineno-11-85" name="__codelineno-11-85" href="#__codelineno-11-85"></a>25/07/06 19:40:21 INFO TaskSchedulerImpl: Adding task set 1.0 with 1 tasks resource profile 0
+<a id="__codelineno-11-86" name="__codelineno-11-86" href="#__codelineno-11-86"></a>25/07/06 19:40:21 INFO TaskSetManager: Starting task 0.0 in stage 1.0 (TID 1) (172.25.0.4, executor 0, partition 1, PROCESS_LOCAL, 9057 bytes) 
+<a id="__codelineno-11-87" name="__codelineno-11-87" href="#__codelineno-11-87"></a>25/07/06 19:40:21 INFO BlockManagerInfo: Removed broadcast_0_piece0 on jupyterhub:40401 in memory (size: 6.7 KiB, free: 434.4 MiB)
+<a id="__codelineno-11-88" name="__codelineno-11-88" href="#__codelineno-11-88"></a>25/07/06 19:40:21 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on 172.25.0.4:40401 (size: 6.7 KiB, free: 434.4 MiB)
+<a id="__codelineno-11-89" name="__codelineno-11-89" href="#__codelineno-11-89"></a>25/07/06 19:40:21 INFO BlockManagerInfo: Removed broadcast_0_piece0 on 172.25.0.4:40401 in memory (size: 6.7 KiB, free: 434.4 MiB)
+<a id="__codelineno-11-90" name="__codelineno-11-90" href="#__codelineno-11-90"></a>25/07/06 19:40:22 INFO TaskSetManager: Finished task 0.0 in stage 1.0 (TID 1) in 182 ms on 172.25.0.4 (executor 0) (1/1)
+<a id="__codelineno-11-91" name="__codelineno-11-91" href="#__codelineno-11-91"></a>25/07/06 19:40:22 INFO TaskSchedulerImpl: Removed TaskSet 1.0, whose tasks have all completed, from pool 
+<a id="__codelineno-11-92" name="__codelineno-11-92" href="#__codelineno-11-92"></a>25/07/06 19:40:22 INFO DAGScheduler: ResultStage 1 (showString at NativeMethodAccessorImpl.java:0) finished in 0.206 s
+<a id="__codelineno-11-93" name="__codelineno-11-93" href="#__codelineno-11-93"></a>25/07/06 19:40:22 INFO DAGScheduler: Job 1 is finished. Cancelling potential speculative or zombie tasks for this job
+<a id="__codelineno-11-94" name="__codelineno-11-94" href="#__codelineno-11-94"></a>25/07/06 19:40:22 INFO TaskSchedulerImpl: Killing all running tasks in stage 1: Stage finished
+<a id="__codelineno-11-95" name="__codelineno-11-95" href="#__codelineno-11-95"></a>25/07/06 19:40:22 INFO DAGScheduler: Job 1 finished: showString at NativeMethodAccessorImpl.java:0, took 0.216567 s
+<a id="__codelineno-11-96" name="__codelineno-11-96" href="#__codelineno-11-96"></a>25/07/06 19:40:22 INFO BlockManagerInfo: Removed broadcast_1_piece0 on jupyterhub:40401 in memory (size: 6.7 KiB, free: 434.4 MiB)
+<a id="__codelineno-11-97" name="__codelineno-11-97" href="#__codelineno-11-97"></a>25/07/06 19:40:22 INFO BlockManagerInfo: Removed broadcast_1_piece0 on 172.25.0.4:40401 in memory (size: 6.7 KiB, free: 434.4 MiB)
+<a id="__codelineno-11-98" name="__codelineno-11-98" href="#__codelineno-11-98"></a>25/07/06 19:40:23 INFO CodeGenerator: Code generated in 17.154848 ms
+<a id="__codelineno-11-99" name="__codelineno-11-99" href="#__codelineno-11-99"></a>+-------+---+
+<a id="__codelineno-11-100" name="__codelineno-11-100" href="#__codelineno-11-100"></a>|   Name| ID|
+<a id="__codelineno-11-101" name="__codelineno-11-101" href="#__codelineno-11-101"></a>+-------+---+
+<a id="__codelineno-11-102" name="__codelineno-11-102" href="#__codelineno-11-102"></a>|  Alice|  1|
+<a id="__codelineno-11-103" name="__codelineno-11-103" href="#__codelineno-11-103"></a>|    Bob|  2|
+<a id="__codelineno-11-104" name="__codelineno-11-104" href="#__codelineno-11-104"></a>|Charlie|  3|
+<a id="__codelineno-11-105" name="__codelineno-11-105" href="#__codelineno-11-105"></a>+-------+---+
+<a id="__codelineno-11-106" name="__codelineno-11-106" href="#__codelineno-11-106"></a>
+<a id="__codelineno-11-107" name="__codelineno-11-107" href="#__codelineno-11-107"></a>25/07/06 19:40:23 INFO SparkContext: SparkContext is stopping with exitCode 0.
+<a id="__codelineno-11-108" name="__codelineno-11-108" href="#__codelineno-11-108"></a>25/07/06 19:40:23 INFO SparkUI: Stopped Spark web UI at http://jupyterhub:4040
+<a id="__codelineno-11-109" name="__codelineno-11-109" href="#__codelineno-11-109"></a>25/07/06 19:40:23 INFO StandaloneSchedulerBackend: Shutting down all executors
+<a id="__codelineno-11-110" name="__codelineno-11-110" href="#__codelineno-11-110"></a>25/07/06 19:40:23 INFO StandaloneSchedulerBackend$StandaloneDriverEndpoint: Asking each executor to shut down
+<a id="__codelineno-11-111" name="__codelineno-11-111" href="#__codelineno-11-111"></a>25/07/06 19:40:23 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+<a id="__codelineno-11-112" name="__codelineno-11-112" href="#__codelineno-11-112"></a>25/07/06 19:40:23 INFO MemoryStore: MemoryStore cleared
+<a id="__codelineno-11-113" name="__codelineno-11-113" href="#__codelineno-11-113"></a>25/07/06 19:40:23 INFO BlockManager: BlockManager stopped
+<a id="__codelineno-11-114" name="__codelineno-11-114" href="#__codelineno-11-114"></a>25/07/06 19:40:23 INFO BlockManagerMaster: BlockManagerMaster stopped
+<a id="__codelineno-11-115" name="__codelineno-11-115" href="#__codelineno-11-115"></a>25/07/06 19:40:23 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+<a id="__codelineno-11-116" name="__codelineno-11-116" href="#__codelineno-11-116"></a>25/07/06 19:40:23 INFO SparkContext: Successfully stopped SparkContext
+<a id="__codelineno-11-117" name="__codelineno-11-117" href="#__codelineno-11-117"></a>25/07/06 19:40:24 INFO ShutdownHookManager: Shutdown hook called
+<a id="__codelineno-11-118" name="__codelineno-11-118" href="#__codelineno-11-118"></a>25/07/06 19:40:24 INFO ShutdownHookManager: Deleting directory /tmp/spark-0193a676-f313-464e-be74-d369715a4b22/pyspark-9dbaa827-430f-4312-95e1-5659de6210f5
+<a id="__codelineno-11-119" name="__codelineno-11-119" href="#__codelineno-11-119"></a>25/07/06 19:40:24 INFO ShutdownHookManager: Deleting directory /tmp/spark-0193a676-f313-464e-be74-d369715a4b22
+<a id="__codelineno-11-120" name="__codelineno-11-120" href="#__codelineno-11-120"></a>25/07/06 19:40:24 INFO ShutdownHookManager: Deleting directory /tmp/spark-3e86e365-966c-461c-8888-7afa5d132904
+</code></pre></div>
+<h2 id="creer-un-environnement-virtuel">Créer un environnement virtuel<a class="headerlink" href="#creer-un-environnement-virtuel" title="Permanent link">#</a></h2>
+<p>Lancez <strong>Anaconda Prompt</strong> et faites la commande suivante:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>spark
+</code></pre></div>
+Cette commande va créer une environnement virtuel avec le nom <strong>spark</strong>, tapez y pour confirmer la création.</p>
+<p><img alt="" src="https://algojungle.github.io/algojungle-assets/images/07-big-data/apache-spark/install/install-pyspark-01.png" /></p>
+<p>Une fois l'environnement virtuel créé, il faut l'activer avec la commande suivante.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>conda<span class="w"> </span>activate<span class="w"> </span>spark
+</code></pre></div></p>
+<h2 id="installer-pyspark">Installer PySpark<a class="headerlink" href="#installer-pyspark" title="Permanent link">#</a></h2>
+<p>PySpark peut-être installé depuis le gestionnaire de packages Pypi. Pour cela tapez la commande suivante
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>pip<span class="w"> </span>install<span class="w"> </span>pyspark
+</code></pre></div></p>
+<h2 id="installer-jupyterlab">Installer JupyterLab<a class="headerlink" href="#installer-jupyterlab" title="Permanent link">#</a></h2>
+<p>Les notebooks offrent un environnement interactif idéal pour travail avec PySpark.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>pip<span class="w"> </span>install<span class="w"> </span>jupyterlab
+</code></pre></div></p>
+<h2 id="lancer-jupyterlab">Lancer JupyterLab<a class="headerlink" href="#lancer-jupyterlab" title="Permanent link">#</a></h2>
+<p>Une fois l'installation terminée, lancez la commande suivante
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>jupyter-lab
+</code></pre></div></p>
+<p>Créez un notebook</p>
+<h2 id="importer-pyspark">Importer PySpark<a class="headerlink" href="#importer-pyspark" title="Permanent link">#</a></h2>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">pyspark</span>
+</code></pre></div>
+Vous pouvez vérifier la version de PySpark
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="n">pyspark</span><span class="o">.</span><span class="n">__version__</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">Output</span><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>&#39;3.5.0&#39;
+</code></pre></div></p>
+
+                    </section>
+
+                </article>
+
+                <!-- Navigation Précédent / Suivant -->
+                <nav class="row mt-5 pt-4 border-top">
+                    <div class="col-6">
+                        
+                        <a href="../" class="text-decoration-none">
+                            <span class="d-block small text-muted text-uppercase mb-1"><i class="fas fa-arrow-left me-1"></i> Précédent</span>
+                            <span class="fw-bold text-primary">Prise en main de PySpark - Le guide ultime</span>
+                        </a>
+                        
+                    </div>
+                    <div class="col-6 text-end">
+                        
+                        <a href="../01-get-started/" class="text-decoration-none">
+                            <span class="d-block small text-muted text-uppercase mb-1">Suivant <i class="fas fa-arrow-right ms-1"></i></span>
+                            <span class="fw-bold text-primary">Démarrer avec PySpark</span>
+                        </a>
+                        
+                    </div>
+                </nav>
+
+                <section class="mt-5 border-top pt-4">
+                    
+                    <div class="share-section mb-5">
+                        <h2 class="h4 mb-3">Partagez sur les réseaux sociaux</h2>
+                        <!-- ShareThis BEGIN -->
+                        <div class="sharethis-inline-share-buttons"></div>
+                        <!-- ShareThis END -->
+                    </div>
+
+                    
+                    
+                    <div class="comments-section">
+                        <h2 id="__comments" class="h4 mb-4">Commentaires</h2>
+                        
+                        
+                        <script src="https://giscus.app/client.js"
+                                data-repo="joekakone/Departement-De-Maths"
+                                data-repo-id="MDEwOlJlcG9zaXRvcnkzMzY4MjEwNTY="
+                                data-category="General"
+                                data-category-id="DIC_kwDOFBN7QM4CORj9"
+                                data-mapping="pathname"
+                                data-reactions-enabled="1"
+                                data-emit-metadata="0"
+                                data-input-position="bottom"
+                                
+                                data-theme="preferred_color_scheme"
+                                data-lang="fr"
+                                crossorigin="anonymous"
+                                async>
+                        </script>
+                    </div>
+                    
+                </section>
+            </main>
+
+        </div>
+    </div>
+
+</div>
+
+
+
+
+  <!-- Tags -->
+
+<!-- CTA FINAL -->
+<section class="py-5 bg-primary text-white text-center">
+<div class="container py-4">
+    <h3 class="text-uppercase mb-4">Inscrivez-vous à une formation complète</h3>
+    <a href="/#formations" class="btn btn-outline-light btn-lg text-uppercase px-5">Voir le catalogue</a>
+</div>
+</section>
+
+<!-- Footer-->
+<footer class="pt-0">
+    <!-- Bande de Navigation Précédent / Suivant (Style Bootstrap Dark) -->
+    
+    
+    <div class="container text-center py-5">
+        <div class="row px-4">
+            <div class="col-lg-7 mx-auto">
+                <h2 class="text-uppercase mb-0">Joseph Konka </h2>
+                <h6 class="text-primary text-uppercase mb-0 letter-spacing-3">Senior Data Analyst | Data Scientist</h6>
+                <p class="text-muted my-4">Project Management - Data Engineering - Data Analytics - Python Programming</p>
+                <ul class="list-inline mb-0">
+                    <li class="list-inline-item"><a class="social-link" href="https://wa.me/+22891518923" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
+                    <li class="list-inline-item"><a class="social-link" href="https://github.com/joekakone" target="_blank"><i class="fab fa-github"></i></a></li>
+                    <li class="list-inline-item"><a class="social-link" href="https://www.linkedin.com/in/joseph-koami-konka" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+                    <li class="list-inline-item"><a class="social-link" href="https://web.facebook.com/joekakonepage" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                    <li class="list-inline-item"><a class="social-link" href="https://twitter.com/joekakone" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                    <li class="list-inline-item"><a class="social-link" href="https://www.youtube.com/@algojungle" target="_blank"><i class="fab fa-youtube"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="copyrights px-4">
+        <div class="container py-4 border-top text-center">
+        <p class="mb-0 text-muted py-2">&copy; All rights reserved. Template designed by <a
+            href="https://bootstrapious.com/p/bootstrap-resume">Bootstrapious</a>. </p>
+        </div>
+    </div>
+</footer>
+  
+
+  <!-- JS -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script> -->
+  <script src="../../../assets/javascripts/custom.js"></script>
+
+  
+  <!-- JavaScript files-->
+  <script src="https://joekakone.github.io/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="https://joekakone.github.io/static/js/front.js"></script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YPL3847T5N"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-YPL3847T5N');
+  </script>
+
+  <script type='text/javascript'>
+    var divElement = document.getElementById('viz1677099741796'); var vizElement = divElement.getElementsByTagName('object')[0]; if (divElement.offsetWidth > 800) { vizElement.style.width = '1100px'; vizElement.style.height = '627px'; } else if (divElement.offsetWidth > 500) { vizElement.style.width = '1100px'; vizElement.style.height = '627px'; } else { vizElement.style.width = '100%'; vizElement.style.height = '1327px'; } var scriptElement = document.createElement('script'); scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js'; vizElement.parentNode.insertBefore(scriptElement, vizElement);                
+  </script>
+
+  <!-- Google Ads -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2980760029476176"
+      crossorigin="anonymous"></script>
+
+  <!-- ShareThis -->
+  <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=649bd6c6a6672f0012d186bd&product=sop' async='async'></script>
+
+  <!-- Tally -->
+  <script async src="https://tally.so/widgets/embed.js"></script>
+
+  <!-- Facebook -->
+  <div id="fb-root"></div>
+  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v20.0&appId=564181564271850"></script>
+
+  <!-- Messenger Plugin de discussion Code -->
+  <div id="fb-root"></div>
+
+  <!-- Your Plugin de discussion code -->
+  <div id="fb-customer-chat" class="fb-customerchat">
+  </div>
+
+  <script>
+    var chatbox = document.getElementById('fb-customer-chat');
+    chatbox.setAttribute("page_id", "2130664133866857");
+    chatbox.setAttribute("attribution", "biz_inbox");
+
+    window.fbAsyncInit = function () {
+      FB.init({
+        xfbml: true,
+        version: 'v12.0'
+      });
+    };
+
+    (function (d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/fr_FR/sdk/xfbml.customerchat.js';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
+
+  <!-- Contact Form Utils -->
+  <script>
+    function buildMailtoUrl(event) {
+      event.preventDefault(); // Prevent form submission
+
+      var emailInputFirstName = document.getElementById('InputFirstName').value;
+      var emailInputLastName = document.getElementById('InputLastName').value;
+      var emailInputEmail = document.getElementById('InputEmail').value;
+      var emailInputPhone = document.getElementById('InputPhone').value;
+      var emailInputSubject = document.getElementById('InputSubject').value;
+      var emailInputMessage = document.getElementById('InputMessage').value;
+
+      var emailContent = `${emailInputMessage} \n\nFull Name : ${emailInputFirstName} ${emailInputLastName}\nPhone Number : ${emailInputPhone}\nEmail : ${emailInputEmail}`;
+
+      var subject = encodeURIComponent(emailInputSubject);
+      var body = encodeURIComponent(emailContent);
+
+      var mailtoLink = 'mailto:konka.datanalytics@gmail.com' + '?subject=' + subject + '&body=' + body;
+
+      window.location.href = mailtoLink;
+    }
+  </script>
+
+  <!-- Google Ads -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2980760029476176"
+    crossorigin="anonymous"></script>
+
+
+  <!-- FontAwesome CSS - loading as last, so it doesn't block rendering-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+</body>
+</html>

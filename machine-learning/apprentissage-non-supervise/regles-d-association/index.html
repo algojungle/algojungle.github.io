@@ -1,0 +1,2306 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+
+  <!-- Meta tags -->
+  
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <!-- Page description -->
+    
+      <meta name="description" content="Prêt à acquérir les compétences pour lancer votre carrière en Data Science ? <br> Je suis Joseph Konka, Analyste de données Sénior et je vous accompagnerai dans votre aventure.<br> Découvrez Python, SQL, Power BI, Tensorflow et bien d'autres outils gratuitement.<br> C'est parti ! 🚀" />
+    
+
+    <!-- Page author -->
+    
+      <meta name="author" content="Joseph Konka" />
+    
+
+    <!-- Canonical -->
+    
+      <link rel="canonical" href="https://josephkonkathedataguy.com/learning/machine-learning/apprentissage-non-supervise/regles-d-association/" />
+    
+
+    <!-- Previous page -->
+    
+      <link rel="prev" href="../clustering-hierachique/" />
+    
+
+    <!-- Next page -->
+    
+      <link rel="next" href="../../advanced-technics/" />
+    
+
+    <!-- Favicon -->
+    <link rel="icon" href="https://algojungle.github.io/algojungle-assets/assets/favicon.png" />
+
+    <!-- Generator banner -->
+    <meta name="generator" content="mkdocs-1.6.1, $md-name$-$md-version$" />
+  
+
+  <title>
+    Les règles d'association | Algo Jungle
+  </title>
+
+  <!-- Google Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,800&display=swap">
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+  <!-- Theme CSS -->
+  <link rel="stylesheet" href="https://joekakone.github.io/static/css/style.blue.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../../../assets/stylesheets/custom.css">
+  
+  <style>
+    body {
+      font-family: 'Work Sans', sans-serif;
+      background-color: #fcfcfc;
+    }
+    /* Style par défaut pour le contenu Markdown */
+    .markdown-content img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+  </style>
+  
+</head>
+
+<body>
+
+  <!-- navbar-->
+<header class="header">
+  <nav class="navbar navbar-light navbar-expand-lg fixed-top" id="navbar">
+    <div class="container"><a class="navbar-brand" href="/learning"><img
+          src="https://algojungle.github.io/algojungle-assets/assets/favicon.png" alt="" height="36.14"></a>
+      <button class="navbar-toggler navbar-toggler-end" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation"><i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        
+  <ul class="navbar-nav ms-auto">
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    <li class="nav-item">
+      
+      <a href="../../.." class="nav-link link-scroll">
+        
+  
+
+  <!-- Navigation link icon -->
+  
+    
+  
+
+  <!-- Navigation link title -->
+  Accueil
+
+      </a>
+      
+    </li>
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../../../informatique/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  Informatique
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../../../algorithmique/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  Algorithmique
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../../../programmation/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  Programmation
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../../../python/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  Python
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../../../analytics/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  Analytics
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../../../analytics/sql/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  SQL
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../../../analytics/powerbi/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  Power BI
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../../../big-data/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  Big Data
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+    
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../../" class="nav-link link-scroll active">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  Machine Learning
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../../tensorflow/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  TensorFlow
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../../../mlops/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  MLOps
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+      
+  
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Navigation item with nested items -->
+  
+    
+
+    <!-- Recurse, if the first item has further nested items -->
+    
+      <li class="nav-item">
+        
+        <a href="../../../blog/" class="nav-link link-scroll">
+          
+  
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  Blog
+
+        </a>
+        
+      </li>
+    
+
+  <!-- Navigation item -->
+  
+
+    
+  </ul>
+
+      </div>
+
+    </div>
+  </nav>
+</header>
+
+  
+
+  <!-- Bloc principal : Sera remplacé par home.html pour la page d'accueil -->
+  
+    <main class="container py-5">
+      <div class="row justify-content-center">
+        <div class="col-lg-10 markdown-content">
+          
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script>
+(function() {
+  function addWidgetsRenderer() {
+    var requireJsScript = document.createElement('script');
+    requireJsScript.src = 'https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js';
+
+    var mimeElement = document.querySelector('script[type="application/vnd.jupyter.widget-view+json"]');
+    var jupyterWidgetsScript = document.createElement('script');
+    var widgetRendererSrc = 'https://unpkg.com/@jupyter-widgets/html-manager@*/dist/embed-amd.js';
+    var widgetState;
+
+    // Fallback for older version:
+    try {
+      widgetState = mimeElement && JSON.parse(mimeElement.innerHTML);
+
+      if (widgetState && (widgetState.version_major < 2 || !widgetState.version_major)) {
+        widgetRendererSrc = 'jupyter-js-widgets@*/dist/embed.js';
+      }
+    } catch(e) {}
+
+    jupyterWidgetsScript.src = widgetRendererSrc;
+
+    document.body.appendChild(requireJsScript);
+    document.body.appendChild(jupyterWidgetsScript);
+  }
+
+  document.addEventListener('DOMContentLoaded', addWidgetsRenderer);
+}());
+</script>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="association-rules">Association Rules<a class="headerlink" href="#association-rules" title="Permanent link">#</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="les-regles-dassociation">Les règles d'association<a class="headerlink" href="#les-regles-dassociation" title="Permanent link">#</a></h1>
+<p>Les règles d'association sont un algorithme d'apprentissage non supervisé. Il est utilisé pour analyser les habitudes d'achats des clients.</p>
+<p><img alt="" src="https://algojungle.github.io/algojungle-assets/images/08-machine-learning/covers/association-rules.png" /></p>
+<p><img alt="" src="https://bigdata.go.th/wp-content/uploads/2021/04/table_baskets-1-1024x518.png" /></p>
+<h2 id="itemset">Itemset<a class="headerlink" href="#itemset" title="Permanent link">#</a></h2>
+<p>U itemset est un utiliser l'algorithme du KMeans pour former un modèle, il faut des données numériques.</p>
+<h2 id="support">Support<a class="headerlink" href="#support" title="Permanent link">#</a></h2>
+<p>Le support d'un itemset est la fréquence d'un itemset.</p>
+<h2 id="methode-doptimisation">Méthode d'optimisation<a class="headerlink" href="#methode-doptimisation" title="Permanent link">#</a></h2>
+<h2 id="condition-darret">Condition d'arrêt<a class="headerlink" href="#condition-darret" title="Permanent link">#</a></h2>
+<h2 id="association-rules_1">Association Rules<a class="headerlink" href="#association-rules_1" title="Permanent link">#</a></h2>
+<h3 id="packages">Packages<a class="headerlink" href="#packages" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># !pip install -q pandas mlxtend</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="kn">from</span><span class="w"> </span><span class="nn">mlxtend.preprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">TransactionEncoder</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="kn">from</span><span class="w"> </span><span class="nn">mlxtend.frequent_patterns</span><span class="w"> </span><span class="kn">import</span> <span class="n">apriori</span><span class="p">,</span> <span class="n">fpmax</span><span class="p">,</span> <span class="n">fpgrowth</span>
+</code></pre></div>
+<h3 id="paths-config">Paths &amp; Config<a class="headerlink" href="#paths-config" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">DATA_PATH</span> <span class="o">=</span> <span class="s2">&quot;/kaggle/input/sales-forecasting/train.csv&quot;</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">SUPPORT</span> <span class="o">=</span> <span class="mf">0.2</span>
+</code></pre></div>
+<h3 id="get-data">Get Data<a class="headerlink" href="#get-data" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">sales_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">DATA_PATH</span><span class="p">)</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">sales_data</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</code></pre></div>
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>Row ID</th>
+<th>Order ID</th>
+<th>Order Date</th>
+<th>Ship Date</th>
+<th>Ship Mode</th>
+<th>Customer ID</th>
+<th>Customer Name</th>
+<th>Segment</th>
+<th>Country</th>
+<th>City</th>
+<th>State</th>
+<th>Postal Code</th>
+<th>Region</th>
+<th>Product ID</th>
+<th>Category</th>
+<th>Sub-Category</th>
+<th>Product Name</th>
+<th>Sales</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>2624</th>
+<td>2625</td>
+<td>CA-2018-127180</td>
+<td>22/10/2018</td>
+<td>24/10/2018</td>
+<td>First Class</td>
+<td>TA-21385</td>
+<td>Tom Ashbrook</td>
+<td>Home Office</td>
+<td>United States</td>
+<td>New York City</td>
+<td>New York</td>
+<td>10024.0</td>
+<td>East</td>
+<td>TEC-PH-10001494</td>
+<td>Technology</td>
+<td>Phones</td>
+<td>Polycom CX600 IP Phone VoIP phone</td>
+<td>2399.600</td>
+</tr>
+<tr>
+<th>4891</th>
+<td>4892</td>
+<td>CA-2017-135776</td>
+<td>23/12/2017</td>
+<td>30/12/2017</td>
+<td>Standard Class</td>
+<td>EH-13765</td>
+<td>Edward Hooks</td>
+<td>Corporate</td>
+<td>United States</td>
+<td>Seattle</td>
+<td>Washington</td>
+<td>98103.0</td>
+<td>West</td>
+<td>OFF-PA-10001295</td>
+<td>Office Supplies</td>
+<td>Paper</td>
+<td>Computer Printout Paper with Letter-Trim Perfo...</td>
+<td>37.940</td>
+</tr>
+<tr>
+<th>3462</th>
+<td>3463</td>
+<td>CA-2016-152611</td>
+<td>20/02/2016</td>
+<td>23/02/2016</td>
+<td>Second Class</td>
+<td>KA-16525</td>
+<td>Kelly Andreada</td>
+<td>Consumer</td>
+<td>United States</td>
+<td>Perth Amboy</td>
+<td>New Jersey</td>
+<td>8861.0</td>
+<td>East</td>
+<td>OFF-AR-10003903</td>
+<td>Office Supplies</td>
+<td>Art</td>
+<td>Sanford 52201 APSCO Electric Pencil Sharpener</td>
+<td>286.790</td>
+</tr>
+<tr>
+<th>2295</th>
+<td>2296</td>
+<td>CA-2016-113145</td>
+<td>01/11/2016</td>
+<td>05/11/2016</td>
+<td>Standard Class</td>
+<td>VD-21670</td>
+<td>Valerie Dominguez</td>
+<td>Consumer</td>
+<td>United States</td>
+<td>New York City</td>
+<td>New York</td>
+<td>10011.0</td>
+<td>East</td>
+<td>OFF-PA-10002659</td>
+<td>Office Supplies</td>
+<td>Paper</td>
+<td>Avoid Verbal Orders Carbonless Minifold Book</td>
+<td>13.520</td>
+</tr>
+<tr>
+<th>223</th>
+<td>224</td>
+<td>CA-2016-169397</td>
+<td>24/12/2016</td>
+<td>27/12/2016</td>
+<td>First Class</td>
+<td>JB-15925</td>
+<td>Joni Blumstein</td>
+<td>Consumer</td>
+<td>United States</td>
+<td>Dublin</td>
+<td>Ohio</td>
+<td>43017.0</td>
+<td>East</td>
+<td>TEC-MA-10001148</td>
+<td>Technology</td>
+<td>Machines</td>
+<td>Swingline SM12-08 MicroCut Jam Free Shredder</td>
+<td>479.988</td>
+</tr>
+<tr>
+<th>3559</th>
+<td>3560</td>
+<td>CA-2018-152737</td>
+<td>07/11/2018</td>
+<td>12/11/2018</td>
+<td>Standard Class</td>
+<td>TS-21505</td>
+<td>Tony Sayre</td>
+<td>Consumer</td>
+<td>United States</td>
+<td>San Francisco</td>
+<td>California</td>
+<td>94122.0</td>
+<td>West</td>
+<td>TEC-AC-10004975</td>
+<td>Technology</td>
+<td>Accessories</td>
+<td>Plantronics Audio 995 Wireless Stereo Headset</td>
+<td>439.800</td>
+</tr>
+<tr>
+<th>9642</th>
+<td>9643</td>
+<td>CA-2015-104563</td>
+<td>07/03/2015</td>
+<td>12/03/2015</td>
+<td>Standard Class</td>
+<td>CM-12715</td>
+<td>Craig Molinari</td>
+<td>Corporate</td>
+<td>United States</td>
+<td>Seattle</td>
+<td>Washington</td>
+<td>98103.0</td>
+<td>West</td>
+<td>FUR-CH-10002780</td>
+<td>Furniture</td>
+<td>Chairs</td>
+<td>Office Star - Task Chair with Contemporary Loo...</td>
+<td>436.704</td>
+</tr>
+<tr>
+<th>3761</th>
+<td>3762</td>
+<td>CA-2018-104577</td>
+<td>12/05/2018</td>
+<td>17/05/2018</td>
+<td>Standard Class</td>
+<td>CK-12205</td>
+<td>Chloris Kastensmidt</td>
+<td>Consumer</td>
+<td>United States</td>
+<td>Everett</td>
+<td>Massachusetts</td>
+<td>2149.0</td>
+<td>East</td>
+<td>OFF-PA-10000659</td>
+<td>Office Supplies</td>
+<td>Paper</td>
+<td>TOPS Carbonless Receipt Book, Four 2-3/4 x 7-1...</td>
+<td>87.600</td>
+</tr>
+<tr>
+<th>3551</th>
+<td>3552</td>
+<td>CA-2017-152555</td>
+<td>29/03/2017</td>
+<td>02/04/2017</td>
+<td>Second Class</td>
+<td>ME-17320</td>
+<td>Maria Etezadi</td>
+<td>Home Office</td>
+<td>United States</td>
+<td>Chicago</td>
+<td>Illinois</td>
+<td>60653.0</td>
+<td>Central</td>
+<td>FUR-CH-10002965</td>
+<td>Furniture</td>
+<td>Chairs</td>
+<td>Global Leather Highback Executive Chair with P...</td>
+<td>844.116</td>
+</tr>
+<tr>
+<th>7010</th>
+<td>7011</td>
+<td>US-2015-135881</td>
+<td>23/05/2015</td>
+<td>27/05/2015</td>
+<td>Standard Class</td>
+<td>GT-14710</td>
+<td>Greg Tran</td>
+<td>Consumer</td>
+<td>United States</td>
+<td>New York City</td>
+<td>New York</td>
+<td>10035.0</td>
+<td>East</td>
+<td>OFF-BI-10000829</td>
+<td>Office Supplies</td>
+<td>Binders</td>
+<td>Avery Non-Stick Binders</td>
+<td>17.960</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="explore-data">Explore Data<a class="headerlink" href="#explore-data" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">sales_data</span><span class="o">.</span><span class="n">shape</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>(9800, 18)
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">sales_data</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</code></pre></div>
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>Row ID</th>
+<th>Postal Code</th>
+<th>Sales</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>count</th>
+<td>9800.000000</td>
+<td>9789.000000</td>
+<td>9800.000000</td>
+</tr>
+<tr>
+<th>mean</th>
+<td>4900.500000</td>
+<td>55273.322403</td>
+<td>230.769059</td>
+</tr>
+<tr>
+<th>std</th>
+<td>2829.160653</td>
+<td>32041.223413</td>
+<td>626.651875</td>
+</tr>
+<tr>
+<th>min</th>
+<td>1.000000</td>
+<td>1040.000000</td>
+<td>0.444000</td>
+</tr>
+<tr>
+<th>25%</th>
+<td>2450.750000</td>
+<td>23223.000000</td>
+<td>17.248000</td>
+</tr>
+<tr>
+<th>50%</th>
+<td>4900.500000</td>
+<td>58103.000000</td>
+<td>54.490000</td>
+</tr>
+<tr>
+<th>75%</th>
+<td>7350.250000</td>
+<td>90008.000000</td>
+<td>210.605000</td>
+</tr>
+<tr>
+<th>max</th>
+<td>9800.000000</td>
+<td>99301.000000</td>
+<td>22638.480000</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">sales_data</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>&lt;class &#39;pandas.core.frame.dataframe&#39;=&quot;&quot;&gt;
+RangeIndex: 9800 entries, 0 to 9799
+Data columns (total 18 columns):
+ #   Column         Non-Null Count  Dtype  
+---  ------         --------------  -----  
+ 0   Row ID         9800 non-null   int64  
+ 1   Order ID       9800 non-null   object 
+ 2   Order Date     9800 non-null   object 
+ 3   Ship Date      9800 non-null   object 
+ 4   Ship Mode      9800 non-null   object 
+ 5   Customer ID    9800 non-null   object 
+ 6   Customer Name  9800 non-null   object 
+ 7   Segment        9800 non-null   object 
+ 8   Country        9800 non-null   object 
+ 9   City           9800 non-null   object 
+ 10  State          9800 non-null   object 
+ 11  Postal Code    9789 non-null   float64
+ 12  Region         9800 non-null   object 
+ 13  Product ID     9800 non-null   object 
+ 14  Category       9800 non-null   object 
+ 15  Sub-Category   9800 non-null   object 
+ 16  Product Name   9800 non-null   object 
+ 17  Sales          9800 non-null   float64
+dtypes: float64(2), int64(1), object(15)
+memory usage: 1.3+ MB
+</code></pre></div>
+<h3 id="clean-data">Clean Data<a class="headerlink" href="#clean-data" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">new_columns</span> <span class="o">=</span> <span class="p">[</span><span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39; |-&#39;</span><span class="p">,</span> <span class="s1">&#39;_&#39;</span><span class="p">,</span> <span class="n">column</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">sales_data</span><span class="o">.</span><span class="n">columns</span><span class="p">)]</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="n">sales_data</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">new_columns</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="n">sales_data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</code></pre></div>
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>Row_ID</th>
+<th>Order_ID</th>
+<th>Order_Date</th>
+<th>Ship_Date</th>
+<th>Ship_Mode</th>
+<th>Customer_ID</th>
+<th>Customer_Name</th>
+<th>Segment</th>
+<th>Country</th>
+<th>City</th>
+<th>State</th>
+<th>Postal_Code</th>
+<th>Region</th>
+<th>Product_ID</th>
+<th>Category</th>
+<th>Sub_Category</th>
+<th>Product_Name</th>
+<th>Sales</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>1</td>
+<td>CA-2017-152156</td>
+<td>08/11/2017</td>
+<td>11/11/2017</td>
+<td>Second Class</td>
+<td>CG-12520</td>
+<td>Claire Gute</td>
+<td>Consumer</td>
+<td>United States</td>
+<td>Henderson</td>
+<td>Kentucky</td>
+<td>42420.0</td>
+<td>South</td>
+<td>FUR-BO-10001798</td>
+<td>Furniture</td>
+<td>Bookcases</td>
+<td>Bush Somerset Collection Bookcase</td>
+<td>261.9600</td>
+</tr>
+<tr>
+<th>1</th>
+<td>2</td>
+<td>CA-2017-152156</td>
+<td>08/11/2017</td>
+<td>11/11/2017</td>
+<td>Second Class</td>
+<td>CG-12520</td>
+<td>Claire Gute</td>
+<td>Consumer</td>
+<td>United States</td>
+<td>Henderson</td>
+<td>Kentucky</td>
+<td>42420.0</td>
+<td>South</td>
+<td>FUR-CH-10000454</td>
+<td>Furniture</td>
+<td>Chairs</td>
+<td>Hon Deluxe Fabric Upholstered Stacking Chairs,...</td>
+<td>731.9400</td>
+</tr>
+<tr>
+<th>2</th>
+<td>3</td>
+<td>CA-2017-138688</td>
+<td>12/06/2017</td>
+<td>16/06/2017</td>
+<td>Second Class</td>
+<td>DV-13045</td>
+<td>Darrin Van Huff</td>
+<td>Corporate</td>
+<td>United States</td>
+<td>Los Angeles</td>
+<td>California</td>
+<td>90036.0</td>
+<td>West</td>
+<td>OFF-LA-10000240</td>
+<td>Office Supplies</td>
+<td>Labels</td>
+<td>Self-Adhesive Address Labels for Typewriters b...</td>
+<td>14.6200</td>
+</tr>
+<tr>
+<th>3</th>
+<td>4</td>
+<td>US-2016-108966</td>
+<td>11/10/2016</td>
+<td>18/10/2016</td>
+<td>Standard Class</td>
+<td>SO-20335</td>
+<td>Sean O'Donnell</td>
+<td>Consumer</td>
+<td>United States</td>
+<td>Fort Lauderdale</td>
+<td>Florida</td>
+<td>33311.0</td>
+<td>South</td>
+<td>FUR-TA-10000577</td>
+<td>Furniture</td>
+<td>Tables</td>
+<td>Bretford CR4500 Series Slim Rectangular Table</td>
+<td>957.5775</td>
+</tr>
+<tr>
+<th>4</th>
+<td>5</td>
+<td>US-2016-108966</td>
+<td>11/10/2016</td>
+<td>18/10/2016</td>
+<td>Standard Class</td>
+<td>SO-20335</td>
+<td>Sean O'Donnell</td>
+<td>Consumer</td>
+<td>United States</td>
+<td>Fort Lauderdale</td>
+<td>Florida</td>
+<td>33311.0</td>
+<td>South</td>
+<td>OFF-ST-10000760</td>
+<td>Office Supplies</td>
+<td>Storage</td>
+<td>Eldon Fold 'N Roll Cart System</td>
+<td>22.3680</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">sales_data</span><span class="o">.</span><span class="n">columns</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>Index([&#39;Row_ID&#39;, &#39;Order_ID&#39;, &#39;Order_Date&#39;, &#39;Ship_Date&#39;, &#39;Ship_Mode&#39;,
+       &#39;Customer_ID&#39;, &#39;Customer_Name&#39;, &#39;Segment&#39;, &#39;Country&#39;, &#39;City&#39;, &#39;State&#39;,
+       &#39;Postal_Code&#39;, &#39;Region&#39;, &#39;Product_ID&#39;, &#39;Category&#39;, &#39;Sub_Category&#39;,
+       &#39;Product_Name&#39;, &#39;Sales&#39;],
+      dtype=&#39;object&#39;)
+</code></pre></div>
+<h3 id="transform-data">Transform Data<a class="headerlink" href="#transform-data" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">create_cart</span><span class="p">(</span><span class="n">item</span><span class="p">):</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>    <span class="k">return</span> <span class="p">[</span><span class="n">elt</span> <span class="k">for</span> <span class="n">elt</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">item</span><span class="p">)]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">df</span> <span class="o">=</span> <span class="n">sales_data</span><span class="p">[[</span><span class="s2">&quot;Customer_ID&quot;</span><span class="p">,</span> <span class="s2">&quot;Sub_Category&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s2">&quot;Customer_ID&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s2">&quot;Sub_Category&quot;</span><span class="p">:</span> <span class="n">create_cart</span><span class="p">})</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Sub_Category&quot;</span><span class="p">:</span> <span class="s2">&quot;cart&quot;</span><span class="p">})</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="c1"># df = sales_data[[&quot;Customer_ID&quot;, &quot;Product_Name&quot;]].groupby(by=&quot;Customer_ID&quot;).agg({&quot;Product_Name&quot;: create_cart}).reset_index().rename(columns={&quot;Product_Name&quot;: &quot;cart&quot;})</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</code></pre></div>
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>Customer_ID</th>
+<th>cart</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>AA-10315</td>
+<td>[Appliances, Binders, Storage, Binders, Applia...</td>
+</tr>
+<tr>
+<th>1</th>
+<td>AA-10375</td>
+<td>[Storage, Furnishings, Accessories, Binders, A...</td>
+</tr>
+<tr>
+<th>2</th>
+<td>AA-10480</td>
+<td>[Paper, Furnishings, Paper, Storage, Paper, Pa...</td>
+</tr>
+<tr>
+<th>3</th>
+<td>AA-10645</td>
+<td>[Chairs, Phones, Chairs, Furnishings, Envelope...</td>
+</tr>
+<tr>
+<th>4</th>
+<td>AB-10015</td>
+<td>[Chairs, Art, Storage, Storage, Phones, Bookca...</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">df</span><span class="p">[</span><span class="s1">&#39;cart_size&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;cart&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="n">df</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
+</code></pre></div>
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>Customer_ID</th>
+<th>cart</th>
+<th>cart_size</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>378</th>
+<td>JK-15625</td>
+<td>[Chairs, Chairs, Bookcases, Art, Paper, Chairs...</td>
+<td>12</td>
+</tr>
+<tr>
+<th>363</th>
+<td>JF-15565</td>
+<td>[Fasteners, Paper, Appliances, Paper, Binders,...</td>
+<td>16</td>
+</tr>
+<tr>
+<th>422</th>
+<td>KD-16270</td>
+<td>[Paper, Tables, Paper, Storage, Machines, Art,...</td>
+<td>16</td>
+</tr>
+<tr>
+<th>505</th>
+<td>MG-17875</td>
+<td>[Appliances, Storage, Tables, Paper, Furnishin...</td>
+<td>7</td>
+</tr>
+<tr>
+<th>306</th>
+<td>GM-14680</td>
+<td>[Furnishings, Art, Fasteners, Phones, Tables, ...</td>
+<td>11</td>
+</tr>
+<tr>
+<th>415</th>
+<td>KB-16315</td>
+<td>[Paper, Furnishings, Binders, Art, Labels, Env...</td>
+<td>22</td>
+</tr>
+<tr>
+<th>594</th>
+<td>PJ-18835</td>
+<td>[Paper, Accessories, Accessories, Paper, Envel...</td>
+<td>13</td>
+</tr>
+<tr>
+<th>542</th>
+<td>MT-17815</td>
+<td>[Envelopes, Binders, Storage, Paper, Tables, P...</td>
+<td>10</td>
+</tr>
+<tr>
+<th>769</th>
+<td>TT-21070</td>
+<td>[Paper, Furnishings, Paper, Fasteners, Machine...</td>
+<td>14</td>
+</tr>
+<tr>
+<th>435</th>
+<td>KM-16225</td>
+<td>[Furnishings, Furnishings, Phones, Storage, Fa...</td>
+<td>19</td>
+</tr>
+<tr>
+<th>696</th>
+<td>SJ-20500</td>
+<td>[Appliances, Accessories, Binders, Chairs, Bin...</td>
+<td>7</td>
+</tr>
+<tr>
+<th>317</th>
+<td>HA-14920</td>
+<td>[Storage, Accessories, Furnishings, Binders, A...</td>
+<td>18</td>
+</tr>
+<tr>
+<th>384</th>
+<td>JL-15175</td>
+<td>[Paper, Furnishings, Chairs, Appliances, Binde...</td>
+<td>7</td>
+</tr>
+<tr>
+<th>251</th>
+<td>EB-13975</td>
+<td>[Binders, Binders, Copiers, Supplies, Binders,...</td>
+<td>6</td>
+</tr>
+<tr>
+<th>493</th>
+<td>MC-18100</td>
+<td>[Phones, Chairs, Paper, Furnishings, Storage, ...</td>
+<td>19</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;cart&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="n">te</span> <span class="o">=</span> <span class="n">TransactionEncoder</span><span class="p">()</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="n">te_ary</span> <span class="o">=</span> <span class="n">te</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">)</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="n">df_x</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">te_ary</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">te</span><span class="o">.</span><span class="n">columns_</span><span class="p">)</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="n">df_x</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</code></pre></div>
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>Accessories</th>
+<th>Appliances</th>
+<th>Art</th>
+<th>Binders</th>
+<th>Bookcases</th>
+<th>Chairs</th>
+<th>Copiers</th>
+<th>Envelopes</th>
+<th>Fasteners</th>
+<th>Furnishings</th>
+<th>Labels</th>
+<th>Machines</th>
+<th>Paper</th>
+<th>Phones</th>
+<th>Storage</th>
+<th>Supplies</th>
+<th>Tables</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>True</td>
+<td>True</td>
+<td>False</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>True</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+<td>False</td>
+</tr>
+<tr>
+<th>1</th>
+<td>True</td>
+<td>False</td>
+<td>True</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<th>2</th>
+<td>True</td>
+<td>False</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+<td>False</td>
+<td>True</td>
+</tr>
+<tr>
+<th>3</th>
+<td>False</td>
+<td>False</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+<td>False</td>
+<td>True</td>
+<td>False</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<th>4</th>
+<td>False</td>
+<td>False</td>
+<td>True</td>
+<td>False</td>
+<td>True</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>True</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="n">frequent_itemsets</span> <span class="o">=</span> <span class="n">fpgrowth</span><span class="p">(</span><span class="n">df_x</span><span class="p">,</span> <span class="n">min_support</span><span class="o">=</span><span class="n">SUPPORT</span><span class="p">,</span> <span class="n">use_colnames</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="c1">#### alternatively:</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="c1">#frequent_itemsets = apriori(df, min_support=SUPPORT, use_colnames=True)</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="c1"># frequent_itemsets = fpmax(df, min_support=SUPPORT, use_colnames=True)</span>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="n">frequent_itemsets</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;support&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</code></pre></div>
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>support</th>
+<th>itemsets</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>0.815889</td>
+<td>(Binders)</td>
+</tr>
+<tr>
+<th>1</th>
+<td>0.757881</td>
+<td>(Paper)</td>
+</tr>
+<tr>
+<th>2</th>
+<td>0.658260</td>
+<td>(Furnishings)</td>
+</tr>
+<tr>
+<th>3</th>
+<td>0.641866</td>
+<td>(Storage)</td>
+</tr>
+<tr>
+<th>4</th>
+<td>0.641866</td>
+<td>(Phones)</td>
+</tr>
+<tr>
+<th>14</th>
+<td>0.640605</td>
+<td>(Paper, Binders)</td>
+</tr>
+<tr>
+<th>8</th>
+<td>0.617907</td>
+<td>(Art)</td>
+</tr>
+<tr>
+<th>5</th>
+<td>0.590164</td>
+<td>(Accessories)</td>
+</tr>
+<tr>
+<th>15</th>
+<td>0.544767</td>
+<td>(Binders, Furnishings)</td>
+</tr>
+<tr>
+<th>18</th>
+<td>0.537201</td>
+<td>(Binders, Storage)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">mlxtend.frequent_patterns</span><span class="w"> </span><span class="kn">import</span> <span class="n">association_rules</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="n">association_rules</span><span class="p">(</span><span class="n">frequent_itemsets</span><span class="p">,</span> <span class="n">metric</span><span class="o">=</span><span class="s2">&quot;confidence&quot;</span><span class="p">,</span> <span class="n">min_threshold</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</code></pre></div>
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>antecedents</th>
+<th>consequents</th>
+<th>antecedent support</th>
+<th>consequent support</th>
+<th>support</th>
+<th>confidence</th>
+<th>lift</th>
+<th>leverage</th>
+<th>conviction</th>
+<th>zhangs_metric</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>(Paper)</td>
+<td>(Binders)</td>
+<td>0.757881</td>
+<td>0.815889</td>
+<td>0.640605</td>
+<td>0.845258</td>
+<td>1.035996</td>
+<td>0.022258</td>
+<td>1.189792</td>
+<td>0.143506</td>
+</tr>
+<tr>
+<th>1</th>
+<td>(Binders)</td>
+<td>(Paper)</td>
+<td>0.815889</td>
+<td>0.757881</td>
+<td>0.640605</td>
+<td>0.785162</td>
+<td>1.035996</td>
+<td>0.022258</td>
+<td>1.126983</td>
+<td>0.188720</td>
+</tr>
+<tr>
+<th>2</th>
+<td>(Furnishings)</td>
+<td>(Binders)</td>
+<td>0.658260</td>
+<td>0.815889</td>
+<td>0.544767</td>
+<td>0.827586</td>
+<td>1.014337</td>
+<td>0.007700</td>
+<td>1.067844</td>
+<td>0.041359</td>
+</tr>
+<tr>
+<th>3</th>
+<td>(Furnishings)</td>
+<td>(Paper)</td>
+<td>0.658260</td>
+<td>0.757881</td>
+<td>0.519546</td>
+<td>0.789272</td>
+<td>1.041419</td>
+<td>0.020663</td>
+<td>1.148963</td>
+<td>0.116379</td>
+</tr>
+<tr>
+<th>4</th>
+<td>(Paper, Furnishings)</td>
+<td>(Binders)</td>
+<td>0.519546</td>
+<td>0.815889</td>
+<td>0.438840</td>
+<td>0.844660</td>
+<td>1.035264</td>
+<td>0.014948</td>
+<td>1.185214</td>
+<td>0.070896</td>
+</tr>
+<tr>
+<th>5</th>
+<td>(Binders, Furnishings)</td>
+<td>(Paper)</td>
+<td>0.544767</td>
+<td>0.757881</td>
+<td>0.438840</td>
+<td>0.805556</td>
+<td>1.062904</td>
+<td>0.025971</td>
+<td>1.245181</td>
+<td>0.130003</td>
+</tr>
+<tr>
+<th>6</th>
+<td>(Storage)</td>
+<td>(Binders)</td>
+<td>0.641866</td>
+<td>0.815889</td>
+<td>0.537201</td>
+<td>0.836935</td>
+<td>1.025795</td>
+<td>0.013509</td>
+<td>1.129066</td>
+<td>0.070216</td>
+</tr>
+<tr>
+<th>7</th>
+<td>(Storage)</td>
+<td>(Paper)</td>
+<td>0.641866</td>
+<td>0.757881</td>
+<td>0.527112</td>
+<td>0.821218</td>
+<td>1.083571</td>
+<td>0.040654</td>
+<td>1.354267</td>
+<td>0.215353</td>
+</tr>
+<tr>
+<th>8</th>
+<td>(Paper, Binders)</td>
+<td>(Storage)</td>
+<td>0.640605</td>
+<td>0.641866</td>
+<td>0.451450</td>
+<td>0.704724</td>
+<td>1.097930</td>
+<td>0.040267</td>
+<td>1.212879</td>
+<td>0.248182</td>
+</tr>
+<tr>
+<th>9</th>
+<td>(Paper, Storage)</td>
+<td>(Binders)</td>
+<td>0.527112</td>
+<td>0.815889</td>
+<td>0.451450</td>
+<td>0.856459</td>
+<td>1.049725</td>
+<td>0.021385</td>
+<td>1.282640</td>
+<td>0.100171</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="references">References<a class="headerlink" href="#references" title="Permanent link">#</a></h3>
+<ul>
+<li>
+<p><a href="http://tutoriels-data-mining.blogspot.com/2019/02/regles-dassociation-sous-python.html">Blog sur le Data Mining</a></p>
+</li>
+<li>
+<p><a href="http://rasbt.github.io/mlxtend/">Librairie Python de Machine Learning</a></p>
+</li>
+<li>
+<p><a href="http://www.saedsayad.com/association_rules.htm">Association Rules</a></p>
+</li>
+<li>
+<p><a href="http://rasbt.github.io/mlxtend/user_guide/frequent_patterns/association_rules/">Association rules generation from frequent itemsets</a></p>
+</li>
+<li>
+<p><a href="https://perso.univ-rennes1.fr/valerie.monbet/doc/cours/IntroDM/Chapitre5.pdf">Règles d'association</a></p>
+</li>
+<li>
+<p><a href="http://www-igm.univ-mlv.fr/~lecroq/cours/regles.pdf">Extraction de règles d’association</a></p>
+</li>
+</ul>
+<h3 id="let-get-in-touch">Let get in touch<a class="headerlink" href="#let-get-in-touch" title="Permanent link">#</a></h3>
+<p><a href="https://github.com/joekakone"><img alt="Github Badge" src="https://img.shields.io/badge/-Github-000?style=flat-square&amp;logo=Github&amp;logoColor=white&amp;link=https://github.com/joekakone" /></a> <a href="https://www.facebook.com/joekakonepage"><img alt="Facebook Badge" src="https://img.shields.io/badge/-Facebook-blue?style=flat-square&amp;logo=Facebook&amp;logoColor=white&amp;link=https://www.facebook.com/joekakonepage" /></a> <a href="https://www.linkedin.com/in/joseph-koami-konka/"><img alt="Linkedin Badge" src="https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&amp;logo=Linkedin&amp;logoColor=white&amp;link=https://www.linkedin.com/in/joseph-koami-konka/" /></a> <a href="https://www.twitter.com/joekakone"><img alt="Twitter Badge" src="https://img.shields.io/badge/-Twitter-blue?style=flat-square&amp;logo=Twitter&amp;logoColor=white&amp;link=https://www.twitter.com/joekakone" /></a> <a href="mailto:joseph.kakone@gmail.com"><img alt="Gmail Badge" src="https://img.shields.io/badge/-Gmail-c14438?style=flat-square&amp;logo=Gmail&amp;logoColor=white&amp;link=mailto:joseph.kakone@gmail.com" /></a></p>
+<p></class></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="packages_1">Packages<a class="headerlink" href="#packages_1" title="Permanent link">#</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">mlxtend</span>
+</code></pre></div>
+
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="nb">print</span><span class="p">(</span><span class="n">mlxtend</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
+</code></pre></div>
+
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+<code>0.22.0
+</code>
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="kn">from</span><span class="w"> </span><span class="nn">mlxtend.preprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">TransactionEncoder</span>
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="kn">from</span><span class="w"> </span><span class="nn">mlxtend.frequent_patterns</span><span class="w"> </span><span class="kn">import</span> <span class="n">apriori</span><span class="p">,</span> <span class="n">association_rules</span>
+</code></pre></div>
+
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="get-data_1">Get data<a class="headerlink" href="#get-data_1" title="Permanent link">#</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="n">DATASET_PATH</span> <span class="o">=</span> <span class="s2">&quot;Data/Sample - Superstore.xls&quot;</span>
+</code></pre></div>
+
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="n">DATASET_PATH</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="s2">&quot;Orders&quot;</span><span class="p">)</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+</code></pre></div>
+
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+<code>                                               0  ...                               4
+Row ID                                         1  ...                               5
+Order ID                          CA-2016-152156  ...                  US-2015-108966
+Order Date                   2016-11-08 00:00:00  ...             2015-10-11 00:00:00
+Ship Date                    2016-11-11 00:00:00  ...             2015-10-18 00:00:00
+Ship Mode                           Second Class  ...                  Standard Class
+Customer ID                             CG-12520  ...                        SO-20335
+Customer Name                        Claire Gute  ...                  Sean O'Donnell
+Segment                                 Consumer  ...                        Consumer
+Country                            United States  ...                   United States
+City                                   Henderson  ...                 Fort Lauderdale
+State                                   Kentucky  ...                         Florida
+Postal Code                                42420  ...                           33311
+Region                                     South  ...                           South
+Product ID                       FUR-BO-10001798  ...                 OFF-ST-10000760
+Category                               Furniture  ...                 Office Supplies
+Sub-Category                           Bookcases  ...                         Storage
+Product Name   Bush Somerset Collection Bookcase  ...  Eldon Fold 'N Roll Cart System
+Sales                                     261.96  ...                          22.368
+Quantity                                       2  ...                               2
+Discount                                     0.0  ...                             0.2
+Profit                                   41.9136  ...                          2.5164
+
+[21 rows x 5 columns]
+</code>
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</code></pre></div>
+
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+<code>(9994, 21)
+</code>
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="data-exploration">Data Exploration<a class="headerlink" href="#data-exploration" title="Permanent link">#</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">info</span><span class="p">())</span>
+</code></pre></div>
+
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+<code>&lt;class 'pandas.core.frame.DataFrame'&gt;
+RangeIndex: 9994 entries, 0 to 9993
+Data columns (total 21 columns):
+ #   Column         Non-Null Count  Dtype         
+---  ------         --------------  -----         
+ 0   Row ID         9994 non-null   int64         
+ 1   Order ID       9994 non-null   object        
+ 2   Order Date     9994 non-null   datetime64[ns]
+ 3   Ship Date      9994 non-null   datetime64[ns]
+ 4   Ship Mode      9994 non-null   object        
+ 5   Customer ID    9994 non-null   object        
+ 6   Customer Name  9994 non-null   object        
+ 7   Segment        9994 non-null   object        
+ 8   Country        9994 non-null   object        
+ 9   City           9994 non-null   object        
+ 10  State          9994 non-null   object        
+ 11  Postal Code    9994 non-null   int64         
+ 12  Region         9994 non-null   object        
+ 13  Product ID     9994 non-null   object        
+ 14  Category       9994 non-null   object        
+ 15  Sub-Category   9994 non-null   object        
+ 16  Product Name   9994 non-null   object        
+ 17  Sales          9994 non-null   float64       
+ 18  Quantity       9994 non-null   int64         
+ 19  Discount       9994 non-null   float64       
+ 20  Profit         9994 non-null   float64       
+dtypes: datetime64[ns](2), float64(3), int64(3), object(13)
+memory usage: 1.6+ MB
+None
+</code>
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[[</span><span class="s2">&quot;Customer ID&quot;</span><span class="p">,</span> <span class="s2">&quot;Sub-Category&quot;</span><span class="p">]]</span>
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+</code></pre></div>
+
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+<code>     Customer ID Sub-Category
+6496    KH-16510  Accessories
+484     MT-18070       Labels
+855     BK-11260        Paper
+227     DS-13180      Storage
+6546    DP-13000        Paper
+822     TR-21325  Accessories
+6610    AG-10495      Binders
+2434    PJ-18835    Envelopes
+6121    JR-16210    Bookcases
+5197    AI-10855       Phones
+</code>
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">describe</span><span class="p">())</span>
+</code></pre></div>
+
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+<code>       Customer ID Sub-Category
+count         9994         9994
+unique         793           17
+top       WB-21850      Binders
+freq            37         1523
+</code>
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="preprocessing">Preprocessing<a class="headerlink" href="#preprocessing" title="Permanent link">#</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="n">flatten</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">cart</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="n">cart</span><span class="p">)</span>
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>
+<a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="n">carts</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s2">&quot;Customer ID&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s2">&quot;Sub-Category&quot;</span><span class="p">:</span> <span class="n">flatten</span><span class="p">})</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Sub-Category&quot;</span><span class="p">:</span> <span class="s2">&quot;Chart&quot;</span><span class="p">})</span>
+<a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">carts</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+</code></pre></div>
+
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+<code>  Customer ID                                              Chart
+0    AA-10315  [Appliances, Binders, Storage, Binders, Applia...
+1    AA-10375  [Storage, Furnishings, Accessories, Binders, A...
+2    AA-10480  [Paper, Furnishings, Paper, Storage, Paper, Pa...
+3    AA-10645  [Chairs, Phones, Chairs, Furnishings, Envelope...
+4    AB-10015  [Chairs, Art, Storage, Storage, Phones, Bookca...
+5    AB-10060  [Accessories, Paper, Binders, Paper, Binders, ...
+6    AB-10105  [Tables, Furnishings, Binders, Phones, Labels,...
+7    AB-10150  [Accessories, Paper, Supplies, Art, Furnishing...
+8    AB-10165  [Accessories, Paper, Art, Art, Paper, Binders,...
+9    AB-10255  [Phones, Storage, Accessories, Supplies, Paper...
+</code>
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="n">encoder</span> <span class="o">=</span> <span class="n">TransactionEncoder</span><span class="p">()</span>
+<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="n">encoder</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">carts</span><span class="p">[</span><span class="s2">&quot;Chart&quot;</span><span class="p">])</span>
+<a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="n">chart_array</span> <span class="o">=</span> <span class="n">encoder</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">carts</span><span class="p">[</span><span class="s2">&quot;Chart&quot;</span><span class="p">])</span>
+<a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a><span class="n">df_chart</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">chart_array</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">encoder</span><span class="o">.</span><span class="n">columns_</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+<a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">df_chart</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+</code></pre></div>
+
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+<code>   Accessories  Appliances  Art  Binders  Bookcases  Chairs  ...  Machines  Paper  Phones  Storage  Supplies  Tables
+0            1           1    0        1          0       0  ...         0      1       1        1         1       0
+1            1           0    1        1          0       0  ...         0      1       1        1         0       0
+2            1           0    1        0          0       0  ...         0      1       1        1         0       1
+3            0           0    1        1          1       1  ...         0      1       1        1         0       0
+4            0           0    1        0          1       1  ...         0      0       1        1         0       0
+5            1           1    0        1          0       1  ...         0      1       0        0         1       1
+6            1           0    1        1          0       0  ...         1      0       1        1         0       1
+7            1           0    1        1          0       0  ...         0      1       0        0         1       0
+8            1           0    1        1          0       1  ...         0      1       0        1         0       0
+9            1           0    1        1          0       0  ...         0      1       1        1         1       0
+
+[10 rows x 17 columns]
+</code>
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="itemsets">Itemsets<a class="headerlink" href="#itemsets" title="Permanent link">#</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="n">frequent_itemsets</span> <span class="o">=</span> <span class="n">apriori</span><span class="p">(</span><span class="n">df_chart</span><span class="p">,</span> <span class="n">min_support</span><span class="o">=</span><span class="mf">0.45</span><span class="p">,</span> <span class="n">use_colnames</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">frequent_itemsets</span><span class="p">)</span>
+</code></pre></div>
+
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+<code>     support                       itemsets
+0   0.597730                  (Accessories)
+1   0.622951                          (Art)
+2   0.819672                      (Binders)
+3   0.513241                       (Chairs)
+4   0.665826                  (Furnishings)
+5   0.770492                        (Paper)
+6   0.644388                       (Phones)
+7   0.648172                      (Storage)
+8   0.508197         (Accessories, Binders)
+9   0.491803           (Paper, Accessories)
+10  0.523329                 (Art, Binders)
+11  0.493064                   (Paper, Art)
+12  0.553594         (Furnishings, Binders)
+13  0.650694               (Paper, Binders)
+14  0.532156              (Binders, Phones)
+15  0.546028             (Storage, Binders)
+16  0.535939           (Paper, Furnishings)
+17  0.450189          (Furnishings, Phones)
+18  0.520807                (Paper, Phones)
+19  0.535939               (Paper, Storage)
+20  0.451450  (Paper, Furnishings, Binders)
+21  0.460277      (Paper, Storage, Binders)
+</code>
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="association-rules_2">Association Rules<a class="headerlink" href="#association-rules_2" title="Permanent link">#</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="n">rules</span> <span class="o">=</span> <span class="n">association_rules</span><span class="p">(</span><span class="n">frequent_itemsets</span><span class="p">,</span> <span class="n">metric</span><span class="o">=</span><span class="s2">&quot;confidence&quot;</span><span class="p">,</span> <span class="n">min_threshold</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+<a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a><span class="n">rules</span> <span class="o">=</span> <span class="n">rules</span><span class="p">[[</span><span class="s2">&quot;antecedents&quot;</span><span class="p">,</span> <span class="s2">&quot;consequents&quot;</span><span class="p">,</span> <span class="s2">&quot;support&quot;</span><span class="p">,</span> <span class="s2">&quot;confidence&quot;</span><span class="p">,</span> <span class="s2">&quot;lift&quot;</span><span class="p">,</span> <span class="s2">&quot;leverage&quot;</span><span class="p">]]</span>
+<a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a><span class="c1"># rules</span>
+<a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">rules</span><span class="p">)</span>
+</code></pre></div>
+
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+<code>               antecedents       consequents   support  confidence      lift  leverage
+0            (Accessories)         (Binders)  0.508197    0.850211  1.037257  0.018254
+1            (Accessories)           (Paper)  0.491803    0.822785  1.067870  0.031257
+2                    (Art)         (Binders)  0.523329    0.840081  1.024899  0.012714
+3                    (Art)           (Paper)  0.493064    0.791498  1.027263  0.013086
+4            (Furnishings)         (Binders)  0.553594    0.831439  1.014356  0.007835
+5                  (Paper)         (Binders)  0.650694    0.844517  1.030311  0.019143
+6                (Binders)           (Paper)  0.650694    0.793846  1.030311  0.019143
+7                 (Phones)         (Binders)  0.532156    0.825832  1.007515  0.003969
+8                (Storage)         (Binders)  0.546028    0.842412  1.027743  0.014740
+9            (Furnishings)           (Paper)  0.535939    0.804924  1.044689  0.022926
+10                (Phones)           (Paper)  0.520807    0.808219  1.048965  0.024311
+11               (Storage)           (Paper)  0.535939    0.826848  1.073143  0.036529
+12    (Paper, Furnishings)         (Binders)  0.451450    0.842353  1.027671  0.012156
+13  (Furnishings, Binders)           (Paper)  0.451450    0.815490  1.058402  0.024911
+14        (Paper, Storage)         (Binders)  0.460277    0.858824  1.047765  0.020983
+15        (Paper, Binders)         (Storage)  0.460277    0.707364  1.091323  0.038516
+16      (Storage, Binders)           (Paper)  0.460277    0.842956  1.094049  0.039568
+17               (Storage)  (Paper, Binders)  0.460277    0.710117  1.091323  0.038516
+</code>
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>
+</code></pre></div>
+
+</div>
+</div>
+
+        </div>
+      </div>
+    </main>
+  
+
+
+  <!-- Tags -->
+
+<!-- CTA FINAL -->
+<section class="py-5 bg-primary text-white text-center">
+<div class="container py-4">
+    <h3 class="text-uppercase mb-4">Inscrivez-vous à une formation complète</h3>
+    <a href="/#formations" class="btn btn-outline-light btn-lg text-uppercase px-5">Voir le catalogue</a>
+</div>
+</section>
+
+<!-- Footer-->
+<footer class="pt-0">
+    <!-- Bande de Navigation Précédent / Suivant (Style Bootstrap Dark) -->
+    
+    
+    <div class="container text-center py-5">
+        <div class="row px-4">
+            <div class="col-lg-7 mx-auto">
+                <h2 class="text-uppercase mb-0">Joseph Konka </h2>
+                <h6 class="text-primary text-uppercase mb-0 letter-spacing-3">Senior Data Analyst | Data Scientist</h6>
+                <p class="text-muted my-4">Project Management - Data Engineering - Data Analytics - Python Programming</p>
+                <ul class="list-inline mb-0">
+                    <li class="list-inline-item"><a class="social-link" href="https://wa.me/+22891518923" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
+                    <li class="list-inline-item"><a class="social-link" href="https://github.com/joekakone" target="_blank"><i class="fab fa-github"></i></a></li>
+                    <li class="list-inline-item"><a class="social-link" href="https://www.linkedin.com/in/joseph-koami-konka" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+                    <li class="list-inline-item"><a class="social-link" href="https://web.facebook.com/joekakonepage" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                    <li class="list-inline-item"><a class="social-link" href="https://twitter.com/joekakone" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                    <li class="list-inline-item"><a class="social-link" href="https://www.youtube.com/@algojungle" target="_blank"><i class="fab fa-youtube"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="copyrights px-4">
+        <div class="container py-4 border-top text-center">
+        <p class="mb-0 text-muted py-2">&copy; All rights reserved. Template designed by <a
+            href="https://bootstrapious.com/p/bootstrap-resume">Bootstrapious</a>. </p>
+        </div>
+    </div>
+</footer>
+  
+
+  <!-- JS -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script> -->
+  <script src="../../../assets/javascripts/custom.js"></script>
+
+  
+  <!-- JavaScript files-->
+  <script src="https://joekakone.github.io/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="https://joekakone.github.io/static/js/front.js"></script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YPL3847T5N"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-YPL3847T5N');
+  </script>
+
+  <script type='text/javascript'>
+    var divElement = document.getElementById('viz1677099741796'); var vizElement = divElement.getElementsByTagName('object')[0]; if (divElement.offsetWidth > 800) { vizElement.style.width = '1100px'; vizElement.style.height = '627px'; } else if (divElement.offsetWidth > 500) { vizElement.style.width = '1100px'; vizElement.style.height = '627px'; } else { vizElement.style.width = '100%'; vizElement.style.height = '1327px'; } var scriptElement = document.createElement('script'); scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js'; vizElement.parentNode.insertBefore(scriptElement, vizElement);                
+  </script>
+
+  <!-- Google Ads -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2980760029476176"
+      crossorigin="anonymous"></script>
+
+  <!-- ShareThis -->
+  <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=649bd6c6a6672f0012d186bd&product=sop' async='async'></script>
+
+  <!-- Tally -->
+  <script async src="https://tally.so/widgets/embed.js"></script>
+
+  <!-- Facebook -->
+  <div id="fb-root"></div>
+  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v20.0&appId=564181564271850"></script>
+
+  <!-- Messenger Plugin de discussion Code -->
+  <div id="fb-root"></div>
+
+  <!-- Your Plugin de discussion code -->
+  <div id="fb-customer-chat" class="fb-customerchat">
+  </div>
+
+  <script>
+    var chatbox = document.getElementById('fb-customer-chat');
+    chatbox.setAttribute("page_id", "2130664133866857");
+    chatbox.setAttribute("attribution", "biz_inbox");
+
+    window.fbAsyncInit = function () {
+      FB.init({
+        xfbml: true,
+        version: 'v12.0'
+      });
+    };
+
+    (function (d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/fr_FR/sdk/xfbml.customerchat.js';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
+
+  <!-- Contact Form Utils -->
+  <script>
+    function buildMailtoUrl(event) {
+      event.preventDefault(); // Prevent form submission
+
+      var emailInputFirstName = document.getElementById('InputFirstName').value;
+      var emailInputLastName = document.getElementById('InputLastName').value;
+      var emailInputEmail = document.getElementById('InputEmail').value;
+      var emailInputPhone = document.getElementById('InputPhone').value;
+      var emailInputSubject = document.getElementById('InputSubject').value;
+      var emailInputMessage = document.getElementById('InputMessage').value;
+
+      var emailContent = `${emailInputMessage} \n\nFull Name : ${emailInputFirstName} ${emailInputLastName}\nPhone Number : ${emailInputPhone}\nEmail : ${emailInputEmail}`;
+
+      var subject = encodeURIComponent(emailInputSubject);
+      var body = encodeURIComponent(emailContent);
+
+      var mailtoLink = 'mailto:konka.datanalytics@gmail.com' + '?subject=' + subject + '&body=' + body;
+
+      window.location.href = mailtoLink;
+    }
+  </script>
+
+  <!-- Google Ads -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2980760029476176"
+    crossorigin="anonymous"></script>
+
+
+  <!-- FontAwesome CSS - loading as last, so it doesn't block rendering-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+</body>
+</html>
